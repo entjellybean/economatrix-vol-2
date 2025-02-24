@@ -5,6 +5,36 @@ main li{
     list-style: none;
 
 }
+.modal{
+    position:fixed;
+    top: 20%;
+    left:5%;
+    width:90%;
+    background-color: white;
+    padding:1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    display:none;
+}
+
+#game-over-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 65%;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Karartılmış bir arka plan */
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: center; /* İçeriği dikeyde ortala */
+    align-items: center; /* İçeriği yatayda ortala */
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Görüntü taşmasını engelle */
+}
 #game-configuration{
     justify-content: center;
     display:grid;

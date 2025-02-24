@@ -1,41 +1,31 @@
-// Oyuncu ve bilgisayar skorları
 let playerScore = 0;
 let computerScore = 0;
 
-// DOM öğelerine erişim
-const gameOverOverlayElement = document.getElementById('game-over-overlay');
-const gameOverMessageElement = document.getElementById('game-over-message');
-const resultImage = document.getElementById('result-image');
-const restartBtnElement = document.getElementById('restart-btn');
-const backdropElement = document.getElementById('backdrop');
 const playerScoreElement = document.querySelector('#player-1-data .player-symbol');
 const computerScoreElement = document.querySelector('#player-2-data .player-symbol');
 const coopBtnElement = document.getElementById('coop-btn');
 const cheatBtnElement = document.getElementById('cheat-btn');
 const gameBoardSquares = document.querySelectorAll('.game-btn');
+const gameOverOverlayElement = document.getElementById('game-over-overlay');
+const gameOverMessageElement = document.getElementById('game-over-message');
 
-// Bilgisayarın rastgele bir seçim yapması için fonksiyon
 function getRandomComputerChoice() {
     const choices = ['coop', 'cheat'];
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-// Oyuncu seçimi işleyicisi
 function handlePlayerChoice(playerChoice) {
     const computerChoice = getRandomComputerChoice();
 
     console.log('Player choice:', playerChoice);
     console.log('Computer choice:', computerChoice);
 
-    // Skorları ve tahtayı güncelle
     updateScores(playerChoice, computerChoice);
     updateBoard(playerChoice, computerChoice);
 
-    // Skor durumlarını kontrol et
     checkGameEnd();
 }
 
-// Skorları güncelle
 function updateScores(playerChoice, computerChoice) {
     if (playerChoice === 'coop' && computerChoice === 'coop') {
         playerScore += 1;
@@ -51,12 +41,10 @@ function updateScores(playerChoice, computerChoice) {
         playerScore -= 0;
     }
 
-    // Skorları DOM üzerinde güncelle
     playerScoreElement.textContent = playerScore;
     computerScoreElement.textContent = computerScore;
 }
 
-// Oyun tahtasını güncelle
 function updateBoard(playerChoice, computerChoice) {
     gameBoardSquares.forEach(square => square.style.backgroundColor = '');
 
@@ -70,17 +58,24 @@ function updateBoard(playerChoice, computerChoice) {
         gameBoardSquares[2].style.backgroundColor = 'purple';
     }
 }
+coopBtnElement.addEventListener('click', () => handlePlayerChoice('coop'));
+cheatBtnElement.addEventListener('click', () => handlePlayerChoice('cheat'));
 
-// Oyunun bitip bitmediğini kontrol et
 function checkGameEnd() {
-    if (playerScore >= 5) {
+    if(playerScore >= 10 && computerScore >= 10){
+        endGame('egalite');
+    }
+    else if(playerScore <= -10 && computerScore <= -10){
+        endGame('egalite');
+    }
+    else if (playerScore >= 10) {
         endGame('win');
-    }else if(playerScore <= -5){
+    }else if(playerScore <= -10){
         endGame('lose');
     }
-    else if(computerScore >= 5){
+    else if(computerScore >= 10){
         endGame('lose');
-    } else if (computerScore <= -5) {
+    } else if (computerScore <= -10) {
         endGame('win');
     }
 }
@@ -91,42 +86,20 @@ function endGame(result) {
 
     if (result === 'win') {
         message = `Victoire ! Avec un score final de ${playerScore} contre ${computerScore}, vos décisions tactiques ont mené Solaris à la gloire !`;
-        resultImage.src = "images/win.png";
     } else if (result === 'lose') {
         message = `Défaite. Score final : ${computerScore} contre ${playerScore}. Analysez vos choix et revenez plus fort !`;
-        resultImage.src = "images/lose.png";
+    } else if(result === 'egalite'){
+        message = `egalite`;
+
     }
 
     // Overlay'i ve mesajı göster
     gameOverMessageElement.textContent = message;
     gameOverOverlayElement.style.display = 'block';
-    backdropElement.style.display = 'block';
 
     // Butonları devre dışı bırak
     coopBtnElement.disabled = true;
     cheatBtnElement.disabled = true;
 }
 
-// Oyunu yeniden başlat
-function restartGame() {
-    playerScore = 0;
-    computerScore = 0;
 
-    playerScoreElement.textContent = playerScore;
-    computerScoreElement.textContent = computerScore;
-
-    gameOverOverlayElement.style.display = 'none';
-    backdropElement.style.display = 'none';
-
-    // Butonları yeniden etkinleştir
-    coopBtnElement.disabled = false;
-    cheatBtnElement.disabled = false;
-
-    // Oyun tahtasını sıfırla
-    gameBoardSquares.forEach(square => square.style.backgroundColor = '');
-}
-
-// Event listenerlar
-coopBtnElement.addEventListener('click', () => handlePlayerChoice('coop'));
-cheatBtnElement.addEventListener('click', () => handlePlayerChoice('cheat'));
-restartBtnElement.addEventListener('click', restartGame);
