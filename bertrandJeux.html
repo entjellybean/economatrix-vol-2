@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="'IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/cournot.css">
+     
+    <script src="javascript/app.js" defer> </script>
+    <script src="javascript/bertrand.js" defer></script>
+
+    <title>bertrand</title>
+</head>
+<body>
+    <header id="main-header">
+        <a href="index.html" id="logo">EconoMatrix</a>
+        <nav>
+          <ul><li>
+              <a href="savoir.html">Savoir Economique</a>
+          </li>
+              <li>
+                  <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
+              <li>
+                  <a href="aboutus.html">A propos</a>
+              </li>
+          </ul>
+        </nav>
+        <div id="menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </header>
+      <aside id="side-drawer">
+  <nav>
+    <button id="close-menu-button">X</button>
+      <ul>  
+        <li>
+            <a href="savoir.html">Savoir Economique</a>
+        </li>
+            <li>
+                <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
+            <li>
+                <a href="aboutus.html">A propos</a>
+            </li>
+      </ul>
+  </nav>
+      </aside>
+ 
+  <main>
+    <section id="hero">
+      <h1>Le Guerre des Pizzas</h1>
+      <a href="bertrandInfo.html"> <button class="btn">En savoir plus</button></a>
+    </section>
+    <section id="question">
+    <p>Q<sub>a</sub> = 60 - 2P<sub>a</sub> + P<sub>b</sub>  </p>
+    <p>Q<sub>b</sub> = 50 - 2P<sub>b</sub> + P<sub>a</sub>  </p>
+    <p>Cm<sub>1</sub> = 15 , Cm<sub>2</sub> = 10</p>
+
+
+    </section>
+    <section id="jeux">
+      <section id="game-board-bertrand">
+        <section id="ai-game-board">
+            <li><button>10</button></li>
+            <li><button>15</button></li>
+            <li><button>25</button></li>
+            <li><button>29</button></li>
+            <li><button>35</button></li>
+        </section>
+        <section id="human-game-board">
+            <li><button id="10">10</button></li>
+            <li><button id="15">15</button></li>
+            <li><button id="25">25</button></li>
+            <li><button id="29">29</button></li>
+            <li><button id="35">35</button></li>
+        </section>
+
+
+      </section>
+      <div>
+      
+      <div id="tips">
+<div id="tip-content">
+  <button id="tip-close">x</button>
+        <div id="tip-one">
+         <p>Si prix=< cout, Vous ne pouvez pas en tirer profit. </p>
+        <button id="btn-tip-one">→</button>
+        </div>
+        <div id="tip-two">
+         <p>Essayez de trouver les prix optimaux:</p>
+         <p>Revenue marginal = Cout marginal</p>
+        <button id="btn-tip-two">result</button>
+
+        </div>
+      </div></div>
+      <section id=tipandimage><img src="images/pizza.png" id="coffeeman">
+        <em>Clique sur l'homme pour les tips :) </em></section>
+        </div>
+    </section>
+  </main>
+  <div id="overlay-nash-bravo" class="bertrand-overlay">
+    <div id="overlay-content">
+        <h2>Vous avez choisi le prix optimal selon l'équilibre de Nash et avez </h2>
+        <h2>obtenu un profit supérieur à celui de votre concurrent. Félicitations !</h2>
+        <button onclick="closeOverlay('overlay--nash-bravo')">Tamam</button>
+    </div>
+</div>
+
+<div id="overlay-no-nash-bravo" class="bertrand-overlay">
+    <div id="overlay-content">
+        <h2>Vous n'avez pas choisi la décision optimale selon l'équilibre de Nash, </h2>
+        <h2> mais vous avez obtenu un bénéfice supérieur à celui de votre concurrent.</h2>
+        <button onclick="closeOverlay('overlay-no-nash-bravo')">Tamam</button>
+    </div>
+</div>
+
+<div id="overlay-defait" class="bertrand-overlay">
+    <div id="overlay-content">
+    <h2>Vous avez obtenu aucun profit...</h2>
+        <button onclick="closeOverlay('overlay-defait')">Tamam</button>
+    </div>
+</div>
+
+<div id="overlay-nash-mal" class="bertrand-overlay">
+    <div id="overlay-content">
+        <h2>Vous avez choisi l'option optimale selon l'équilibre de Nash. Malheureusement, </h2>
+        <h2>votre concurrent étant plus avantagé, vous avez réalisé un profit inférieur au sien.</h2>
+        <button onclick="closeOverlay('overlay-nash-mal')">Tamam</button>
+    </div>
+</div>
+
+<div id="overlay-mal" class="bertrand-overlay">
+    <div id="overlay-content">
+<h2>Vous n'avez ni appliqué le prix optimal selon l'équilibre de Nash </h2>    
+<h2>ni obtenu un profit supérieur à celui de votre concurrent.</h2>
+<button onclick="closeOverlay('overlay-mal')">Tamam</button>
+    </div>
+</div>
+
+
+
+<footer></footer>
+</body>
+</html>

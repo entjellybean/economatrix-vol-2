@@ -1,0 +1,93 @@
+main{
+    display: grid;
+}
+main li{
+    list-style: none;
+
+}
+#game-configuration{
+    justify-content: center;
+    display:grid;
+    grid-template-columns: repeat(2,15rem);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+#game-configuration li{
+    border: 1px dotted black;
+    font-size: 150%;
+    text-align: center;
+}
+#game-board{
+    display: grid;
+    width:80%;
+    margin: 0 auto;
+    list-style: none;
+    grid-template-columns: repeat(3, 10rem);
+    grid-template-rows: repeat(3, 10rem);
+    align-items: center;
+
+}
+#active-game{
+    display: grid;
+    gap:15rem;
+    grid-template-columns: 50% 50%;
+    align-items: end;
+    width:80%; 
+    margin: 1rem auto;
+}
+#hero{
+    background-color: rgb(18, 108, 108);
+    color:white;
+    justify-content: center;
+    display: grid;
+    padding-bottom: 1rem;
+}
+
+#hero button{
+    width:70%;
+    margin: 0 15%;
+}
+#hero h1{
+    font-size: 300%;
+    text-align: center;
+}
+#elprof{
+    width:10rem;
+    height:auto;
+}
+.game-btn{
+    height:10rem;
+    width:100%;
+    margin-left: 1rem;
+    background-color: rgb(18, 108, 108);
+    color:white
+
+}
+#coop-btn, #cheat-btn{
+    font-size: 100%;
+    background-color: white;
+    padding: 0.5rem 1rem;
+}
+#coop-btn:hover, #cheat-btn:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+#game-board div{
+    justify-content: center;
+    display: grid;
+    gap:2rem;
+}
+.game-btn:hover{
+    background-color:  rgb(22, 147, 147);
+    cursor: pointer;
+}
+#tip-close{
+    display: none;
+}
+#tipandimage{
+    display: grid;
+    gap:1rem;
+  }
+  #tip-one{
+    display:none;
+}

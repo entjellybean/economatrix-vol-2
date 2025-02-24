@@ -1,0 +1,169 @@
+#titlesCrisesOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;   
+}
+.choices-buttons-container{
+    display: grid;
+    grid-template-columns: repeat(2, 30rem);
+    justify-content: space-between;  
+    width:70%;  
+    margin: 2rem auto;
+}
+.message, #finInvest{
+    display:none;
+}
+.choix, #deuxQuestionInvest{
+    display:none;
+}
+.fin, #titlesCrisesOverlay2, #alternativeInvest{
+    display:none; 
+}
+h3{
+    font-size: 180%;
+    margin: 2rem auto;
+    width:80%;
+    text-align: center;
+}
+#avatar-info {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+    text-align: center;
+    display: none; /* Varsayılan olarak gizli */
+    z-index: 10;
+  }
+body{
+    background-color: rgb(237, 237, 237);
+}
+#titlesCrisesOverlay ul{
+    background-color: white;
+    width:50%;
+    height: 70%;
+    margin: 0 auto;
+    padding-top: 5rem;
+    list-style: none;
+    font-size: 200%;
+    margin: 3rem 0;
+    display: grid;
+    text-align: center;
+    grid-template-rows: repeat(4,7rem);
+}
+#titlesCrisesOverlay button{
+    background-color: rgb(18, 108, 108);
+    color:white;
+    border-radius:6px;
+    padding: 1.5rem auto;
+    font-size: 200%;
+}
+#titlesCrisesOverlay button:hover{
+    background-color: rgb(12, 158, 158);
+
+}
+#open{
+    font-size: 70%;
+
+}
+#hero{
+    background-color: rgb(18, 108, 108);
+    display: flex;
+    padding-bottom: 1rem;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+    color:white;
+}
+#hero h1{
+    font-size: 300%;
+}
+#hero p{
+    font-size:200%;
+    margin-top:-2rem;
+}
+h2{
+    text-align: center;
+    font-size: 250%;
+}
+#info{
+    text-align: center;
+    font-size: 150%;
+    margin:2rem 4rem;
+}
+#tdj{
+    display: grid;
+    grid-template-columns: repeat(2,20rem);
+}
+
+.avatars p{
+ display: none;
+}
+.avatars li{
+    display: grid;
+    justify-content: center;
+}
+.avatars img{
+    width:12rem;
+    height: 12rem;
+}
+.avatars a{
+    text-align: center;
+    font-size: 150%;
+    color:black;
+}
+.avatars{
+    display: grid;
+    grid-template-columns: repeat(3,14rem);
+    justify-content:space-between ;
+    width:80%;
+    margin: 0 auto;
+}
+footer{
+    height:2rem;
+}
+@media (max-width:800px){
+    .avatars{
+        grid-template-columns: 100%;
+        gap:5rem;
+    }
+    .avatars p{
+        display:block;
+    }
+    .avatars li{
+        display: grid;
+        grid-template-columns: repeat(2,12rem);
+        width:70%;
+        margin:0 auto;
+        border-bottom: 2px solid rgb(30, 29, 29);
+        padding-bottom: 3rem;
+
+    }
+    .avatars li:last-child{
+        border:none;
+    }
+    .avatars-content{
+        align-items: center;
+        display: grid;
+    }
+    #titlesCrisesOverlay ul{
+     background-color: black;
+     color:white;
+     width: 100%;
+     font-size:150%;
+}
+.choices-buttons-container{
+    grid-template-columns: 100%;
+    gap:10%;
+}
+  
+}

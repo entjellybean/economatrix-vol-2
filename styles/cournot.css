@@ -1,0 +1,243 @@
+#game-board, #surplus{
+    display: grid;
+    width:80%;
+    margin: 0 auto;
+    list-style: none;
+    grid-template-columns: repeat(3, 10rem);
+    grid-template-rows: repeat(3, 10rem);
+    align-items: center;
+
+}
+#cournot-result{
+    width:15rem;
+    height: auto;
+    display:none;
+}
+#tip-one{
+    display:none;
+}
+#tip-one-sur{
+    display:none;
+}
+#tip-two{
+    display:none;
+}
+#jeux, #surplus-sec{
+    display: grid;
+    gap:15rem;
+    grid-template-columns: 50% 50%;
+    align-items: end;
+    width:80%; 
+    margin: 1rem auto;
+}
+#surplus-sec{
+    display: none;
+    gap:2rem;
+    grid-template-columns: 50% 30% 20%;
+    align-items: center;
+    width:80%; 
+    margin: 1rem auto;
+}
+
+
+#hero{
+    background-color: rgb(18, 108, 108);
+    color:white;
+    justify-content: center;
+    display: grid;
+    padding-bottom: 1rem;
+}
+
+#hero button{
+    width:70%;
+    margin: 0 15%;
+}
+#hero h1{
+    font-size: 300%;
+    text-align: center;
+}
+
+#bravo-surplus, #try-surplus{
+    display:none;
+    text-align: center;
+}
+#coffeeman, #coffeeman-sur{
+    width:20rem;
+    height:auto;
+}
+.game-btn, .surplus-btn{
+    height:10rem;
+    width:100%;
+    margin-left: 1rem;
+    background-color: rgb(18, 108, 108);
+    color:white
+
+}
+.price-button{
+    background-color: rgb(18, 108, 108);
+    color:white;
+    border-radius: 16px;
+    font-size: 100%;
+    padding:0.5rem 1rem;
+
+}
+#cartel, #trahir{
+    font-size: 100%;
+    background-color: white;
+    padding: 0.5rem 1rem;
+}
+#cartel:hover, #trahir:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+
+#game-board div, #surplus div{
+    justify-content: center;
+    display: grid;
+    gap:2rem;
+}
+.game-btn:hover, .surplus-btn:hover, .price-button:hover{
+    background-color:  rgb(22, 147, 147);
+
+
+    cursor: pointer;
+}
+#tip-close, #tip-close-sur{
+    display: none;
+}
+#question p{
+    text-align: center;
+    font-size:180%;
+}
+
+#tipandimage, #tipandimage-sur{
+    display: grid;
+    gap:1rem;
+  }
+
+ #submit-surplus{
+    display: block;
+    margin: 1rem auto;
+ } 
+
+#overlay-bravo, #overlay-tryagain, #overlay-missing {
+    position: fixed;
+    display: none;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay-content {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+}
+#button-board{
+    gap:2rem;
+    display:grid;
+}
+#elprof{
+    width:10rem;
+    height:auto;
+}
+/*bertand specials*/
+#game-board-bertrand{
+    display:grid;
+    gap:5rem;
+    margin-top:6rem;
+}
+#game-board-bertrand section{
+    display:grid;
+    grid-template-columns: repeat(5,8rem);
+}
+#game-board-bertrand section li{
+list-style: none;
+
+}
+#game-board-bertrand section button{
+    width:7rem;
+height:7rem;
+}
+
+.bertrand-overlay, .prison-overlay {
+    position: fixed;
+    display: none;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width:900px){
+    .game-btn{
+        padding:1rem;
+    }
+  #jeux,#surplus-sec{
+    grid-template-columns: 100%;
+    width:100%;
+    justify-content: left;
+    gap:2rem;
+  }
+  #tips-sur,#tips{
+    position: fixed;
+    display: none;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+  }
+   #tip-content-sur,#tip-content{
+    background: white;
+    padding: 2rem;
+    margin-top:50%;
+    text-align: center;
+    border-radius: 10px;
+   }
+    #game-board,#surplus{
+        margin:0;
+        padding:0;
+        
+        grid-template-columns: repeat(3, 7rem);
+        grid-template-rows: repeat(3, 8rem);
+    }
+
+   #game-board div,#surplus div{
+    gap:0.2rem;
+   }
+  #coffeeman, #coffeeman-sur{
+    width:4rem;
+  }
+  #tipandimage, #tipandimage-sur{
+    display:flex;
+    align-items: end;
+  }
+/*bertrand special*/
+#game-board-bertrand section button{
+    width:2rem;
+height:2rem;
+}
+
+  #game-board-bertrand{
+    margin: 0 auto;
+  }
+ 
+#game-board-bertrand section{
+    grid-template-columns: repeat(5,3rem);
+}
+ 
+}

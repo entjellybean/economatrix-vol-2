@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="'IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link href="styles/cournot.css" rel="stylesheet">
+    <script src="javascript/app.js" defer> </script>
+    <script src="javascript/prisoner.js" defer> </script>
+    <title>dilemme du prisonnier</title>
+</head>
+<body>
+    <header id="main-header">
+        <a href="index.html" id="logo">EconoMatrix</a>
+        <nav>
+          <ul><li>
+              <a href="savoir.html">Savoir Economique</a>
+          </li>
+              <li>
+                  <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
+              <li>
+                  <a href="aboutus.html">A propos</a>
+              </li>
+          </ul>
+        </nav>
+        <div id="menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </header>
+      <aside id="side-drawer">
+  <nav>
+    <button id="close-menu-button">X</button>
+      <ul>  
+        <li>
+            <a href="savoir.html">Savoir Economique</a>
+        </li>
+            <li>
+                <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
+            <li>
+                <a href="aboutus.html">A propos</a>
+            </li>
+      </ul>
+  </nav>
+      </aside>
+ 
+  <main>
+    <section id="hero">
+      <h1>Dilemme du Prisonnier</h1>
+      <a href="nashInfo.html"> <button class="btn">En savoir plus</button></a>
+    </section>
+   <p style="text-align: center; font-size: 150%; width:70%; margin:1rem auto;">Vous avez été attrapé en train de commettre un crime avec votre ami. Lors de l'interrogatoire, vous pouvez garder le silence ou rejeter la faute sur votre ami. Votre choix déterminera votre destin ainsi que celui de votre ami.</p>
+    <section id="jeux">
+      <section id="game-board">
+        <li id="empty" style="text-align: center;"></li>
+          <li style="text-align: center; font-size: 120%;">dénoncer</li>
+          <li style="text-align: center;font-size: 120%;">se taire</li>
+
+   <div>   <li>  <button id="cartel">dénoncer</button></li> 
+    <li></li>
+  </div> 
+
+       <li><button class="game-btn">(2,2)</button></li> 
+       <li><button class="game-btn">(0,5)</button></li> 
+     <div> <li>  <button id="trahir">se taire</button></li> 
+<li></li>
+     </div> 
+
+       <li><button class="game-btn">(5,0)</button></li> 
+       <li><button class="game-btn">(1,1)</button></li> 
+
+      </section>
+      <div>
+     
+      <div id="tips">
+<div id="tip-content">
+  <button id="tip-close">x</button>
+        <div id="tip-one">
+          <p>Déterminez la stratégie dominante en comparant </p><p>
+            le résultat de chaque coup de l'adversaire.</p>
+        </div>
+        
+      </div></div>
+      <section id=tipandimage><img src="images/prisoner.png" id="elprof">
+        <em>Clique sur l'homme pour les tips :) </em></section>
+    </div>
+    </section>
+  </main>
+  <div id="overlay-cheat" class="prison-overlay">
+    <div id="overlay-content">
+        <h2>Vous vous êtes dénoncés mutuellement et avez été condamnés à deux ans de prison.</h2>
+        <button onclick="closeOverlay('overlay-bravo')">Tamam</button>
+    </div>
+</div>
+
+<div id="overlay-cheat-coop" class="prison-overlay">
+    <div id="overlay-content">
+        <h2>Votre ami était resté silencieux, mais vous, ne voulant pas prendre de risque, l'avez dénoncé. </h2>
+         <h2> Il passera cinq ans en prison, tandis que vous êtes libre. Félicitations.</h2>
+        <button onclick="closeOverlay('overlay-tryagain')">Tamam</button>
+    </div>
+</div>
+
+<div id="overlay-coop-cheat" class="prison-overlay">
+  <div id="overlay-content">
+      <h2>Votre ami vous a dénoncé pour sauver sa propre peau.  </h2>
+       <h2>Pendant qu'il reste libre, vous avez été condamné à cinq ans de prison.</h2>
+      <button onclick="closeOverlay('overlay-tryagain')">Tamam</button>
+  </div>
+</div>
+
+<div id="overlay-coop" class="prison-overlay">
+  <div id="overlay-content">
+      <h2>Vous vous êtes protégés mutuellement et avez exercé votre droit au silence. </h2>
+        <h2>Vous ne passerez chacun qu'une année en prison avant d'être libérés.</h2>
+      <button onclick="closeOverlay('overlay-missing')">Ok</button>
+  </div>
+</div>
+
+<footer></footer>
+</body>
+</html>

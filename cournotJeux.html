@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="'IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link href="styles/cournot.css" rel="stylesheet">
+    <script src="javascript/app.js" defer> </script>
+    <script src="javascript/cournot.js" defer> </script>
+
+
+    <title>cournot</title>
+</head>
+<body>
+    <header id="main-header">
+        <a href="index.html" id="logo">EconoMatrix</a>
+        <nav>
+          <ul><li>
+              <a href="savoir.html">Savoir Economique</a>
+          </li>
+              <li>
+                  <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
+              <li>
+                  <a href="aboutus.html">A propos</a>
+              </li>
+          </ul>
+        </nav>
+        <div id="menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </header>
+      <aside id="side-drawer">
+  <nav>
+    <button id="close-menu-button">X</button>
+      <ul>  
+        <li>
+            <a href="savoir.html">Savoir Economique</a>
+        </li>
+            <li>
+                <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
+            <li>
+                <a href="aboutus.html">A propos</a>
+            </li>
+      </ul>
+  </nav>
+      </aside>
+ 
+  <main>
+    <section id="hero">
+      <h1>L'Affrontement des Aromes</h1>
+      <a href="cournotInfo.html"> <button class="btn">En savoir plus</button></a>
+    </section>
+    <section id="question">
+    <p>prix du marché = 50-2(q1+q2)</p>
+    <p>cout = 10+2q <sub>i</sub></p>
+    </section>
+    <section id="jeux">
+      <section id="game-board">
+        <li id="empty"></li>
+        <div>  <li>Cartel</li>
+          <button class="price-button" id="cartel-price-adv">p</button>
+        </div><div>
+          <li>Trahir</li>
+          <button class="price-button" id="trahir-price-adv">p</button></div>
+   <div>   <li>  <button id="cartel">Cartel</button></li> 
+       <li><button class="price-button" id="cartel-price">p</button></li></div> 
+
+       <li><button id="btn1" class="game-btn">(...,...)</button></li> 
+       <li><button id="btn2"class="game-btn">(...,...)</button></li> 
+     <div> <li>  <button id="trahir">Trahir</button></li> 
+<li><button class="price-button" id="trahir-price">p</button></li>
+     </div> 
+
+       <li><button id="btn3"class="game-btn">(...,...)</button></li> 
+       <li><button id="btn4"class="game-btn">(...,...)</button></li> 
+
+      </section>
+      <div>
+     
+      <div id="tips">
+<div id="tip-content">
+  <button id="tip-close">x</button>
+        <div id="tip-one">
+          <p>Chaque entreprise maximise son propre profit en tenant compte de la quantité de production de son concurrent.</p>
+          <p>
+            &Pi;<sub>1</sub>(q<sub>1</sub>, q<sub>2</sub>) = P(q<sub>1</sub> + q<sub>2</sub>) &middot; q<sub>1</sub> - C<sub>1</sub>(q<sub>1</sub>)
+        </p>
+        <button id="btn-tip-one">→</button>
+        </div>
+        <div id="tip-two">
+          <p>L'optimisation de profit:       </p>
+          <p>
+            ∂Π<sub>1</sub>(q<sub>1</sub>, q<sub>2</sub>) / ∂q<sub>1</sub> = P(q<sub>1</sub> + q<sub>2</sub>) + 
+            q<sub>1</sub> · P′(q<sub>1</sub> + q<sub>2</sub>) - ∂C<sub>1</sub>(q<sub>1</sub>) / ∂q<sub>1</sub> = 0
+        </p>
+        <button id="btn-tip-two">result</button>
+
+        </div>
+        <img src="images/cournotresult.png" id="cournot-result">
+      </div></div>
+      <section id=tipandimage><img src="images/coffeeman.png" id="coffeeman">
+        <em>Clique sur l'homme pour les tips :) </em></section>
+    </div>
+    </section>
+  </main>
+  <div id="overlay-bravo">
+    <div id="overlay-content">
+        <h2>Bravo!</h2>
+        <button onclick="closeOverlay('overlay-bravo')">Tamam</button>
+        <button id="open-surplus">aller plus loin</button>
+    </div>
+</div>
+
+<div id="overlay-tryagain">
+    <div id="overlay-content">
+        <h2>Try Again!</h2>
+        <button onclick="closeOverlay('overlay-tryagain')">Tamam</button>
+    </div>
+</div>
+<div id="overlay-missing">
+  <div id="overlay-content">
+      <h2>Veuillez saisir tous les prix et profits possibles sans omission et correctement. Pour cela, il vous suffit de cliquer dessus.</h2>
+      <button onclick="closeOverlay('overlay-missing')">Ok</button>
+  </div>
+</div>
+<section id="surplus-sec">
+  <div id="button-board">
+<div id="surplus">
+  <li></li>
+  <div>  <li>Cartel</li>
+    <span>6</span>
+  </div><div>
+    <li>Trahir</li>
+    <li>9</li></div>
+<div>   <li>  Cartel</li> 
+ <li>6</li></div> 
+
+ <li><button id="surplus-btn1" class="surplus-btn">...</button></li> 
+ <li><button id="surplus-btn2"class="surplus-btn">...</button></li> 
+<div> <li>  Trahir</li> 
+  <span>9</span>
+</div> 
+
+ <li><button id="surplus-btn3"class="surplus-btn">...</button></li> 
+ <li><button id="surplus-btn4"class="surplus-btn">...</button></li> 
+</div>
+<button id="submit-surplus">Submit</button></div>
+<div>
+
+  <div id="tips-sur">
+<div id="tip-content-sur">
+<button id="tip-close-sur">x</button>
+    <div id="tip-one-sur">
+      <p>Surplus de Consommateur</p>
+      <p>
+        (Prix<sub>max</sub>-Prix<sub>marché</sub>) x Q/2
+
+    </p>
+    </div>
+  </div></div><section id=tipandimage-sur><img src="images/coffeeman.png" id="coffeeman-sur">
+    <em>Clique sur l'homme pour les tips :) </em></section></div></section>
+<div id="bravo-surplus">
+  <p>Bravo!
+ <a href="TheoriesDeJeux.html"><button>Theories de jeux</button></a></p>
+</div>
+<div id="try-surplus">
+<p>try again
+<button id="restart-surplus">try again</button></p>
+</div></div>
+<footer></footer>
+</body>
+</html>

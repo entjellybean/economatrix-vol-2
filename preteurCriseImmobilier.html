@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Crise d'Immobilier/preteur</title>
+    
+    <link rel="stylesheet" href="styles/fourCrises/stylesCrises.css" />
+    <link rel="stylesheet" href="styles/fourCrises/overlaysCrises.css">
+    <link rel="stylesheet" href="styles/general.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <script src="javascript/fourcrises/invest.js" defer></script>
+    
+  </head>
+<body>
+  <div id="backdrop1"></div>
+    <header>
+      <div id="amblem"> <a href="index.html" id="eco">EconoMatrix</a> 
+        <h1>Crise des subprimes de 2008</h1></div>
+      <p>Plongez dans les défis et décisions clés de cette crise historique.</p>
+      
+    </header>
+    <main>
+     <h3 id="choixInvest">En tant que directeur d’une institution de crédit hypothécaire, vous avez le pouvoir de décider à qui prêter de l’argent.
+         La demande de prêts immobiliers est en forte croissance, et les profits rapides semblent à portée de main. Mais vous savez que beaucoup de 
+         ces prêts sont risqués. 
+        Allez-vous maximiser les profits immédiats, ou penser à la stabilité à long terme ?</h3>
+        <aside class="message" id="message1">
+          <p class=overlay-paragraph>Vous décidez de vous concentrer sur les prêts subprimes. Les clients avec de faibles revenus ou 
+            un historique de crédit instable se bousculent pour obtenir un prêt.
+             Les commissions augmentent, et les bénéfices montent en flèche. </p>
+            <button  class="btn btn-close1">Suivant</button>
+        </aside>
+           <h3 class="choix" id="choix11">Les ventes de maisons atteignent des sommets, mais les taux de défaut de paiement commencent à augmenter. 
+            Les signes de surchauffe du marché se multiplient.  </h3>
+           <aside class="message" id="message2">
+            <p class=overlay-paragraph>Vous décidez de limiter les prêts aux clients solvables avec un historique de crédit solide. Les bénéfices sont plus 
+                faibles, mais votre portefeuille de prêts reste sain.</p>
+               <button  class="btn btn-close2">Suivant</button>
+          </aside>
+             <h3 class="choix" id="choix21">Vos concurrents engrangent des bénéfices records avec les subprimes. Vos actionnaires commencent à se plaindre.</h3>
+              <aside class="message" id="message11">
+                <p class=overlay-paragraph>Vous empaquetez les prêts hypothécaires en titres financiers complexes que vous revendez sur le marché. Les risques sont transférés 
+                    à d’autres investisseurs, et vous continuez à réaliser des profits élevés.</p>
+                  <button  class="btn btn-close11"> Voir les résultats</button>
+              </aside>
+              <aside class="message" id="message12">
+                <p class=overlay-paragraph>Vous arrêtez les prêts subprimes et vous retirez du marché. 
+                    Vos concurrents se moquent de votre prudence, mais vous sentez que le risque est trop grand. </p>
+                  <button  class="btn btn-close12">Voir les résultats</button>
+              </aside>
+              <aside class="message" id="message21">
+                <p class=overlay-paragraph>Vous cédiez à la pression et commencez à  prêter à des clients moins solvables. 
+                    Les profits augmentent, mais vous sentez une tension croissante.</p>
+                  <button  class="btn btn-close21">Voir les résultats</button>
+              </aside>
+              <aside class="message" id="message22">
+                <p class=overlay-paragraph>Vous résistez à la tentation et continuez à prêter de manière prudente. 
+                    Vos concurrents vous dépassent, mais vous gardez la tête froide. </p>
+                  <button  class="btn btn-close22">Voir les résultats</button>
+              </aside>
+              <h3 class="fin" id="fin11">Le marché des subprimes s’effondre. Les titres deviennent toxiques, et vous êtes pris dans une vague de faillites. 
+                Votre institution est accusée d’avoir alimenté la crise.</h3>
+              <h3 class="fin" id="fin12">Vous évitez le pire de la crise, mais l'effondrement du marché immobilier affecte tout de même vos activités. 
+                Vous survivez, mais à un coût élevé pour vos profits</h3>
+              <h3 class="fin" id="fin21">Le marché s'effondre, et vos nouveaux prêts deviennent rapidement des actifs toxiques. Votre
+                 institution est en difficulté, et vous luttez pour éviter la faillite.</h3>
+              <h3 class="fin" id="fin22">Le krach des subprimes emporte beaucoup de vos concurrents. Vous survivez à la crise avec un minimum de dégâts, 
+                et votre réputation est renforcée</h3>
+
+                <h2>Quel sera votre prochain coup ?</h2>
+        <section id="premQuestionInvest">
+            
+            <button  class="btn btn-choix1"> Accorder des prêts subprimes à haut risque</button>
+            <button  class="btn btn-choix2">Privilégier les prêts à faible risque et les clients solvables</button></section>
+
+            <section id="deuxQuestionInvest">
+            <button  class="btn btn-choix11">Titrisations massives pour revendre les prêts</button>
+            <button  class="btn btn-choix12"> Cesser de prêter et se retirer du marché subprime</button></section>
+            
+            <section id="finInvest">
+              <button id="grandeDepression" class="btn btn-choix111">recommencer Les Quatre Crises</button>
+              <button id="chocPetrolier" class="btn btn-choix112">Crise suivante</button></section>
+              <section id="alternativeInvest">
+              <button  class="btn btn-choix21">Céder à la pression et commencer à accorder des prêts subprimes</button>
+              <button  class="btn btn-choix22">Maintenir une politique prudente malgré la pression</button></section>
+
+              <div id="titlesCrisesOverlay2">
+            <section id="availableCrises">
+                <button id="grandeDepression2" class="btn btn-vertical"><li>Grande Dépression</li> </button>
+                <button  id="chocPetrolier2" class="btn btn-vertical"><li>Premier choc pétrolier</li> </button>
+                <button  id="criseImmobilier2" class="btn btn-vertical"><li>Crise des subprimes de 2008</li></button></section>
+                <button  id="criseSanitaire" class="btn btn-vertical"><li>Crise COVID-19</li></button></section>  
+                
+            </div>
+        
+    </main>
+</body>
+</html>
