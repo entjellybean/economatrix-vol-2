@@ -17,10 +17,10 @@ cartel.addEventListener("click", () => {
     const computerChoice = getRandomComputerChoice(); 
 
     if(computerChoice == 'trahir'){
-       cheatcoop.style.display='block';
+       cheatcoop.style.display='grid';
     }
     else{
-        cheat.style.display='block';
+        cheat.style.display='grid';
 
     }
 });
@@ -28,10 +28,10 @@ trahir.addEventListener("click", () => {
     const computerChoice = getRandomComputerChoice(); 
 
     if(computerChoice == 'trahir'){
-       coop.style.display='block';
+       coop.style.display='grid';
     }
     else{
-        coopcheat.style.display='block';
+        coopcheat.style.display='grid';
 
     }
 });

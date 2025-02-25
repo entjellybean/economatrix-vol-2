@@ -109,7 +109,9 @@
     text-align: center;
     font-size:180%;
 }
-
+main{
+    display: none;
+}
 #tipandimage, #tipandimage-sur{
     display: grid;
     gap:1rem;
@@ -119,11 +121,32 @@
     display: block;
     margin: 1rem auto;
  } 
+#scenario{
+    position: relative;
+    width:100%;
+    display:grid;
+    justify-items: center;
+    z-index: 20;
+    background-color: white;
+    top:15%;
+    height: 120vh;
+    align-items: center;
+}
+#scenario p{
+    font-size: 150%;
+    text-align: center;
+    width:70%;
+}
+#scenario img{
+    width: 30rem;
+    height: auto;
+    border-radius: 6px;
+    padding-top: 5rem;
+}
 
 #overlay-bravo, #overlay-tryagain, #overlay-missing {
     position: fixed;
     display: none;
-
     top: 0;
     left: 0;
     width: 100%;
@@ -132,10 +155,15 @@
     justify-content: center;
     align-items: center;
 }
-
+input{
+    width:2rem;
+}
 #overlay-content {
     background: white;
     padding: 2rem;
+    top:15%;
+    height: 10rem;
+    width:40rem;
     text-align: center;
     border-radius: 10px;
 }
@@ -239,5 +267,8 @@ height:2rem;
 #game-board-bertrand section{
     grid-template-columns: repeat(5,3rem);
 }
- 
+#scenario img{
+    width:20rem;
+    
+}
 }

@@ -47,8 +47,13 @@
       </ul>
   </nav>
       </aside>
- 
+      <aside id="scenario">
+        <img src="images/coffeewars.webp">
+        <p>Bienvenue dans l’affrontement des arômes ! Le propriétaire d’Aida Café et celui de Thalia Café étaient autrefois mariés. Ils ont eu une dispute sur les subtilités de la préparation du café et sont devenus rivaux. Cependant, le marché du café est très compétitif. Aida Café vous a proposé (à Thalia Café) de former un cartel. Allez-vous lui faire confiance ou la concurrence primera-t-elle sur tout le reste ?</p>
+        <button id="play">Play!</button>
+    </aside>
   <main>
+    
     <section id="hero">
       <h1>L'Affrontement des Aromes</h1>
       <a href="cournotInfo.html"> <button class="btn">En savoir plus</button></a>
@@ -61,21 +66,24 @@
       <section id="game-board">
         <li id="empty"></li>
         <div>  <li>Cartel</li>
-          <button class="price-button" id="cartel-price-adv">p</button>
+          <input type="number" id="cartel-price-adv" class="price-button" placeholder="p" />
         </div><div>
           <li>Trahir</li>
-          <button class="price-button" id="trahir-price-adv">p</button></div>
+          <input type="number" class="price-button" id="trahir-price-adv" placeholder="p"></input></div>
    <div>   <li>  <button id="cartel">Cartel</button></li> 
-       <li><button class="price-button" id="cartel-price">p</button></li></div> 
+    <li> <input type="number" class="price-button" id="cartel-price" placeholder="p"></input></li></div>
 
-       <li><button id="btn1" class="game-btn">(...,...)</button></li> 
-       <li><button id="btn2"class="game-btn">(...,...)</button></li> 
+<li><input type="text" id="btn1" class="game-btn" placeholder="..." /></li>
+<li><input type="text" id="btn2" class="game-btn" placeholder="..." /></li>
+
+ 
      <div> <li>  <button id="trahir">Trahir</button></li> 
-<li><button class="price-button" id="trahir-price">p</button></li>
-     </div> 
+      
+     <li> <input type="number" class="price-button" id="trahir-price" placeholder="p"></input></li></div>
+    </div> 
 
-       <li><button id="btn3"class="game-btn">(...,...)</button></li> 
-       <li><button id="btn4"class="game-btn">(...,...)</button></li> 
+     <li><input type="text" id="btn3" class="game-btn" placeholder="..." /></li>
+     <li><input type="text" id="btn4" class="game-btn" placeholder="..." /></li>
 
       </section>
       <div>
@@ -99,7 +107,6 @@
         <button id="btn-tip-two">result</button>
 
         </div>
-        <img src="images/cournotresult.png" id="cournot-result">
       </div></div>
       <section id=tipandimage><img src="images/coffeeman.png" id="coffeeman">
         <em>Clique sur l'homme pour les tips :) </em></section>

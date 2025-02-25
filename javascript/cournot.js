@@ -1,12 +1,14 @@
+// Elementleri Seç
 const advTrahirPrice = document.getElementById("trahir-price-adv");
 const advCartelPrice = document.getElementById("cartel-price-adv");
 const btn1 = document.getElementById("btn1");
 const btn2 = document.getElementById("btn2");
 const btn3 = document.getElementById("btn3");
 const btn4 = document.getElementById("btn4");
-const jeux= document.getElementById("jeux");
+const jeux = document.getElementById("jeux");
 const trahirButton = document.getElementById("trahir");
 const cartelButton = document.getElementById("cartel");
+
 
 
 const trahirPrice = document.getElementById("trahir-price");
@@ -18,11 +20,11 @@ const overlayMissing = document.getElementById("overlay-missing");
 const surplusBtn1 = document.getElementById("surplus-btn1");
 const surplusBtn2 = document.getElementById("surplus-btn2");
 const surplusBtn3 = document.getElementById("surplus-btn3");
-const surplusBtn4 = document.getElementById("surplus-btn4"); 
+const surplusBtn4 = document.getElementById("surplus-btn4");
 
-const bravoSurplus= document.getElementById("bravo-surplus"); 
-const trySurplus= document.getElementById("try-surplus"); 
-const submitSurplus= document.getElementById("submit-surplus"); 
+const bravoSurplus = document.getElementById("bravo-surplus");
+const trySurplus = document.getElementById("try-surplus");
+const submitSurplus = document.getElementById("submit-surplus");
 const tipOne = document.getElementById("tip-one");
 const tipOneSur = document.getElementById("tip-one-sur");
 
@@ -32,102 +34,91 @@ const btntiptwo = document.getElementById("btn-tip-two");
 const coffeeman = document.getElementById("coffeeman");
 const coffeemanSur = document.getElementById("coffeeman-sur");
 
-const cournotResult= document.getElementById("cournot-result");
-const tipsSur= document.getElementById("tips-sur");
-const tips= document.getElementById("tips");
+const tipsSur = document.getElementById("tips-sur");
+const tips = document.getElementById("tips");
 
-const tipClose= document.getElementById("tip-close");
-const tipCloseSur= document.getElementById("tip-close-sur");
+const tipClose = document.getElementById("tip-close");
+const tipCloseSur = document.getElementById("tip-close-sur");
 
+const mainElement = document.getElementsByTagName('main')[0];
 
-
-
-// Butonları seç
-const gameButtons = document.querySelectorAll(".game-btn");
-
-// Butona tıklandığında üzerine yeni değer yazmak için event listener ekle
-gameButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        let newValue = prompt("Entrez les profits pour chaque scenario \n ex: (547,456)");
-        if (newValue !== null && newValue.trim() !== "") {
-            button.textContent = newValue;
-        }
-    });
-});
-
-const surplusButtons = document.querySelectorAll(".surplus-btn");
-
-// Butona tıklandığında üzerine yeni değer yazmak için event listener ekle
-surplusButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        let newValue = prompt("Entrez les surplus consommateur  pour chaque scenario \n ex: 456 ");
-        if (newValue !== null && newValue.trim() !== "") {
-            button.textContent = newValue;
-        }
-    });
-});
-
-
-
+const scenario = document.getElementById("scenario");
+const play = document.getElementById("play");
 // Cartel ve Cartel-Adv Butonları
 const priceButtons = [cartelPrice, advCartelPrice];
 
 // Trahir ve Trahir-Adv Butonları
 const trahirButtons = [trahirPrice, advTrahirPrice];
+play.addEventListener("click", () => {
+    scenario.style.display = 'none';
+    mainElement.style.display = 'grid';
+});
 
-// Fiyatı güncelleyen fonksiyon
-function updatePrice(buttons) {
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            let newValue = prompt("Entrez le prix dans cette scenario");
-            if (newValue !== null && newValue.trim() !== "") {
-                buttons.forEach(btn => btn.textContent = newValue);
-            }
-        });
-    });
+// Input alanlarına değer ekle (game-btn sınıfındaki input'lar)
+const gameInputs = document.querySelectorAll(".game-btn");
+const surplusButtons = document.querySelectorAll(".surplus-btn");
+
+// Sonuçları güncellemek için fonksiyon
+function updateResults() {
+    // Tablodaki fiyatları güncelle
+    cartelPrice.value = "6";  // Fiyat 6
+    trahirPrice.value = "9";  // Fiyat 9
+advCartelPrice.value = "6";  // Fiyat 6
+advTrahirPrice.value = "9";  // Fiyat 9
+    // Oyun tahtasında (139,139) gibi sonuçları güncelle
+    btn1.value = "(139,139)";  // Örnek değer
+    btn2.value = "(98,152)";   // Örnek değer
+    btn3.value = "(152,98)";   // Örnek değer
+    btn4.value = "(98,98)";    // Örnek değer
 }
 
-// Cartel ve Trahir fiyat butonlarını senkronize et
-updatePrice(priceButtons);
-updatePrice(trahirButtons);
+// Result butonuna tıklama olayını ekle
+const resultButton = document.getElementById("btn-tip-two");
+resultButton.addEventListener("click", () => {
+    updateResults();  // Sonuçları güncelle
+});
+
+// Inputlara tıklanıldığında placeholder'ı temizle
+gameInputs.forEach(input => {
+    input.addEventListener("click", () => {
+        input.placeholder = "";  // Placeholder'ı temizle
+    });
+});
+
 
 function checkConditions() {
     return (
-        cartelPrice.textContent === "6" &&
-        trahirPrice.textContent === "9" &&
-        btn1.textContent === "(139,139)" &&
-        btn2.textContent === "(98,152)" &&
-        btn3.textContent === "(152,98)" &&
-        btn4.textContent === "(98,98)"
+        cartelPrice.value === "6" &&
+        trahirPrice.value === "9" &&
+        advCartelPrice.value === "6" &&
+        advTrahirPrice.value === "9" &&
+        btn1.value === "(139,139)" &&
+        btn2.value === "(98,152)" &&
+        btn3.value === "(152,98)" &&
+        btn4.value === "(98,98)"
     );
 }
 
 function surplusConditions() {
     return (
-        surplusBtn1.textContent === "144" &&
-        surplusBtn2.textContent === "225" &&
-        surplusBtn3.textContent === "225" &&
-        surplusBtn4.textContent === "324"
+        surplusBtn1.value === "144" &&
+        surplusBtn2.value === "225" &&
+        surplusBtn3.value === "225" &&
+        surplusBtn4.value === "324"
     );
 }
 
-
-
 function surplusHandle() {
     if (surplusConditions()) {
-            bravoSurplus.style.display = "block"; 
-        } else {
-            trySurplus.style.display = "block"; 
-        }
-    
+        bravoSurplus.style.display = "grid";
+    } else {
+        trySurplus.style.display = "grid";
+    }
 }
 
+submitSurplus.addEventListener("click", () => surplusHandle());
 
-
-
-submitSurplus.addEventListener("click", () =>  surplusHandle());
-
-// Overlay kapatma fonksiyonu
+// Overlay kapama fonksiyonu
 function closeOverlay(overlayId) {
     document.getElementById(overlayId).style.display = "none";
 }
@@ -137,14 +128,14 @@ function toggleTips() {
         tipOne.style.display = "none";
     } else if (tiptwo.style.display === "block") {
         tiptwo.style.display = "none";
-    } else if (cournotResult.style.display === "block") {
-        cournotResult.style.display = "none";
+    
     } else {
         tips.style.display = "block";
         tipClose.style.display = "block";
         tipOne.style.display = "block";
     }
 }
+
 coffeeman.addEventListener("click", toggleTips);
 
 function toggleTipsSur() {
@@ -156,77 +147,77 @@ function toggleTipsSur() {
         tipOneSur.style.display = "block";
     }
 }
+
 coffeemanSur.addEventListener("click", toggleTipsSur);
 
-function opentiptwo(){
-    tipOne.style.display= "none";
-    tiptwo.style.display= "block";
+function opentiptwo() {
+    tipOne.style.display = "none";
+    tiptwo.style.display = "block";
+}
 
+function openresult() {
+    tipOne.style.display = "none";
+    tiptwo.style.display = "none";
 }
-function openresult(){
-    tipOne.style.display= "none";
-    tiptwo.style.display= "none";
-    cournotResult.style.display= "block";
-}
-function closeTips(){
+
+function closeTips() {
     tips.style.display = "none";
     tipOne.style.display = "none";
     tiptwo.style.display = "none";
-    cournotResult.style.display = "none";
 }
 
-function closeTipsSur(){
+function closeTipsSur() {
     tipsSur.style.display = "none";
     tipOneSur.style.display = "none";
 }
 
-
-btntipOne.addEventListener("click",opentiptwo);
-btntiptwo.addEventListener("click",openresult);
-tipClose.addEventListener("click",closeTips);
-tipCloseSur.addEventListener("click",closeTipsSur);
-
+btntipOne.addEventListener("click", opentiptwo);
+btntiptwo.addEventListener("click", openresult);
+tipClose.addEventListener("click", closeTips);
+tipCloseSur.addEventListener("click", closeTipsSur);
 
 const btnOpenSurplus = document.getElementById("open-surplus");
 const surplusOverlay = document.getElementById("surplus-sec");
 
 btnOpenSurplus.addEventListener('click', () => {
     surplusOverlay.style.display = 'grid';
-    overlayBravo.style.display= 'none';
-    jeux.style.display='none';
-  });
-
-
-
-
-
-
+    overlayBravo.style.display = 'none';
+    jeux.style.display = 'none';
+});
 
 const restartSurplus = document.getElementById("restart-surplus");
 
 restartSurplus.addEventListener("click", () => {
     surplusButtons.forEach(button => {
-        button.textContent = "..."; 
+        button.value = "...";  // Inputları sıfırla
     });
-    trySurplus.style.display = "none"; 
+    trySurplus.style.display = "none";
 });
 
 trahirButton.addEventListener('click', () => {
-    if(checkConditions()){
-        overlayBravo.style.display='block';
+    if (checkConditions()) {
+        overlayBravo.style.display = 'grid';
+    } else {
+        overlayMissing.style.display = 'grid';
     }
-    else{
-        overlayMissing.style.display='block';
+});
+
+cartelButton.addEventListener('click', () => {
+    if (checkConditions()) {
+        overlayTryAgain.style.display = 'grid';
+    } else {
+        overlayMissing.style.display = 'grid';
     }
-
-    });
-    cartelButton.addEventListener('click', () => {
-        if(checkConditions()){
-            overlayTryAgain.style.display='block';
-        }
-        else{
-            overlayMissing.style.display='block';
-        }
-    
-        });
-
+});
+trahirPrice.addEventListener("input", () => {
+    advTrahirPrice.value = trahirPrice.value;
+});
+advTrahirPrice.addEventListener("input", () => {
+    trahirPrice.value = advTrahirPrice.value;
+});
+cartelPrice.addEventListener("input", () => {
+    advCartelPrice.value = cartelPrice.value;
+});
+advCartelPrice.addEventListener("input", () => {
+    cartelPrice.value = advCartelPrice.value;
+});

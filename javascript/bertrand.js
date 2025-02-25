@@ -5,15 +5,21 @@ const p29 = document.getElementById('29');
 const p35 = document.getElementById('35');
 
 const tipOne = document.getElementById("tip-one");
-
 const tiptwo = document.getElementById("tip-two");
 const btntipOne = document.getElementById("btn-tip-one");
 const btntiptwo = document.getElementById("btn-tip-two");
 const coffeeman = document.getElementById("coffeeman");
 
 const tips= document.getElementById("tips");
-
 const tipClose= document.getElementById("tip-close");
+const mainElement = document.getElementsByTagName('main')[0];
+
+const scenario = document.getElementById("scenario");
+const play = document.getElementById("play");
+play.addEventListener("click", () => {
+   scenario.style.display='none';
+   mainElement.style.display='grid';
+})
 
 function toggleTips() {
     if (tipOne.style.display === "block") {
@@ -70,10 +76,10 @@ p29.addEventListener('click', () => handlePlayerChoice('29'));
 p35.addEventListener('click', () => handlePlayerChoice('35'));
 
 p10.addEventListener("click", () => {
-    overlayDefait.style.display="block";
+    overlayDefait.style.display="grid";
 })
 p15.addEventListener("click", () => {
-    overlayDefait.style.display="block";
+    overlayDefait.style.display="grid";
 })
 
 const buttons = document.querySelectorAll('#human-game-board button');
@@ -89,28 +95,28 @@ function handlePlayerChoice(playerChoice) {
 
     if (playerChoice === '25') {
         if(computerChoice === '25'){     
-        overlayMal.style.display = "block"; 
+        overlayMal.style.display = "grid"; 
         }
         else{
-            overlayNoNashBravo.style.display = "block"; 
+            overlayNoNashBravo.style.display = "grid"; 
     }
     }
 
       if (playerChoice === '29') {
         if(computerChoice === '35'){     
-        overlayNashBravo.style.display = "block"; 
+        overlayNashBravo.style.display = "grid"; 
         }
         else{
-            overlayNashMal.style.display = "block"; 
+            overlayNashMal.style.display = "grid"; 
     }
     }
 
   if (playerChoice === '35') {
         if(computerChoice === '35'){     
-        overlayNoNashBravo.style.display = "block"; 
+        overlayNoNashBravo.style.display = "grid"; 
         }
         else{
-            overlayMal.style.display = "block"; 
+            overlayMal.style.display = "grid"; 
     }
     }
 }
