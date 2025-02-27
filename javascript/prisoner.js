@@ -62,4 +62,7 @@ function closeTips(){
 
 
 tipClose.addEventListener("click",closeTips);
+function closeOverlay(overlayId) {
+    document.getElementById(overlayId).style.display = "none";
+}
 

@@ -51,7 +51,7 @@
       <aside id="scenario">
         <img src="images/pepperoni.png">
         <p>Bienvenue dans la ville de PizzaTown, où deux pizzerias rivales se battent pour dominer le marché local. Vous incarnez l’un des deux gérants : Pepperoni Palace ou Cheesy Kingdom. Les habitants de PizzaTown adorent les pizzas, mais ils sont très sensibles aux prix. Votre objectif : fixer le prix parfait pour attirer le maximum de clients et maximiser vos profits !</p>
-        <button id="play">Play!</button>
+        <button id="play">Jouer!</button>
     </aside>
   <main>
     <section id="hero">
@@ -68,6 +68,7 @@
     <section id="jeux">
       <section id="game-board-bertrand">
         <section id="ai-game-board">
+            <li>Pepperoni Palace</li>
             <li><button>10</button></li>
             <li><button>15</button></li>
             <li><button>25</button></li>
@@ -75,6 +76,7 @@
             <li><button>35</button></li>
         </section>
         <section id="human-game-board">
+            <li>Vos prix</li>
             <li><button id="10">10</button></li>
             <li><button id="15">15</button></li>
             <li><button id="25">25</button></li>
@@ -96,7 +98,6 @@
         <div id="tip-two">
          <p>Essayez de trouver les prix optimaux:</p>
          <p>Revenue marginal = Cout marginal</p>
-        <button id="btn-tip-two">result</button>
 
         </div>
       </div></div>
@@ -107,41 +108,45 @@
   </main>
   <div id="overlay-nash-bravo" class="bertrand-overlay">
     <div id="overlay-content">
-        <h2>Vous avez choisi le prix optimal selon l'équilibre de Nash et avez </h2>
-        <h2>obtenu un profit supérieur à celui de votre concurrent. Félicitations !</h2>
-        <button onclick="closeOverlay('overlay--nash-bravo')">Tamam</button>
+        <h2>Vous avez choisi le prix optimal selon l'équilibre de Nash et avez 
+        obtenu un profit supérieur à celui de votre concurrent. Félicitations !</h2>
+        <button onclick="closeOverlay('overlay-nash-bravo')">↻</button>
+        <button><a href="TheoriesDeJeux.html">Théories de jeux</a></button>
     </div>
 </div>
 
 <div id="overlay-no-nash-bravo" class="bertrand-overlay">
     <div id="overlay-content">
-        <h2>Vous n'avez pas choisi la décision optimale selon l'équilibre de Nash, </h2>
-        <h2> mais vous avez obtenu un bénéfice supérieur à celui de votre concurrent.</h2>
-        <button onclick="closeOverlay('overlay-no-nash-bravo')">Tamam</button>
+        <h2>Vous n'avez pas choisi la décision optimale selon l'équilibre de Nash, 
+         mais vous avez obtenu un bénéfice supérieur à celui de votre concurrent.</h2>
+        <button onclick="closeOverlay('overlay-no-nash-bravo')">↻</button>
+        <button><a href="TheoriesDeJeux.html">Théories de jeux</a></button>
     </div>
 </div>
 
 <div id="overlay-defait" class="bertrand-overlay">
     <div id="overlay-content">
     <h2>Vous avez obtenu aucun profit...</h2>
-        <button onclick="closeOverlay('overlay-defait')">Tamam</button>
+    <button onclick="closeOverlay('overlay-defait')">↻</button>
+    <button><a href="TheoriesDeJeux.html">Théories de jeux</a></button>
     </div>
 </div>
 
 <div id="overlay-nash-mal" class="bertrand-overlay">
     <div id="overlay-content">
-        <h2>Vous avez choisi l'option optimale selon l'équilibre de Nash. Malheureusement, </h2>
-        <h2>votre concurrent étant plus avantagé, vous avez réalisé un profit inférieur au sien.</h2>
-        <button onclick="closeOverlay('overlay-nash-mal')">Tamam</button>
+        <h2>Vous avez choisi l'option optimale selon l'équilibre de Nash. Malheureusement, 
+        votre concurrent étant plus avantagé, vous avez réalisé un profit inférieur au sien.</h2>
+        <button onclick="closeOverlay('overlay-nash-mal')">↻</button>
+        <button><a href="TheoriesDeJeux.html">Théories de jeux</a></button>
     </div>
 </div>
 
 <div id="overlay-mal" class="bertrand-overlay">
     <div id="overlay-content">
-<h2>Vous n'avez ni appliqué le prix optimal selon l'équilibre de Nash </h2>    
-<h2>ni obtenu un profit supérieur à celui de votre concurrent.</h2>
-<button onclick="closeOverlay('overlay-mal')">Tamam</button>
-    </div>
+<h2>Vous n'avez ni appliqué le prix optimal selon l'équilibre de Nash    
+ni obtenu un profit supérieur à celui de votre concurrent.</h2>
+<button onclick="closeOverlay('overlay-mal')">↻</button>
+        <button><a href="TheoriesDeJeux.html">Théories de jeux</a></button>    </div>
 </div>
 
 

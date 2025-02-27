@@ -22,8 +22,10 @@ const surplusBtn2 = document.getElementById("surplus-btn2");
 const surplusBtn3 = document.getElementById("surplus-btn3");
 const surplusBtn4 = document.getElementById("surplus-btn4");
 
-const bravoSurplus = document.getElementById("bravo-surplus");
-const trySurplus = document.getElementById("try-surplus");
+const surplusBravo = document.getElementById('surplus-bravo');
+const surplusMissing =document.getElementById('surplus-missing');
+const surplusContent = document.getElementById('surplus-content');
+
 const submitSurplus = document.getElementById("submit-surplus");
 const tipOne = document.getElementById("tip-one");
 const tipOneSur = document.getElementById("tip-one-sur");
@@ -44,38 +46,32 @@ const mainElement = document.getElementsByTagName('main')[0];
 
 const scenario = document.getElementById("scenario");
 const play = document.getElementById("play");
-// Cartel ve Cartel-Adv Butonları
 const priceButtons = [cartelPrice, advCartelPrice];
 
-// Trahir ve Trahir-Adv Butonları
 const trahirButtons = [trahirPrice, advTrahirPrice];
 play.addEventListener("click", () => {
     scenario.style.display = 'none';
     mainElement.style.display = 'grid';
 });
 
-// Input alanlarına değer ekle (game-btn sınıfındaki input'lar)
 const gameInputs = document.querySelectorAll(".game-btn");
 const surplusButtons = document.querySelectorAll(".surplus-btn");
 
-// Sonuçları güncellemek için fonksiyon
 function updateResults() {
-    // Tablodaki fiyatları güncelle
-    cartelPrice.value = "6";  // Fiyat 6
-    trahirPrice.value = "9";  // Fiyat 9
-advCartelPrice.value = "6";  // Fiyat 6
-advTrahirPrice.value = "9";  // Fiyat 9
-    // Oyun tahtasında (139,139) gibi sonuçları güncelle
-    btn1.value = "(139,139)";  // Örnek değer
-    btn2.value = "(98,152)";   // Örnek değer
-    btn3.value = "(152,98)";   // Örnek değer
-    btn4.value = "(98,98)";    // Örnek değer
+    cartelPrice.value = "6";  
+    trahirPrice.value = "9"; 
+advCartelPrice.value = "6";  
+advTrahirPrice.value = "9";  
+    btn1.value = "(139,139)";  
+    btn2.value = "(98,152)";   
+    btn3.value = "(152,98)";  
+    btn4.value = "(98,98)";    
 }
 
-// Result butonuna tıklama olayını ekle
 const resultButton = document.getElementById("btn-tip-two");
 resultButton.addEventListener("click", () => {
-    updateResults();  // Sonuçları güncelle
+    updateResults();  
+    tips.style.display = 'none';
 });
 
 // Inputlara tıklanıldığında placeholder'ı temizle
@@ -110,15 +106,14 @@ function surplusConditions() {
 
 function surplusHandle() {
     if (surplusConditions()) {
-        bravoSurplus.style.display = "grid";
+        surplusBravo.style.display = "grid";
     } else {
-        trySurplus.style.display = "grid";
+        surplusMissing.style.display = "grid";
     }
 }
 
-submitSurplus.addEventListener("click", () => surplusHandle());
 
-// Overlay kapama fonksiyonu
+
 function closeOverlay(overlayId) {
     document.getElementById(overlayId).style.display = "none";
 }
@@ -126,8 +121,12 @@ function closeOverlay(overlayId) {
 function toggleTips() {
     if (tipOne.style.display === "block") {
         tipOne.style.display = "none";
+        tipClose.style.display = "none";
+
     } else if (tiptwo.style.display === "block") {
         tiptwo.style.display = "none";
+        tipClose.style.display = "none";
+
     
     } else {
         tips.style.display = "block";
@@ -185,14 +184,8 @@ btnOpenSurplus.addEventListener('click', () => {
     jeux.style.display = 'none';
 });
 
-const restartSurplus = document.getElementById("restart-surplus");
 
-restartSurplus.addEventListener("click", () => {
-    surplusButtons.forEach(button => {
-        button.value = "...";  // Inputları sıfırla
-    });
-    trySurplus.style.display = "none";
-});
+
 
 trahirButton.addEventListener('click', () => {
     if (checkConditions()) {
@@ -221,3 +214,5 @@ cartelPrice.addEventListener("input", () => {
 advCartelPrice.addEventListener("input", () => {
     cartelPrice.value = advCartelPrice.value;
 });
+
+submitSurplus.addEventListener("click", () => surplusHandle());

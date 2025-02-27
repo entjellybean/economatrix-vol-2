@@ -57,10 +57,7 @@
     text-align: center;
 }
 
-#bravo-surplus, #try-surplus{
-    display:none;
-    text-align: center;
-}
+
 #coffeeman, #coffeeman-sur{
     width:20rem;
     height:auto;
@@ -144,7 +141,7 @@ main{
     padding-top: 5rem;
 }
 
-#overlay-bravo, #overlay-tryagain, #overlay-missing {
+#overlay-bravo, #overlay-tryagain, #overlay-missing, #surplus-bravo, #surplus-missing {
     position: fixed;
     display: none;
     top: 0;
@@ -157,8 +154,10 @@ main{
 }
 input{
     width:2rem;
+    height:2rem;
+    text-align: center;
 }
-#overlay-content {
+#overlay-content, #surplus-content {
     background: white;
     padding: 2rem;
     top:15%;
@@ -183,10 +182,18 @@ input{
 }
 #game-board-bertrand section{
     display:grid;
-    grid-template-columns: repeat(5,8rem);
+    grid-template-columns: repeat(6,8rem);
+    align-items: center;
 }
 #game-board-bertrand section li{
 list-style: none;
+}
+#game-board-bertrand section button{
+    background-color:  rgb(22, 147, 147);
+    }
+#human-game-board button:hover{
+cursor: pointer;
+background-color:  rgb(16, 111, 111);
 
 }
 #game-board-bertrand section button{
@@ -229,6 +236,7 @@ height:7rem;
     background: rgba(0, 0, 0, 0.7);
     justify-content: center;
   }
+  
    #tip-content-sur,#tip-content{
     background: white;
     padding: 2rem;
@@ -236,14 +244,23 @@ height:7rem;
     text-align: center;
     border-radius: 10px;
    }
-    #game-board,#surplus{
+    #game-board{
         margin:0;
         padding:0;
-        
         grid-template-columns: repeat(3, 7rem);
-        grid-template-rows: repeat(3, 8rem);
+        grid-template-rows: repeat(3, 7rem);
+        
     }
-
+    #surplus{
+        grid-template-columns: repeat(3, 6rem);
+        grid-template-rows: repeat(3, 6rem);
+        margin:0;
+        padding:0;
+    }
+    .game-btn, .surplus-btn{
+        width:5rem;
+        height:5rem;
+    }
    #game-board div,#surplus div{
     gap:0.2rem;
    }
@@ -270,5 +287,11 @@ height:2rem;
 #scenario img{
     width:20rem;
     
+}
+
+#overlay-content, #surplus-content {
+    height: 20rem;
+    width:20rem;
+  
 }
 }

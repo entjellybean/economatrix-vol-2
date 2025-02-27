@@ -68,7 +68,7 @@ const overlayNashBravo = document.getElementById("overlay-nash-bravo");
 const overlayNoNashBravo = document.getElementById("overlay-no-nash-bravo");
 const overlayDefait = document.getElementById("overlay-defait");
 const overlayMal = document.getElementById("overlay-mal");
-const overlayNashMal = document.getElementById("overlay-mal");
+const overlayNashMal = document.getElementById("overlay-nash-mal");
 
 
 p25.addEventListener('click', () => handlePlayerChoice('25'));
@@ -93,32 +93,39 @@ buttons.forEach(button => {
 function handlePlayerChoice(playerChoice) {
     const computerChoice = getRandomComputerChoice(); 
 
+    // Close all overlays first to prevent multiple showing at once
+    closeOverlay('overlay-nash-bravo');
+    closeOverlay('overlay-no-nash-bravo');
+    closeOverlay('overlay-mal');
+    closeOverlay('overlay-nash-mal');
+
     if (playerChoice === '25') {
-        if(computerChoice === '25'){     
-        overlayMal.style.display = "grid"; 
-        }
-        else{
-            overlayNoNashBravo.style.display = "grid"; 
-    }
-    }
-
-      if (playerChoice === '29') {
-        if(computerChoice === '35'){     
-        overlayNashBravo.style.display = "grid"; 
-        }
-        else{
-            overlayNashMal.style.display = "grid"; 
-    }
-    }
-
-  if (playerChoice === '35') {
-        if(computerChoice === '35'){     
-        overlayNoNashBravo.style.display = "grid"; 
-        }
-        else{
+        if (computerChoice === '25') {     
             overlayMal.style.display = "grid"; 
+        } else {
+            overlayNoNashBravo.style.display = "grid"; 
+        }
     }
+
+    if (playerChoice === '29') {
+        if (computerChoice === '35') {     
+            overlayNashBravo.style.display = "grid"; 
+        } else {
+            overlayNashMal.style.display = "grid"; 
+        }
     }
+
+    if (playerChoice === '35') {
+        if (computerChoice === '35') {     
+            overlayNoNashBravo.style.display = "grid"; 
+        } else {
+            overlayMal.style.display = "grid"; 
+        }
+    }
+}
+
+function closeOverlay(overlayId) {
+    document.getElementById(overlayId).style.display = "none";
 }
 
 

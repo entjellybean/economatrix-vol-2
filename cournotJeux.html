@@ -50,7 +50,7 @@
       <aside id="scenario">
         <img src="images/coffeewars.webp">
         <p>Bienvenue dans l’affrontement des arômes ! Le propriétaire d’Aida Café et celui de Thalia Café étaient autrefois mariés. Ils ont eu une dispute sur les subtilités de la préparation du café et sont devenus rivaux. Cependant, le marché du café est très compétitif. Aida Café vous a proposé (à Thalia Café) de former un cartel. Allez-vous lui faire confiance ou la concurrence primera-t-elle sur tout le reste ?</p>
-        <button id="play">Play!</button>
+        <button id="play">Jouer!</button>
     </aside>
   <main>
     
@@ -115,26 +115,30 @@
   </main>
   <div id="overlay-bravo">
     <div id="overlay-content">
-        <h2>Bravo!</h2>
-        <button onclick="closeOverlay('overlay-bravo')">Tamam</button>
+        <h2>Vous avez gagné en choisissant la bonne option selon l'équilibre de Nash!</h2>
+        <button><a href="TheoriesDeJeux.html">Théories de jeux</a></button>
         <button id="open-surplus">aller plus loin</button>
     </div>
 </div>
 
 <div id="overlay-tryagain">
     <div id="overlay-content">
-        <h2>Try Again!</h2>
-        <button onclick="closeOverlay('overlay-tryagain')">Tamam</button>
+        <h2>Vous n'avez pas choisi l'option correcte selon l'équilibre de Nash. Veuillez réessayer.</h2>
+        <button onclick="closeOverlay('overlay-tryagain')">
+          ↻</button>
     </div>
 </div>
 <div id="overlay-missing">
   <div id="overlay-content">
       <h2>Veuillez saisir tous les prix et profits possibles sans omission et correctement. Pour cela, il vous suffit de cliquer dessus.</h2>
-      <button onclick="closeOverlay('overlay-missing')">Ok</button>
+      <button onclick="closeOverlay('overlay-missing')">
+        ↻</button>
   </div>
 </div>
 <section id="surplus-sec">
   <div id="button-board">
+    <h2 style="text-align: center;">Veuillez saisir les valeurs appropriées de surplus du consommateur pour chaque situation.</h2>
+
 <div id="surplus">
   <li></li>
   <div>  <li>Cartel</li>
@@ -144,15 +148,14 @@
     <li>9</li></div>
 <div>   <li>  Cartel</li> 
  <li>6</li></div> 
-
- <li><button id="surplus-btn1" class="surplus-btn">...</button></li> 
- <li><button id="surplus-btn2"class="surplus-btn">...</button></li> 
+ <li><input type="text" id="surplus-btn1" class="surplus-btn"  /></li>
+ <li><input type="text" id="surplus-btn2" class="surplus-btn"  /></li>
 <div> <li>  Trahir</li> 
   <span>9</span>
 </div> 
 
- <li><button id="surplus-btn3"class="surplus-btn">...</button></li> 
- <li><button id="surplus-btn4"class="surplus-btn">...</button></li> 
+<li><input type="text" id="surplus-btn3" class="surplus-btn"  /></li>
+<li><input type="text" id="surplus-btn4" class="surplus-btn"  /></li>
 </div>
 <button id="submit-surplus">Submit</button></div>
 <div>
@@ -169,14 +172,18 @@
     </div>
   </div></div><section id=tipandimage-sur><img src="images/coffeeman.png" id="coffeeman-sur">
     <em>Clique sur l'homme pour les tips :) </em></section></div></section>
-<div id="bravo-surplus">
-  <p>Bravo!
- <a href="TheoriesDeJeux.html"><button>Theories de jeux</button></a></p>
-</div>
-<div id="try-surplus">
-<p>try again
-<button id="restart-surplus">try again</button></p>
-</div></div>
+    <div id="surplus-bravo">
+      <div id="surplus-content">
+          <h2>Vous avez saisi correctement toutes les valeurs de surplus!</h2>
+          <button><a href="TheoriesDeJeux.html">Théories de jeux</a></button>
+      </div></div>
+      <div id="surplus-missing">
+        <div id="surplus-content">
+            <h2>Vous avez saisi des valeurs de surplus incomplètes ou incorrectes.</h2>
+            <button onclick="closeOverlay('surplus-missing')">
+              ↻</button>
+        </div>
+      </div></div>
 <footer></footer>
 </body>
 </html>
