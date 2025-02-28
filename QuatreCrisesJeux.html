@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Les Quatres Crises</title>
-    <link rel="stylesheet" href="styles/fourCrises/stylesCrises.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="'IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/general.css">
-    <script src="javascript/app.js" defer> </script>   
-    <script src="javascript/fourcrises/appCrises.js" defer></script>
-  </head>
-  <body>
+    <link rel="stylesheet" href="styles/crises.css">
+     
+    <script src="javascript/app.js" defer> </script>
+    <script src="javascript/crises.js" defer></script>
+
+    <title>bertrand</title>
+</head>
+<body>
+   
     <header id="main-header">
-      <a href="index.html" id="logo">EconoMatrix</a>
-      <nav>
-        <ul><li>
+        <a href="index.html" id="logo">EconoMatrix</a>
+        <nav>
+          <ul><li>
+              <a href="savoir.html">Savoir Economique</a>
+          </li>
+              <li>
+                  <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
+              <li>
+                  <a href="aboutus.html">A propos</a>
+              </li>
+          </ul>
+        </nav>
+        <div id="menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </header>
+      <aside id="side-drawer">
+  <nav>
+    <button id="close-menu-button">X</button>
+      <ul>  
+        <li>
             <a href="savoir.html">Savoir Economique</a>
         </li>
             <li>
@@ -22,75 +45,46 @@
             <li>
                 <a href="aboutus.html">A propos</a>
             </li>
-        </ul>
-      </nav>
-      <div id="menu-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-    </header>
-    <aside id="side-drawer">
-<nav>
-  <button id="close-menu-button">X</button>
-    <ul>
-        
-        <li>
-            <a href="savoir.html">Savoir Economique</a>
-        </li>
-        <li>
-          <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
-        </li>
-        <li>
-            <a href="aboutus.html">A propos</a>
-        </li>
-    </ul>
-</nav>
-    </aside>
+      </ul>
+  </nav>
+      </aside>
+     <aside id="titles">
+      <div id="titles-content">
+      <ul>
+      <li><button id="grande-depression-btn" style="background-color: rgb(18, 108, 108);">Grande Depression</button></li>
+      <li><button>Choc Petrolier</button></li>
+      <li><button>Crise Immobilier</button></li>
+      <li><button>Crise Sanitaire</button></li>
+    </ul></div>
+     </aside>
   <main>
-        <div id="titlesCrisesOverlay" >
-            
-        <ul>
-            <li id="open"> <button >La Grande Dépression</button> </li>  
-            <li>Premier choc pétrolier</li> 
-            <li>Crise des subprimes de 2008</li>
-            <li>Crise COVID-19</li>  
-          </ul>
-        </div>
-        <section id="hero">
-          <h1>Grande Dépression de 1929</h1>
-          <p>Plongez dans les défis et décisions clés de cette crise historique.</p>
-          <a href="laGrandeDepressionInfo.html"> <button class="btn">En savoir plus</button></a>
-        </section>
-        <p id="info">Le joueur incarne un personnage dans l’Amérique des années 1920, où la prospérité économique règne en maître. Les choix qu'il fait influenceront son destin personnel, mais aussi celui de l’économie globale.</p>
-        <h2>Incarnez un personnage:</h2>
-        <div class="avatars" id="av1">
-          <li id="invest" data-info="Ce rôle incarne la personne qui prend des risques pour profiter des opportunités malgré la crise.">
-            <img src="images/Investisseur.png">
-            <div class="avatars-content">
-            <a href="investGrandeDepression.html">Investisseur audacieux</a>
-            <p class="data-info">Ce rôle incarne la personne qui prend des risques pour profiter des opportunités malgré la crise.</p>
-          </div>
-          </li>
-          <li id="poli" data-info="Ce rôle incarne un preneur de décisions politiques et économiques clés.">
-            <img src="images/Politicien.png">
-            <div class="avatars-content">
-            <a href="poliGrandeDepression.html">Politicien influant</a>
-            <p class="data-info">Ce rôle incarne un preneur de décisions politiques et économiques clés.</p>
-            </div>
-          </li>
-          <li id="ouvrier" data-info="L'ouvrier américain incarne le travailleur résilient qui lutte pour maintenir sa stabilité économique malgré les crises.">
-            <img src="images/Ouvrier.png">
-            <div class="avatars-content">
-            <a href="ouvrierGrandeDepression.html">Ouvrier américain</a>
-            <p class="data-info">L'ouvrier américain incarne le travailleur résilient qui lutte pour maintenir sa stabilité économique malgré les crises.</p>
-         </div>
-          </li>
-        </div>
-        <p id="avatar-info" class="avatarsinfos"></p>
-        
+    <section id="hero">
+      <h1>Quatre Crises</h1>
+      <a href="laGrandeDepressionInfo.html"> <button class="btn">En savoir plus</button></a>
+    </section>
+    
+    <section id="debut">
+  <p id="debut-paragraph">Le joueur incarne un personnage dans l’Amérique des années 1920, où la prospérité économique règne en maître. Les choix qu'il fait influenceront son destin personnel, mais aussi celui de l’économie globale. </p>
+  <p style="font-weight: bold;">Incarnez un personnage</p>
+  <ul>
+  <li><img src="images/Investisseur.png">
+    <p>Investisseur audacieux</p>
+  </li>
+  <li><img src="images/Politicien.png">
+    <p>Politicien influent</p></li>
+  <li><img src="images/Ouvrier.png">
+   <p> Ouvrier americain</p></li>
+</ul>
+</section>
+<section id="invest">
 
-    </main>
-  </body>
-  <footer> </footer>
-  </html>
+</section>
+<section id="politicien">
+
+</section>
+<section id="ouvrier">
+
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,98 @@
+#hero{
+    background-color: rgb(18, 108, 108);
+    color:white;
+    justify-items: center;
+    display: grid;
+    padding-bottom: 1rem;
+}
+
+#hero button{
+    width:100%;
+    margin: 0 15%;
+    font-size: 100%;
+}
+#hero h1{
+    font-size: 300%;
+    text-align: center;
+}
+main{
+    display:none;
+}
+
+#titles {
+    position: fixed;
+    display:grid;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+#titles ul{
+    display: grid;
+    gap:2rem;
+}
+#titles li{
+    list-style: none;
+}
+
+#titles button{
+    font-size: 150%;
+    background-color: transparent;
+} 
+#titles-content {
+    background: white;
+    padding: 2rem;
+    top:10%;
+    margin-left: -2rem;
+    height: 17rem;
+    width:40rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#grande-depression-btn:hover{
+    box-shadow: 1px 1px 1px black;
+    cursor: pointer;
+}
+#debut p{
+    font-size: 150%;
+    width:80%;
+    text-align: center;
+}
+#debut{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+#debut img{
+    width:10rem;
+    height:auto;
+}
+#debut ul{
+    display: grid;
+    grid-template-columns: repeat(3,25rem);
+    list-style: none;
+}
+#debut li{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+#debut li:hover{
+    background-color: whitesmoke;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+#invest, #politicien,#ouvrier{
+display:none;
+}
+
+@media (max-width:900px){
+    #debut ul{
+        grid-template-columns: 100%;
+    }
+}
