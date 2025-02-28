@@ -49,13 +49,13 @@ function updateBoard(playerChoice, computerChoice) {
     gameBoardSquares.forEach(square => square.style.backgroundColor = '');
 
     if (playerChoice === 'coop' && computerChoice === 'coop') {
-        gameBoardSquares[0].style.backgroundColor = 'purple';
+        gameBoardSquares[0].style.backgroundColor = 'rgb(13, 76, 76)';
     } else if (playerChoice === 'cheat' && computerChoice === 'cheat') {
-        gameBoardSquares[3].style.backgroundColor = 'purple';
+        gameBoardSquares[3].style.backgroundColor = 'rgb(13, 76, 76)';
     } else if (playerChoice === 'coop' && computerChoice === 'cheat') {
-        gameBoardSquares[1].style.backgroundColor = 'purple';
+        gameBoardSquares[1].style.backgroundColor = 'rgb(13, 76, 76)';
     } else if (playerChoice === 'cheat' && computerChoice === 'coop') {
-        gameBoardSquares[2].style.backgroundColor = 'purple';
+        gameBoardSquares[2].style.backgroundColor = 'rgb(13, 76, 76)';
     }
 }
 coopBtnElement.addEventListener('click', () => handlePlayerChoice('coop'));
@@ -80,7 +80,6 @@ function checkGameEnd() {
     }
 }
 
-// Oyunu sonlandır
 function endGame(result) {
     let message;
 
@@ -93,13 +92,58 @@ function endGame(result) {
 
     }
 
-    // Overlay'i ve mesajı göster
     gameOverMessageElement.textContent = message;
-    gameOverOverlayElement.style.display = 'block';
+    gameOverOverlayElement.style.display = 'grid';
 
-    // Butonları devre dışı bırak
     coopBtnElement.disabled = true;
     cheatBtnElement.disabled = true;
 }
+function closeOverlay(overlayId) {
+    document.getElementById(overlayId).style.display = "none";
+    coopBtnElement.disabled = false;
+    cheatBtnElement.disabled = false;
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreElement.textContent = playerScore;
+    computerScoreElement.textContent = computerScore;
+    gameBoardSquares[0].style.backgroundColor = 'rgb(18, 108, 108)';
+    gameBoardSquares[1].style.backgroundColor = 'rgb(18, 108, 108)';
+    gameBoardSquares[2].style.backgroundColor = 'rgb(18, 108, 108)';
+    gameBoardSquares[3].style.backgroundColor = 'rgb(18, 108, 108)';
 
+
+}
+const tipOne = document.getElementById('tip-one'); 
+const avatar = document.getElementById('elprof');
+const tipClose = document.getElementById('tip-close');
+const tips = document.getElementById('tips');
+
+
+function toggleTips() {
+    if (tipOne.style.display === "block") {
+        tipOne.style.display = "none";
+        tipClose.style.display = "none";
+    
+    } else {
+        tips.style.display = "block";
+        tipClose.style.display = "block";
+        tipOne.style.display = "block";
+    }
+}
+function closeTips() {
+    tips.style.display = "none";
+    tipOne.style.display = "none";
+    tipClose.style.display = "none";
+}
+tipClose.addEventListener("click", closeTips);
+
+avatar.addEventListener("click", toggleTips);
+const mainElement = document.getElementsByTagName('main')[0];
+
+const scenario = document.getElementById("scenario");
+const play = document.getElementById("play");
+play.addEventListener("click", () => {
+    scenario.style.display = 'none';
+    mainElement.style.display = 'grid';
+});
 

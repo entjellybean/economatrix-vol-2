@@ -48,7 +48,12 @@
   </ul>
 </nav>
   </aside>
-    
+  <aside id="scenario">
+    <img src="images/royaum.png">
+    <p>Bienvenue dans le monde de Solaris et Lunaris ! Deux royaumes rivaux se disputent une vallée stratégique riche en ressources. Vous êtes à la tête du royaume de Solaris, et votre adversaire, un algorithme, dirige Lunaris.</p>
+    <p>Votre mission est de maximiser vos gains (ressources et territoires) tout en anticipant les actions de votre adversaire. Vous devrez choisir à chaque tour entre deux stratégies simples</p>
+    <button id="play">Jouer!</button>
+</aside>
     <main>
  
 
@@ -108,8 +113,11 @@
           </section>
 
           <div id="game-over-overlay" class="modal">
+            <div id="overlay-content">
             <h2 id="game-over-message"></h2>
-            <button id="restart-btn" class="btn">Réessayer</button>
+            <button onclick="closeOverlay('game-over-overlay')"> ↻</button>
+            <button><a href="TheoriesDeJeux.html">↩</a></button>
+          </div>
         </div>
         </main>
         

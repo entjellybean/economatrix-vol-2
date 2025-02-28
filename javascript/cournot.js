@@ -140,6 +140,8 @@ coffeeman.addEventListener("click", toggleTips);
 function toggleTipsSur() {
     if (tipOneSur.style.display === "block") {
         tipOneSur.style.display = "none";
+        tipCloseSur.style.display = "none";
+
     } else {
         tipsSur.style.display = "block";
         tipCloseSur.style.display = "block";

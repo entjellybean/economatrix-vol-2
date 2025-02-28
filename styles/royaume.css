@@ -1,9 +1,31 @@
 main{
-    display: grid;
+    display: none;
 }
 main li{
     list-style: none;
 
+}
+#scenario{
+    position: relative;
+    width:100%;
+    display:grid;
+    justify-items: center;
+    z-index: 20;
+    background-color: white;
+    top:15%;
+    height: 120vh;
+    align-items: center;
+}
+#scenario p{
+    font-size: 150%;
+    text-align: center;
+    width:70%;
+}
+#scenario img{
+    width: 25rem;
+    height: auto;
+    border-radius: 10px;
+    padding-top: 5rem;
 }
 .modal{
     position:fixed;
@@ -19,21 +41,24 @@ main li{
 
 #game-over-overlay {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 65%;
-    padding: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Karartılmış bir arka plan */
-    border-radius: 10px;
     display: none;
-    flex-direction: column;
-    justify-content: center; /* İçeriği dikeyde ortala */
-    align-items: center; /* İçeriği yatayda ortala */
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    overflow: hidden; /* Görüntü taşmasını engelle */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+#overlay-content {
+    background: white;
+    padding: 2rem;
+    top:15%;
+    margin-left: -2rem;
+    height: 10rem;
+    width:40rem;
+    text-align: center;
+    border-radius: 10px;
 }
 #game-configuration{
     justify-content: center;
@@ -121,3 +146,63 @@ main li{
   #tip-one{
     display:none;
 }
+@media (max-width:900px){
+    #active-game{
+        grid-template-columns: 100%;
+    width:100%;
+    justify-content: left;
+    gap:2rem;
+    }
+   
+    #game-configuration{
+        grid-template-columns: repeat(2,10rem);
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    #game-board{
+       
+        grid-template-columns: repeat(3, 8rem);
+        grid-template-rows: repeat(3, 8rem);
+        margin-left: 0.1rem;
+    
+    }
+    .game-btn{
+        margin-left: -0.6rem;
+    }
+    #overlay-content {
+        height: 20rem;
+        width:20rem;
+      
+    }
+    #elprof{
+        width:4rem;
+      }
+      #tipandimage{
+        display:flex;
+        align-items: end;
+      }
+      #scenario img{
+        width: 20rem;
+        
+    }
+    #tips{
+        position: fixed;
+        display: none;
+    
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+      }
+      
+ #tip-content{
+        background: white;
+        padding: 2rem;
+        margin-top:50%;
+        text-align: center;
+        border-radius: 10px;
+       }
+}
+
