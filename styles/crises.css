@@ -28,28 +28,28 @@ li{
     list-style: none;
 }
 .button-container{
-    display:grid;
     justify-items: center;
     grid-template-columns: 50% 50%;
+    margin-top: 5rem;
     
 }
-.avatars{
+#avatars{
     display:flex;
     justify-content:space-evenly;
+    margin-top: 2rem;
 }
-.avatars li{
+#avatars li{
    width:20rem;
    justify-items: center;
 }
-.avatars li p{
+#avatars li p{
     text-align: center;
 }
-.avatars li:hover{
+#avatars li:hover{
     background-color: whitesmoke;
     cursor: pointer;
 }
 .message-content{
-    display: grid;
     justify-items: center;
 }
 .choix-btn{
@@ -64,8 +64,6 @@ li{
 }
 .choix-btn:hover{
     background-color: rgb(35, 151, 151);
-    cursor: pointer;
-
 }
 .message button{
     background-color: rgb(18, 108, 108);
@@ -79,4 +77,34 @@ li{
 .message button:hover{
     background-color: rgb(35, 151, 151);
 
+}
+button:hover{
+    cursor: pointer;
+}
+#choc-petrolier, #crise-immobilier, #covid{
+    display:none;
+}
+
+.message{
+    display: none;
+}
+.final, .question-two-one, .choix-container-two-one, .question-two-two, .choix-container-two-two{
+    display:none;
+}
+.choix-container-final{
+    display:none;
+}
+.choix-container-one{
+display:grid;}
+.avatar-sec {
+    display: none; /* Start with the avatar sections hidden */
+}
+
+
+#invest-sec, #poli-sec, #ouvrier-sec {
+    display: none;
+}
+
+#invest-sec.active, #poli-sec.active, #ouvrier-sec.active {
+    display: grid;
 }
