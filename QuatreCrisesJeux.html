@@ -48,43 +48,623 @@
       </ul>
   </nav>
       </aside>
-     <aside id="titles">
-      <div id="titles-content">
-      <ul>
-      <li><button id="grande-depression-btn" style="background-color: rgb(18, 108, 108);">Grande Depression</button></li>
-      <li><button>Choc Petrolier</button></li>
-      <li><button>Crise Immobilier</button></li>
-      <li><button>Crise Sanitaire</button></li>
-    </ul></div>
-     </aside>
+    
   <main>
+    <section id="grande-depression">
+
     <section id="hero">
+      <aside id="titles">
+        <div id="titles-content">
+        <ul>
+        <li><button id="grande-depression-btn" style="background-color: rgb(18, 108, 108);">Grande Depression</button></li>
+        <li><button>Choc Petrolier</button></li>
+        <li><button>Crise Immobilier</button></li>
+        <li><button>Crise Sanitaire</button></li>
+      </ul></div>
+       </aside>
       <h1>Quatre Crises</h1>
       <a href="laGrandeDepressionInfo.html"> <button class="btn">En savoir plus</button></a>
     </section>
-    
-    <section id="debut">
-  <p id="debut-paragraph">Le joueur incarne un personnage dans l’Amérique des années 1920, où la prospérité économique règne en maître. Les choix qu'il fait influenceront son destin personnel, mais aussi celui de l’économie globale. </p>
-  <p style="font-weight: bold;">Incarnez un personnage</p>
-  <ul>
-  <li><img src="images/Investisseur.png">
-    <p>Investisseur audacieux</p>
-  </li>
-  <li><img src="images/Politicien.png">
-    <p>Politicien influent</p></li>
-  <li><img src="images/Ouvrier.png">
-   <p> Ouvrier americain</p></li>
-</ul>
-</section>
-<section id="invest">
+    <p>Le joueur incarne un personnage dans l’Amérique des années 1920, où la prospérité économique règne en maître. Les choix qu'il fait influenceront son destin personnel, mais aussi celui de l’économie globale. 
+    </p>
+    <ul class="avatars">
+    <li id="invest">
+     <p>Investisseur Audacieux</p>
+     <img src="images/Investisseur.png">
+    </li>
+    <li id="politicien">
+      <p>Politicien Influant</p>
+      <img src="images/Politicien.png">
+    </li>
+    <li id="ouvrier">
+      <p>Ouvrier Américain</p>
+      <img src="images/Ouvrier.png">
+    </li></ul>
 
-</section>
-<section id="politicien">
+    <section id="invest-sec">
+     <p class="question-one">Le marché boursier est en pleine effervescence. Les gains sont rapides et les possibilités infinies. Vous avez investi massivement, mais la question reste : jusqu'où la vague de prospérité ira-t-elle ?</p>
+     <div class="choix-container-one button-container">
+      <button class="button-ch-1 choix-btn">Spéculer davantage en empruntant auprès des banques</button>
+      <button class="button-ch-2 choix-btn">Rester prudent et diversifier ses investissements</button>
+     </div>
+     <div class="message-ch-1 message">
+      <div class="message-ch-1-content message-content">
+       <p>Vous décidez d'emprunter encore plus d'argent pour acheter des actions. Votre portefeuille grimpe rapidement, et les banques vous considèrent comme un client en or. Mais attention, la chute pourrait être brutale.</p>
+       <button  onclick="closeOverlay('message-ch-1')">➡</button>
+      </div>
+     </div>
+     <div class="message-ch-2 message">
+      <div class="message-ch-2-content message-content">
+       <p>Vous décidez de diversifier vos investissements dans l'immobilier et l'agriculture. Votre portefeuille croît plus lentement, mais vous vous sentez plus serein face aux fluctuations du marché.</p>
+       <button  onclick="closeOverlay('message-ch-2')">➡</button>
+      </div>
+     </div>
+     <p class="question-two-one">Les signes d’instabilité commencent à apparaître. Les rumeurs de bulle spéculative se multiplient. Que faites-vous ?</p>
+     <div class="choix-container-two-one button-container">
+      <button class="button-ch-211 choix-btn">Doubler la mise</button>
+      <button class="button-ch-212 choix-btn">Vendre certaines actions</button>
+     </div>
+     <div class="message-ch-211 message">
+      <div class="message-ch-211-content message-content">
+        <p>Vous empruntez encore plus pour profiter de la montée des actions. Votre fortune semble croître exponentiellement, mais un sentiment d'inquiétude persiste.</p>
+       <button  onclick="closeOverlay('message-ch-211')">➡</button>
+      </div>
+     </div>
+     <div class="message-ch-212 message">
+      <div class="message-ch-212-content message-content">
+        <p>Vous vendez une partie de votre portefeuille pour réduire les risques. Les profits sont encore importants, mais vous n'avez pas la même influence qu’avant.</p>
+       <button  onclick="closeOverlay('message-ch-212')">➡</button>
+      </div>
+     </div>
+     <p class="question-two-two">Le marché commence à montrer des signes de faiblesse, mais vos actifs sont plus résilients. Que faites-vous ?</p>
+     <div class="choix-container-two-two button-container">
+      <button class="button-ch-221 choix-btn">Se retirer du marché</button>
+      <button class="button-ch-222 choix-btn">Reprendre le risque</button>
+     </div>
+     <div class="message-ch-221 message">
+      <div class="message-ch-221-content message-content">
+        <p>Vous liquidez toutes vos positions en actions et investissez dans des valeurs refuges comme l’or. Les autres investisseurs vous regardent avec perplexité.</p>
+       <button  onclick="closeOverlay('message-ch-221')">➡</button>
+      </div>
+     </div>
+     <div class="message-ch-222 message">
+      <div class="message-ch-222-content message-content">
+        <p>Vous décidez de reprendre des risques en achetant de nouvelles actions. Vous espérez que le marché se rétablira bientôt.</p>
+       <button  onclick="closeOverlay('message-ch-222')">➡</button>
+      </div>
+     </div>
+     <p class="final1">Le krach frappe de plein fouet. Votre portefeuille perd presque toute sa valeur en une journée. Vous êtes endetté jusqu’au cou et les banques exigent leur dû. C'est la ruine.</p>
+     <p class="final2">Le marché s'effondre, mais vos pertes sont limitées. Vous avez sauvé ce qui pouvait l'être, mais votre avenir financier reste incertain.</p>
+     <p class="final3">Le krach arrive et vous n’avez pas tout perdu, mais l’économie plonge, et même vos valeurs refuges en pâtissent. Votre sécurité est relative.</p>
+     <p class="final4">Le krach anéantit vos espoirs. Votre portefeuille s'effondre. Vous réalisez trop tard que vous auriez dû rester prudent.</p>
+     <div class="choix-container-final button-container">
+      <button class="grand choix-btn">↻</button>
+      <button class="next choix-btn">➡</button>
+     </div>
+    </section>
 
-</section>
-<section id="ouvrier">
+    <section id="poli-sec">
+      <p class="question-one">Vous êtes au cœur du gouvernement, témoin d’une croissance économique effrénée. Mais cette prospérité repose sur des bases fragiles : la spéculation et le crédit facile. Allez-vous intervenir pour éviter une catastrophe, ou encourager la croissance, quitte à risquer une crise ?</p>
+      <div class="choix-container-one button-container">
+        <button class="button-ch-1 choix-btn"> Proposer des lois pour réguler les prêts à risque des banques</button>
+        <button class="button-ch-2 choix-btn">Laisser les banques se réguler elles-mêmes</button>
+       </div>
+       <div class="message-ch-1 message">
+        <div class="message-ch-1-content message-content">
+         <p>Vous proposez une législation stricte pour limiter les prêts à risque des banques. Les milieux d'affaires s'opposent fermement à vos initiatives. On vous accuse de freiner l'économie.</p>
+         <button  onclick="closeOverlay('message-ch-1')">➡</button>
+        </div>
+       </div>
+       <div class="message-ch-2 message">
+        <div class="message-ch-2-content message-content">
+         <p>Vous encouragez les banques à continuer de prêter et incitez les citoyens à investir. La croissance se poursuit, et votre popularité atteint des sommets.</p>
+         <button  onclick="closeOverlay('message-ch-2')">➡</button>
+        </div>
+       </div>
+       <p class="question-two-one">Les lois passent, mais affaiblies. Les banques continuent de prêter, et les tensions montent. Que faites-vous ?</p>
+       <div class="choix-container-two-one button-container">
+        <button class="button-ch-211 choix-btn">Renforcer la réglementation</button>
+        <button class="button-ch-212 choix-btn">Laisser les banques se réguler elles-mêmes</button>
+       </div>
+       <div class="message-ch-211 message">
+        <div class="message-ch-211-content message-content">
+          <p>Vous persistez malgré tout et proposez des régulations encore plus strictes. Les oppositions deviennent virulentes, et vous commencez à perdre le soutien politique.</p>
+         <button  onclick="closeOverlay('message-ch-211')">➡</button>
+        </div>
+       </div>
+       <div class="message-ch-212 message">
+        <div class="message-ch-212-content message-content">
+          <p>Vous cédez à la pression et retirez vos propositions. Les banques continuent à prêter massivement, et les marchés s’emballent.</p>
+         <button  onclick="closeOverlay('message-ch-212')">➡</button>
+        </div>
+       </div>
+       <p class="question-two-two">Les marchés sont surchauffés. Vous commencez à recevoir des avertissements de la part d’économistes inquiets. Que faites-vous ?</p>
+       <div class="choix-container-two-two button-container">
+        <button class="button-ch-221 choix-btn"> Introduire des mesures de régulation tardives</button>
+        <button class="button-ch-222 choix-btn">Continuer sur la voie actuelle</button>
+       </div>
+       <div class="message-ch-221 message">
+        <div class="message-ch-221-content message-content">
+          <p>Face à la montée des risques, vous tentez d'introduire des régulations tardives. Les milieux financiers se rebellent contre vous.</p>
+         <button  onclick="closeOverlay('message-ch-221')">➡</button>
+        </div>
+       </div>
+       <div class="message-ch-222 message">
+        <div class="message-ch-222-content message-content">
+          <p>Vous choisissez de ne rien faire, convaincu que le marché s’auto-régulera. Les signaux d’alerte se multiplient, mais vous restez confiant.</p>
+         <button  onclick="closeOverlay('message-ch-222')">➡</button>
+        </div>
+       </div>
+       <p class="final1">Vos mesures atténuent le choc, mais l’économie s'effondre tout de même. Vous sauvez le système bancaire, mais la récession plonge le pays dans le chaos.</p>
+     <p class="final2">Le krach de 1929 vous frappe de plein fouet. Les banques s’effondrent, et la crise économique est inévitable. Votre carrière politique est en ruine.</p>
+     <p class="final3">Vos mesures arrivent trop tard. Le krach dévaste l’économie et votre carrière. Vous vous retrouvez à gérer une crise que vous n’avez pas pu éviter.</p>
+     <p class="final4">Le krach arrive, détruisant non seulement l'économie mais aussi votre réputation. Vous réalisez trop tard l’ampleur de la crise que vous avez laissée se développer.</p>
+     <div class="choix-container-final button-container">
+      <button class="grand choix-btn">↻</button>
+      <button class="next choix-btn">➡</button>
+     </div>
+    </section>
 
-</section>
+    <section id="ouvrier-sec">
+      <p class="question-one">Vous travaillez dur dans une usine de production automobile. Vous voyez les autres autour de vous profiter de la prospérité grâce au crédit facile. Le rêve américain est à portée de main, mais vous hésitez : devez-vous vous lancer dans la consommation, ou rester prudent ?</p>
+      <div class="choix-container-one button-container">
+        <button class="button-ch-1 choix-btn">Profiter des crédits faciles pour acheter une voiture ou une maison</button>
+        <button class="button-ch-2 choix-btn">Mettre de l’argent de côté, inquiet de l’avenir incertain</button>
+       </div>
+       <div class="message-ch-1 message">
+        <div class="message-ch-1-content message-content">
+         <p>Vous décidez d'acheter une voiture flambant neuve à crédit. Vous vous sentez enfin à la hauteur de vos voisins. Les mensualités sont abordables, du moins pour l'instant.</p>
+         <button  onclick="closeOverlay('message-ch-1')">➡</button>
+        </div>
+       </div>
+       <div class="message-ch-2 message">
+        <div class="message-ch-2-content message-content">
+         <p>Vous choisissez de ne pas prendre de crédit et d'épargner chaque mois. Vous vous privez de certains biens, mais vous vous sentez plus serein face à l'incertitude.</p>
+         <button  onclick="closeOverlay('message-ch-2')">➡</button>
+        </div>
+       </div>
+       <p class="question-two-one">Votre salaire reste stagnant, mais les mensualités augmentent. La situation économique commence à se détériorer. Que faites-vous ?</p>
+       <div class="choix-container-two-one button-container">
+        <button class="button-ch-211 choix-btn">Contracter un deuxième prêt</button>
+        <button class="button-ch-212 choix-btn">Réduire les dépenses</button>
+       </div>
+       <div class="message-ch-211 message">
+        <div class="message-ch-211-content message-content">
+          <p>Vous décidez d'acheter d'autres biens à crédit pour maintenir votre niveau de vie. Les banques acceptent sans hésiter.</p>
+         <button  onclick="closeOverlay('message-ch-211')">➡</button>
+        </div>
+       </div>
+       <div class="message-ch-212 message">
+        <div class="message-ch-212-content message-content">
+          <p>Vous limitez vos achats et essayez de rembourser vos dettes plus rapidement. Vous vous serrez la ceinture, mais vous vous sentez plus en sécurité.</p>
+         <button  onclick="closeOverlay('message-ch-212')">➡</button>
+        </div>
+       </div>
+       <p class="question-two-two">Vous voyez les autres dépenser sans compter. La tentation d’investir dans des actions est grande. Que faites-vous ?</p>
+       <div class="choix-container-two-two button-container">
+        <button class="button-ch-221 choix-btn"> Utiliser l’épargne pour investir dans des actions</button>
+        <button class="button-ch-222 choix-btn">Continuer à épargner prudemment</button>
+       </div>
+       <div class="message-ch-221 message">
+        <div class="message-ch-221-content message-content">
+          <p>Vous cédez à la tentation et investissez votre épargne dans des actions, espérant des rendements rapides. Les premiers gains sont prometteurs.</p>
+         <button  onclick="closeOverlay('message-ch-221')">➡</button>
+        </div>
+       </div>
+       <div class="message-ch-222 message">
+        <div class="message-ch-222-content message-content">
+          <p>Vous restez fidèle à votre plan d'épargne, malgré les opportunités d'investissement. Vous vous concentrez sur la sécurité financière.</p>
+         <button  onclick="closeOverlay('message-ch-222')">➡</button>
+        </div>
+       </div>
+       <p class="final1">Le krach vous prend par surprise. Vous perdez votre emploi, et vous ne pouvez plus rembourser vos dettes. La banque saisit vos biens. C'est la ruine.</p>
+     <p class="final2">Vous perdez votre emploi, mais vous avez réussi à limiter les dégâts financiers. La crise est dure, mais vous tenez bon.</p>
+     <p class="final3">Le krach détruit vos investissements en un instant. Vous perdez toutes vos économies. L’avenir s’annonce sombre.</p>
+     <p class="final4">Le krach arrive, mais vous avez évité le pire. Vos économies vous permettent de survivre, mais le chômage et la récession rendent la vie très difficile.</p>
+     <div class="choix-container-final button-container">
+      <button class="grand choix-btn">↻</button>
+      <button class="next choix-btn">➡</button>
+     </div>
+    </section>
+    </section>
+
+    <section id="choc-petrolier">
+      <section id="hero">
+        <aside id="titles">
+          <div id="titles-content">
+          <ul>
+          <li><button id="grande-depression-btn" style="background-color: rgb(18, 108, 108);">Grande Depression</button></li>
+          <li><button id="choc-petrolier-btn" style="background-color: rgb(18, 108, 108);">Choc Petrolier</button></li>
+          <li><button>Crise Immobilier</button></li>
+          <li><button>Crise Sanitaire</button></li>
+        </ul></div>
+         </aside>
+        <h1>Quatre Crises</h1>
+        <a href="leChocPetrolierInfo.html"> <button class="btn">En savoir plus</button></a>
+      </section>
+      <p>Le joueur est plongé dans l'euphorie des années 1960 et du début des années 1970, une période de prospérité et de croissance économique. Cependant, cette prospérité repose sur une base fragile : la dépendance excessive au pétrole étranger. Les tensions géopolitiques montent au Moyen-Orient, et le spectre d’une crise énergétique plane sur l’Occident. Le joueur incarnera un personnage clé dans ce contexte et devra faire des choix qui influenceront le déroulement des événements. Saurez-vous naviguer à travers cette période tumultueuse et éviter la catastrophe ?
+      </p>
+      <ul class="avatars">
+      <li id="dirig">
+        <p>Dirigeant Industriel</p>
+        <img src="images/dirig.png">
+       </li>
+       <li id="politicien-occid">
+         <p>Politicien Occidental</p>
+         <img src="images/poliOccident.png">
+       </li></ul>
+       <section id="dirig-sec">
+        <p class="question-one">Vous êtes à la tête d'une grande entreprise automobile. Le monde n’a jamais été aussi avide de voitures, et la demande est en constante augmentation. Mais les rumeurs de tensions au Moyen-Orient inquiètent. Devez-vous continuer à produire au rythme effréné, ou anticiper une éventuelle crise énergétique ?</p>
+        <div class="choix-container-one button-container">
+          <button class="button-ch-1 choix-btn">Continuer à produire à plein régime</button>
+          <button class="button-ch-2 choix-btn">Diversifier les sources d’énergie et investir dans des modèles économes en carburant</button>
+         </div>
+         <div class="message-ch-1 message">
+          <div class="message-ch-1-content message-content">
+           <p>Vous décidez de continuer la production à un rythme élevé. Les ventes explosent, et les bénéfices atteignent des sommets. Vous êtes célébré comme un visionnaire dans votre industrie.</p>
+           <button  onclick="closeOverlay('message-ch-1')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-2 message">
+          <div class="message-ch-2-content message-content">
+           <p>Vous lancez un projet pour développer des voitures plus économes en carburant et explorez des alternatives comme le gaz naturel. Vos actionnaires sont sceptiques, mais vous êtes convaincu que c’est le bon choix.</p>
+           <button  onclick="closeOverlay('message-ch-2')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-one">L'embargo pétrolier est annoncé, et le prix du pétrole quadruple en quelques mois. Votre production devient trop coûteuse. Que faites-vous ?</p>
+     <div class="choix-container-two-one button-container">
+      <button class="button-ch-211 choix-btn">Réduire la production et licencier du personnel</button>
+      <button class="button-ch-212 choix-btn">Augmenter les prix des véhicules</button>
+     </div>
+     <div class="message-ch-211 message">
+      <div class="message-ch-211-content message-content">
+        <p>Vous réduisez drastiquement la production et licenciez une partie de vos employés pour survivre. Le moral dans l'entreprise est au plus bas, mais vous gagnez un peu de temps.</p>
+       <button  onclick="closeOverlay('message-ch-211')">➡</button>
+      </div>
+     </div>
+     <div class="message-ch-212 message">
+      <div class="message-ch-212-content message-content">
+        <p>Vous décidez de reporter les coûts supplémentaires sur le consommateur. Les prix des voitures augmentent considérablement.</p>
+       <button  onclick="closeOverlay('message-ch-212')">➡</button>
+      </div>
+     </div>
+     <p class="question-two-two">Les tensions au Moyen-Orient s'intensifient. Le prix du pétrole grimpe en flèche, et les consommateurs cherchent des alternatives moins coûteuses. Que faites-vous ?</p>
+     <div class="choix-container-two-two button-container">
+      <button class="button-ch-221 choix-btn">Accélérer le développement des modèles économes</button>
+      <button class="button-ch-222 choix-btn">Suspendre le développement pour réduire les coûts</button>
+     </div>
+     <div class="message-ch-221 message">
+      <div class="message-ch-221-content message-content">
+        <p>Vous redoublez d’efforts pour sortir rapidement des modèles économes en carburant. Le temps presse, mais l’avenir semble plus prometteur.</p>
+       <button  onclick="closeOverlay('message-ch-221')">➡</button>
+      </div>
+     </div>
+     <div class="message-ch-222 message">
+      <div class="message-ch-222-content message-content">
+        <p>Vous décidez de suspendre temporairement le développement des nouveaux modèles pour préserver les finances de l’entreprise. Les employés sont inquiets.</p>
+       <button  onclick="closeOverlay('message-ch-222')">➡</button>
+      </div>
+     </div>
+     <p class="final1">La stagflation frappe. Les ventes s'effondrent, et l'entreprise est au bord de la faillite. Vous vous demandez si vous avez fait les bons choix.</p>
+     <p class="final2">Les consommateurs se détournent de vos véhicules coûteux. Les ventes chutent et les bénéfices s'effondrent. La crise est inévitable.</p>
+     <p class="final3">Vos nouveaux modèles rencontrent un franc succès. L'entreprise traverse la crise mieux que prévu, bien que les profits soient encore en berne.</p>
+     <p class="final4">Vous évitez la faillite immédiate, mais votre entreprise perd son avantage concurrentiel. La reprise économique sera difficile.</p>
+     <div class="choix-container-final button-container">
+      <button class="petrol choix-btn">↻</button>
+      <button class="next choix-btn">➡</button>
+     </div>
+       </section>
+
+       <section id="poli-occid-sec">
+        <p class="question-one">En tant que ministre de l'Énergie d'un pays occidental, vous devez garantir la sécurité énergétique de votre nation. Les tensions géopolitiques au Moyen-Orient menacent l'approvisionnement en pétrole. Allez-vous anticiper une crise et sécuriser des ressources alternatives, ou compter sur une résolution rapide du conflit ?</p>
+        <div class="choix-container-one button-container">
+          <button class="button-ch-1 choix-btn">Constituer des réserves stratégiques de pétrole</button>
+          <button class="button-ch-2 choix-btn">Compter sur une résolution rapide du conflit et encourager la production nationale</button>
+         </div>
+         <div class="message-ch-1 message">
+          <div class="message-ch-1-content message-content">
+            <p>Vous décidez de constituer des réserves stratégiques de pétrole en prévision d’une crise. Certains vous accusent de semer la panique, mais vous maintenez le cap.</p>
+           <button  onclick="closeOverlay('message-ch-1')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-2 message">
+          <div class="message-ch-2-content message-content">
+            <p>Vous faites confiance à une résolution diplomatique rapide et incitez les compagnies pétrolières nationales à augmenter la production. Les marchés réagissent positivement à court terme.</p>
+           <button  onclick="closeOverlay('message-ch-2')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-one">L'embargo pétrolier est imposé. Les réserves permettent de limiter l'impact immédiat, mais elles s'épuisent rapidement. Que faites-vous ?</p>
+     <div class="choix-container-two-one button-container">
+      <button class="button-ch-211 choix-btn">Rationner l'essence et promouvoir les économies d'énergie</button>
+      <button class="button-ch-212 choix-btn">Chercher des accords secrets avec d'autres fournisseurs</button>
+     </div>
+     <div class="message-ch-211 message">
+      <div class="message-ch-211-content message-content">
+        <p>Vous introduisez des mesures de rationnement et lancez des campagnes de sensibilisation pour réduire la consommation d'énergie. La population est mécontente, mais les mesures semblent nécessaires.</p>
+       <button  onclick="closeOverlay('message-ch-211')">➡</button>
+      </div>
+     </div>
+     <div class="message-ch-212 message">
+      <div class="message-ch-212-content message-content">
+        <p>Vous négociez en coulisse avec des pays non membres de l’OPEP pour obtenir du pétrole. Les discussions sont difficiles et coûteuses.</p>
+       <button  onclick="closeOverlay('message-ch-212')">➡</button>
+      </div>
+     </div>
+     <p class="question-two-two">L'embargo se prolonge, et la situation devient critique. Les prix explosent, et les entreprises commencent à licencier. Que faites-vous ?</p>
+     <div class="choix-container-two-two button-container">
+      <button class="button-ch-221 choix-btn">Nationaliser les ressources énergétiques pour contrôler les prix</button>
+      <button class="button-ch-222 choix-btn">Proposer des subventions pour le développement d'énergies alternatives</button>
+     </div>
+     <div class="message-ch-221 message">
+      <div class="message-ch-221-content message-content">
+        <p>Vous décidez de nationaliser les compagnies énergétiques pour stabiliser les prix et garantir un approvisionnement constant. Les milieux d'affaires sont furieux.</p>
+       <button  onclick="closeOverlay('message-ch-221')">➡</button>
+      </div>
+     </div>
+     <div class="message-ch-222 message">
+      <div class="message-ch-222-content message-content">
+        <p>Vous offrez des subventions massives pour le développement de l’énergie solaire, éolienne et nucléaire. Vous espérez que ces investissements porteront leurs fruits à long terme.</p>
+       <button  onclick="closeOverlay('message-ch-222')">➡</button>
+      </div>
+     </div>
+     <p class="final1">La stagflation frappe malgré tout. L'économie souffre, mais les tensions sociales sont partiellement contenues. Vous sauvez ce qui peut l’être.</p>
+     <p class="final2">Vous parvenez à sécuriser des livraisons de pétrole, mais à un prix élevé. L'économie subit tout de même un choc, et votre popularité chute.</p>
+     <p class="final3">Les coûts de production explosent, et l'efficacité baisse. La nationalisation limite les dégâts, mais ne résout pas la crise.</p>
+     <p class="final4">Les résultats se font attendre. L'économie entre en récession, mais les fondations pour une transition énergétique sont posées. Vous payez le prix politique maintenant, mais l’histoire vous jugera plus clémentement.</p>
+     <div class="choix-container-final button-container">
+      <button class="petrol choix-btn">↻</button>
+      <button class="next choix-btn">➡</button>
+     </div>
+       </section>
+    </section>
+
+    <section id="crise-immobilier">
+      <section id="hero">
+        <aside id="titles">
+          <div id="titles-content">
+          <ul>
+          <li><button id="grande-depression-btn" style="background-color: rgb(18, 108, 108);">Grande Depression</button></li>
+          <li><button id="choc-petrolier-btn" style="background-color: rgb(18, 108, 108);">Choc Petrolier</button></li>
+          <li><button id="crise-immobilier-btn" style="background-color: rgb(18, 108, 108);">Crise Immobilier</button></li>
+          <li><button>Crise Sanitaire</button></li>
+        </ul></div>
+         </aside>
+        <h1>Quatre Crises</h1>
+        <a href="criseSubprimeInfo.html"> <button class="btn">En savoir plus</button></a>
+      </section>
+      <p>Le joueur est plongé dans les années précédant la crise des subprimes de 2008, une période marquée par une frénésie immobilière et un accès au crédit facile. Les institutions financières, les agents immobiliers, et les consommateurs sont tous emportés dans la spirale de l’endettement et de la spéculation. En tant que personnage clé de ce système, le joueur doit naviguer à travers ces eaux troubles, faire des choix qui détermineront son succès ou sa faillite, et tenter d'éviter, ou d'exploiter, la catastrophe imminente.
+      </p>
+      <ul class="avatars">
+      <li id="preteur">
+        <p>Prêteur Hypothécaire</p>
+        <img src="images/pre.png">
+       </li>
+       <li id="agent">
+         <p>Agent Immobilier</p>
+         <img src="images/agent.png">
+       </li></ul>
+       <section id="preteur-sec">
+        <p class="question-one">En tant que directeur d’une institution de crédit hypothécaire, vous avez le pouvoir de décider à qui prêter de l’argent. La demande de prêts immobiliers est en forte croissance, et les profits rapides semblent à portée de main. Mais vous savez que beaucoup de ces prêts sont risqués. Allez-vous maximiser les profits immédiats, ou penser à la stabilité à long terme ?</p>
+        <div class="choix-container-one button-container">
+          <button class="button-ch-1 choix-btn">Accorder des prêts subprimes à haut risque</button>
+          <button class="button-ch-2 choix-btn"> Privilégier les prêts à faible risque et les clients solvables</button>
+         </div>
+         <div class="message-ch-1 message">
+          <div class="message-ch-1-content message-content">
+            <p>Vous décidez de vous concentrer sur les prêts subprimes. Les clients avec de faibles revenus ou un historique de crédit instable se bousculent pour obtenir un prêt. Les commissions augmentent, et les bénéfices montent en flèche.</p>
+           <button  onclick="closeOverlay('message-ch-1')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-2 message">
+          <div class="message-ch-2-content message-content">
+            <p>Vous décidez de limiter les prêts aux clients solvables avec un historique de crédit solide. Les bénéfices sont plus faibles, mais votre portefeuille de prêts reste sain.</p>
+           <button  onclick="closeOverlay('message-ch-2')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-one">Les ventes de maisons atteignent des sommets, mais les taux de défaut de paiement commencent à augmenter. Les signes de surchauffe du marché se multiplient. Que faites-vous ?</p>
+         <div class="choix-container-two-one button-container">
+          <button class="button-ch-211 choix-btn">Titrisations massives pour revendre les prêts</button>
+          <button class="button-ch-212 choix-btn">Cesser de prêter et se retirer du marché subprime</button>
+         </div>
+         <div class="message-ch-211 message">
+          <div class="message-ch-211-content message-content">
+            <p>Vous empaquetez les prêts hypothécaires en titres financiers complexes que vous revendez sur le marché. Les risques sont transférés à d’autres investisseurs, et vous continuez à réaliser des profits élevés.</p>
+           <button  onclick="closeOverlay('message-ch-211')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-212 message">
+          <div class="message-ch-212-content message-content">
+            <p>Vous arrêtez les prêts subprimes et vous retirez du marché. Vos concurrents se moquent de votre prudence, mais vous sentez que le risque est trop grand.</p>
+           <button  onclick="closeOverlay('message-ch-212')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-two">Vos concurrents engrangent des bénéfices records avec les subprimes. Vos actionnaires commencent à se plaindre. Que faites-vous ?</p>
+         <div class="choix-container-two-two button-container">
+          <button class="button-ch-221 choix-btn">Céder à la pression et commencer à accorder des prêts subprimes</button>
+          <button class="button-ch-222 choix-btn">Maintenir une politique prudente malgré la pression</button>
+         </div>
+         <div class="message-ch-221 message">
+          <div class="message-ch-221-content message-content">
+            <p>Vous cédiez à la pression et commencez à  prêter à des clients moins solvables. Les profits augmentent, mais vous sentez une tension croissante.</p>
+           <button  onclick="closeOverlay('message-ch-221')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-222 message">
+          <div class="message-ch-222-content message-content">
+            <p>Vous résistez à la tentation et continuez à prêter de manière prudente. Vos concurrents vous dépassent, mais vous gardez la tête froide.</p>
+           <button  onclick="closeOverlay('message-ch-222')">➡</button>
+          </div>
+         </div>
+         <p class="final1">Le marché des subprimes s’effondre. Les titres deviennent toxiques, et vous êtes pris dans une vague de faillites. Votre institution est accusée d’avoir alimenté la crise.</p>
+     <p class="final2">Vous évitez le pire de la crise, mais l'effondrement du marché immobilier affecte tout de même vos activités. Vous survivez, mais à un coût élevé pour vos profits.</p>
+     <p class="final3">Le marché s'effondre, et vos nouveaux prêts deviennent rapidement des actifs toxiques. Votre institution est en difficulté, et vous luttez pour éviter la faillite.</p>
+     <p class="final4">Le krach des subprimes emporte beaucoup de vos concurrents. Vous survivez à la crise avec un minimum de dégâts, et votre réputation est renforcée.</p>
+     <div class="choix-container-final button-container">
+      <button class="immobil choix-btn">↻</button>
+      <button class="next choix-btn">➡</button>
+     </div>
+       </section>
+
+       <section id="agent-sec">
+        <p class="question-one">Vous êtes un agent immobilier prospère, profitant de la flambée des prix de l’immobilier. Les maisons se vendent comme des petits pains, et les commissions ne cessent d’augmenter. Mais vous sentez que quelque chose ne va pas. Les prix sont trop élevés, et les clients commencent à avoir du mal à obtenir des crédits. Allez-vous profiter de la bulle tant qu’elle existe, ou vous préparer à son éclatement ?</p>
+        <div class="choix-container-one button-container">
+          <button class="button-ch-1 choix-btn"> Encourager l'achat de biens immobiliers coûteux</button>
+          <button class="button-ch-2 choix-btn">Alerter vos clients sur les risques du marché</button>
+         </div>
+         <div class="message-ch-1 message">
+          <div class="message-ch-1-content message-content">
+            <p>Vous encouragez vos clients à acheter des propriétés de plus en plus chères, même s’ils doivent emprunter au maximum de leurs capacités. Les commissions sont énormes, et vous accumulez des profits records.</p>
+           <button  onclick="closeOverlay('message-ch-1')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-2 message">
+          <div class="message-ch-2-content message-content">
+            <p>Vous commencez à alerter vos clients sur la surévaluation des prix immobiliers et les risques de l’endettement. Certains vous écoutent, mais d’autres vous tournent le dos.</p>
+           <button  onclick="closeOverlay('message-ch-2')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-one">Les prix continuent de grimper, mais les ventes commencent à ralentir. Certains clients peinent à payer leurs mensualités. Que faites-vous ?</p>
+     <div class="choix-container-two-one button-container">
+      <button class="button-ch-211 choix-btn">Continuer à vendre des biens chers, coûte que coûte</button>
+      <button class="button-ch-212 choix-btn">Se concentrer sur les biens abordables</button>
+     </div>
+     <div class="message-ch-211 message">
+      <div class="message-ch-211-content message-content">
+        <p>Vous continuez à vendre des maisons coûteuses, convaincu que le marché va se stabiliser. Vos profits continuent d’augmenter.</p>
+       <button  onclick="closeOverlay('message-ch-211')">➡</button>
+      </div>
+     </div>
+     <div class="message-ch-212 message">
+      <div class="message-ch-212-content message-content">
+        <p>Vous commencez à orienter vos clients vers des maisons plus abordables. Vos commissions diminuent, mais vos clients sont plus satisfaits.</p>
+       <button  onclick="closeOverlay('message-ch-212')">➡</button>
+      </div>
+     </div>
+     <p class="question-two-two">Le marché semble encore solide, et vos avertissements passent pour du pessimisme. Vous perdez des clients au profit d'agents plus optimistes. Que faites-vous ?</p>
+     <div class="choix-container-two-two button-container">
+      <button class="button-ch-221 choix-btn">Revenir à la promotion des ventes comme avant</button>
+      <button class="button-ch-222 choix-btn">Maintenir votre position prudente</button>
+     </div>
+     <div class="message-ch-221 message">
+      <div class="message-ch-221-content message-content">
+        <p>Vous abandonnez vos mises en garde et recommencez à promouvoir des ventes. Les clients affluent, et vos profits augmentent de nouveau.</p>
+       <button  onclick="closeOverlay('message-ch-221')">➡</button>
+      </div>
+     </div>
+     <div class="message-ch-222 message">
+      <div class="message-ch-222-content message-content">
+        <p>Vous maintenez vos avertissements et vous vous concentrez sur les ventes prudentes. Vous perdez des clients, mais gardez votre intégrité.</p>
+       <button  onclick="closeOverlay('message-ch-222')">➡</button>
+      </div>
+     </div>
+     <p class="final1">Le marché s’effondre. Les propriétés que vous avez vendues perdent de leur valeur, et les clients vous accusent de les avoir trompés. Votre réputation est détruite, et votre entreprise est en faillite.</p>
+     <p class="final2">Le marché s'effondre, mais vos clients sont moins touchés par la crise. Votre entreprise survit, mais à un prix : vos revenus ont chuté de manière significative.</p>
+     <p class="final3">Le marché s'effondre peu après. Vos clients se sentent trahis, et votre réputation est entachée. Vous luttez pour maintenir votre entreprise à flot.</p>
+     <p class="final4">Le marché s’effondre, et beaucoup d’agents immobiliers font faillite. Vous avez moins de clients, mais une réputation intacte. Votre entreprise se maintient malgré la tempête.</p>
+     <div class="choix-container-final button-container">
+      <button class="immobil choix-btn">↻</button>
+      <button class="next choix-btn">➡</button>
+     </div>
+       </section>
+    </section>
+
+    <section id="covid">
+      <section id="hero">
+        <aside id="titles">
+          <div id="titles-content">
+          <ul>
+          <li><button id="grande-depression-btn" style="background-color: rgb(18, 108, 108);">Grande Depression</button></li>
+          <li><button id="choc-petrolier-btn" style="background-color: rgb(18, 108, 108);">Choc Petrolier</button></li>
+          <li><button id="crise-immobilier-btn" style="background-color: rgb(18, 108, 108);">Crise Immobilier</button></li>
+          <li><button id="covid-btn" style="background-color: rgb(18, 108, 108);">Crise Sanitaire</button></li>
+        </ul></div>
+         </aside>
+        <h1>Quatre Crises</h1>
+        <a href="criseSannitaireInfo.html"> <button class="btn">En savoir plus</button></a>
+      </section>
+      <p>Le joueur est plongé au cœur de la crise du COVID-19 en 2020, une période de bouleversements sans précédent pour le monde entier. Les hôpitaux sont submergés, les économies vacillent, et les gouvernements doivent prendre des décisions difficiles pour protéger leurs citoyens. En tant qu’acteur clé de cette situation, le joueur devra naviguer à travers les défis médicaux, économiques et sociaux, tout en tentant de minimiser les pertes humaines et économiques.
+      </p>
+      <ul class="avatars">
+      <li id="prop-hopital">
+        <p>Propriétaire d'Hôpital</p>
+        <img src="images/proprietaire d'hopital.png">
+       </li>
+       <li id="citoyen">
+         <p>Citoyen Ordinaire</p>
+         <img src="images/person.png">
+       </li></ul>
+
+       <section id="hopital-sec">
+        <p class="question-one">Vous êtes le propriétaire d'un hôpital privé au début de la pandémie de COVID-19. Les cas commencent à augmenter rapidement, et les ressources deviennent de plus en plus limitées. Vous devez gérer les lits, le personnel, les équipements de protection, tout en veillant à la sécurité et au bien-être de vos employés. Allez-vous privilégier le profit, ou le bien-être des patients et du personnel ?</p>
+        <div class="choix-container-one button-container">
+          <button class="button-ch-1 choix-btn">Maximiser les profits en augmentant les coûts des soins</button>
+          <button class="button-ch-2 choix-btn">Prioriser le bien-être des patients et du personnel</button>
+         </div>
+         <div class="message-ch-1 message">
+          <div class="message-ch-1-content message-content">
+            <p>Vous décidez d’augmenter les coûts des soins pour les patients atteints de COVID-19. Les tests, les traitements et les équipements de protection sont facturés à des tarifs plus élevés. Les profits montent en flèche, mais les critiques aussi.</p>
+           <button  onclick="closeOverlay('message-ch-1')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-2 message">
+          <div class="message-ch-2-content message-content">
+            <p>Vous décidez de prioriser la sécurité du personnel et le bien-être des patients. Vous limitez les admissions pour éviter la surcharge et procurez des équipements de protection supplémentaires au personnel.</p>
+           <button  onclick="closeOverlay('message-ch-2')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-one">Les patients affluent malgré les prix élevés, mais le personnel est épuisé et de plus en plus de voix dénoncent vos pratiques. Que faites-vous ?</p>
+         <div class="choix-container-two-one button-container">
+          <button class="button-ch-211 choix-btn">Continuer à augmenter les prix</button>
+          <button class="button-ch-212 choix-btn">Réduire les prix et offrir des soins gratuits pour les plus démunis</button>
+         </div>
+         <div class="message-ch-211 message">
+          <div class="message-ch-211-content message-content">
+            <p>Vous continuez à augmenter les prix, en espérant maximiser les profits avant que la situation ne s'aggrave. Les profits continuent de croître.</p>
+           <button  onclick="closeOverlay('message-ch-211')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-212 message">
+          <div class="message-ch-212-content message-content">
+            <p>Vous décidez de réduire les prix et d’offrir des soins gratuits pour les patients les plus démunis. Vos bénéfices diminuent, mais la réaction publique est positive.</p>
+           <button  onclick="closeOverlay('message-ch-212')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-two">Le personnel est satisfait, mais l'hôpital n'est pas rentable, et les ressources commencent à manquer. Que faites-vous ?</p>
+         <div class="choix-container-two-two button-container">
+          <button class="button-ch-221 choix-btn">Demander de l'aide au gouvernement et aux ONG</button>
+          <button class="button-ch-222 choix-btn">Réduire les salaires des cadres supérieurs et des dirigeants</button>
+         </div>
+         <div class="message-ch-221 message">
+          <div class="message-ch-221-content message-content">
+            <p>Vous sollicitez l’aide du gouvernement et des organisations non gouvernementales pour obtenir des ressources supplémentaires. Vous espérez ainsi continuer à offrir des soins de qualité.</p>
+           <button  onclick="closeOverlay('message-ch-221')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-222 message">
+          <div class="message-ch-222-content message-content">
+            <p>Vous réduisez les salaires des cadres supérieurs et des dirigeants pour réallouer les fonds au personnel médical et aux ressources nécessaires. Certains cadres sont mécontents, mais le moral du personnel soignant augmente.</p>
+           <button  onclick="closeOverlay('message-ch-222')">➡</button>
+          </div>
+         </div>
+         <p class="final1">Les médias et le public s’insurgent contre vous. Les manifestations et les critiques fusent. La réputation de votre hôpital est détruite, et vous faites face à des enquêtes gouvernementales.</p>
+         <p class="final2">Les critiques se calment, et l'hôpital est reconnu pour ses efforts pendant la crise. Vous obtenez des subventions gouvernementales pour soutenir vos activités.</p>
+         <p class="final3">Les aides arrivent, mais insuffisamment. L'hôpital survit, mais vous devez faire des choix difficiles quant aux patients à traiter en priorité.</p>
+         <p class="final4">L'hôpital devient un exemple de gestion éthique pendant la crise. Votre décision renforce la cohésion de l’équipe et améliore la réputation de l’hôpital, mais les difficultés financières persistent.</p>
+         <div class="choix-container-final button-container">
+          <button class="covid choix-btn">↻</button>
+          <button class="next choix-btn">➡</button>
+         </div>
+       </section>
+
+       <section id="citoyen-sec">
+        <p class="question-one">Vous êtes un citoyen ordinaire vivant la pandémie de COVID-19. Le gouvernement a mis en place des mesures de confinement strictes pour limiter la propagation du virus. Vous devez décider si vous allez respecter ces règles ou non. Mais ce choix ne concerne pas seulement votre propre sécurité, il affecte aussi celle de toute la communauté. Vos décisions seront influencées par ce que vous pensez que les autres vont faire, et par les conséquences potentielles de chaque action.</p>
+        <div class="choix-container-one button-container">
+          <button class="button-ch-1 choix-btn"> Respecter les règles de confinement</button>
+          <button class="button-ch-2 choix-btn">Ne pas respecter les règles de confinement</button>
+         </div>
+
+       </section>
+    </section>
 </main>
 </body>
 </html>

@@ -15,84 +15,68 @@
     font-size: 300%;
     text-align: center;
 }
-main{
-    display:none;
-}
-
-#titles {
-    position: fixed;
-    display:grid;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-}
-#titles ul{
-    display: grid;
-    gap:2rem;
-}
-#titles li{
-    list-style: none;
-}
-
-#titles button{
-    font-size: 150%;
-    background-color: transparent;
-} 
-#titles-content {
-    background: white;
-    padding: 2rem;
-    top:10%;
-    margin-left: -2rem;
-    height: 17rem;
-    width:40rem;
-    text-align: center;
-    border-radius: 10px;
-}
-
-#grande-depression-btn:hover{
-    box-shadow: 1px 1px 1px black;
-    cursor: pointer;
-}
-#debut p{
+p{
     font-size: 150%;
     width:80%;
-    text-align: center;
+    margin: 1rem auto;
 }
-#debut{
-    display: grid;
-    justify-items: center;
-    align-items: center;
+img{
+    width:7rem;
+    height:7rem;
 }
-#debut img{
-    width:10rem;
-    height:auto;
-}
-#debut ul{
-    display: grid;
-    grid-template-columns: repeat(3,25rem);
+li{
     list-style: none;
 }
-#debut li{
-    display: grid;
-    justify-content: center;
+.button-container{
+    display:grid;
+    justify-items: center;
+    grid-template-columns: 50% 50%;
+    
+}
+.avatars{
+    display:flex;
+    justify-content:space-evenly;
+}
+.avatars li{
+   width:20rem;
+   justify-items: center;
+}
+.avatars li p{
     text-align: center;
 }
-#debut li:hover{
+.avatars li:hover{
     background-color: whitesmoke;
+    cursor: pointer;
+}
+.message-content{
+    display: grid;
+    justify-items: center;
+}
+.choix-btn{
+    width:25rem;
+    background-color: rgb(18, 108, 108);
+    color:white;
+    border: 1px solid white;
+    font-size: 120%;
+    padding-top: 1rem; 
+    padding-bottom: 1rem;
     border-radius: 6px;
+}
+.choix-btn:hover{
+    background-color: rgb(35, 151, 151);
     cursor: pointer;
 
 }
-#invest, #politicien,#ouvrier{
-display:none;
-}
+.message button{
+    background-color: rgb(18, 108, 108);
+    color:white;
+    border: 1px solid white;
+    padding: 0.5em 1rem;
+    border-radius: 4px;
+    cursor: pointer;
 
-@media (max-width:900px){
-    #debut ul{
-        grid-template-columns: 100%;
-    }
+}
+.message button:hover{
+    background-color: rgb(35, 151, 151);
+
 }
