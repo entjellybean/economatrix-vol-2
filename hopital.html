@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="'IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/crises.css">
+     
+    <script src="javascript/app.js" defer> </script>
+    <script src="javascript/crises.js" defer></script>
+
+    <title>quatre crises</title>
+</head>
+<body>
+   
+    <header id="main-header">
+        <a href="index.html" id="logo">EconoMatrix</a>
+        <nav>
+          <ul><li>
+              <a href="savoir.html">Savoir Economique</a>
+          </li>
+              <li>
+                  <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
+              <li>
+                  <a href="aboutus.html">A propos</a>
+              </li>
+          </ul>
+        </nav>
+        <div id="menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </header>
+      <aside id="side-drawer">
+  <nav>
+    <button id="close-menu-button">X</button>
+      <ul>  
+        <li>
+            <a href="savoir.html">Savoir Economique</a>
+        </li>
+            <li>
+                <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
+            <li>
+                <a href="aboutus.html">A propos</a>
+            </li>
+      </ul>
+  </nav>
+      </aside>
+    
+  <main>
+    <section id="hopital-sec"  class="avatar-sec">
+        <p class="question-one">Vous êtes le propriétaire d'un hôpital privé au début de la pandémie de COVID-19. Les cas commencent à augmenter rapidement, et les ressources deviennent de plus en plus limitées. Vous devez gérer les lits, le personnel, les équipements de protection, tout en veillant à la sécurité et au bien-être de vos employés. Allez-vous privilégier le profit, ou le bien-être des patients et du personnel ?</p>
+        <div class="choix-container-one button-container">
+          <button class="button-ch-1 choix-btn">Maximiser les profits en augmentant les coûts des soins</button>
+          <button class="button-ch-2 choix-btn">Prioriser le bien-être des patients et du personnel</button>
+         </div>
+         <div class="message-ch-1 message">
+          <div class="message-ch-1-content message-content">
+            <p>Vous décidez d’augmenter les coûts des soins pour les patients atteints de COVID-19. Les tests, les traitements et les équipements de protection sont facturés à des tarifs plus élevés. Les profits montent en flèche, mais les critiques aussi.</p>
+           <button  onclick="closeOverlay('message-ch-1')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-2 message">
+          <div class="message-ch-2-content message-content">
+            <p>Vous décidez de prioriser la sécurité du personnel et le bien-être des patients. Vous limitez les admissions pour éviter la surcharge et procurez des équipements de protection supplémentaires au personnel.</p>
+           <button  onclick="closeOverlay('message-ch-2')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-one">Les patients affluent malgré les prix élevés, mais le personnel est épuisé et de plus en plus de voix dénoncent vos pratiques. Que faites-vous ?</p>
+         <div class="choix-container-two-one button-container">
+          <button class="button-ch-211 choix-btn">Continuer à augmenter les prix</button>
+          <button class="button-ch-212 choix-btn">Réduire les prix et offrir des soins gratuits pour les plus démunis</button>
+         </div>
+         <div class="message-ch-211 message">
+          <div class="message-ch-211-content message-content">
+            <p>Vous continuez à augmenter les prix, en espérant maximiser les profits avant que la situation ne s'aggrave. Les profits continuent de croître.</p>
+           <button  onclick="closeOverlay('message-ch-211')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-212 message">
+          <div class="message-ch-212-content message-content">
+            <p>Vous décidez de réduire les prix et d’offrir des soins gratuits pour les patients les plus démunis. Vos bénéfices diminuent, mais la réaction publique est positive.</p>
+           <button  onclick="closeOverlay('message-ch-212')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-two">Le personnel est satisfait, mais l'hôpital n'est pas rentable, et les ressources commencent à manquer. Que faites-vous ?</p>
+         <div class="choix-container-two-two button-container">
+          <button class="button-ch-221 choix-btn">Demander de l'aide au gouvernement et aux ONG</button>
+          <button class="button-ch-222 choix-btn">Réduire les salaires des cadres supérieurs et des dirigeants</button>
+         </div>
+         <div class="message-ch-221 message">
+          <div class="message-ch-221-content message-content">
+            <p>Vous sollicitez l’aide du gouvernement et des organisations non gouvernementales pour obtenir des ressources supplémentaires. Vous espérez ainsi continuer à offrir des soins de qualité.</p>
+           <button  onclick="closeOverlay('message-ch-221')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-222 message">
+          <div class="message-ch-222-content message-content">
+            <p>Vous réduisez les salaires des cadres supérieurs et des dirigeants pour réallouer les fonds au personnel médical et aux ressources nécessaires. Certains cadres sont mécontents, mais le moral du personnel soignant augmente.</p>
+           <button  onclick="closeOverlay('message-ch-222')">➡</button>
+          </div>
+         </div>
+         <p class="final1 final">Les médias et le public s’insurgent contre vous. Les manifestations et les critiques fusent. La réputation de votre hôpital est détruite, et vous faites face à des enquêtes gouvernementales.</p>
+         <p class="final2 final">Les critiques se calment, et l'hôpital est reconnu pour ses efforts pendant la crise. Vous obtenez des subventions gouvernementales pour soutenir vos activités.</p>
+         <p class="final3 final">Les aides arrivent, mais insuffisamment. L'hôpital survit, mais vous devez faire des choix difficiles quant aux patients à traiter en priorité.</p>
+         <p class="final4 final">L'hôpital devient un exemple de gestion éthique pendant la crise. Votre décision renforce la cohésion de l’équipe et améliore la réputation de l’hôpital, mais les difficultés financières persistent.</p>
+         <div class="choix-container-final button-container">
+          <button onclick="toggleSection('grande-depression', 'hopital-sec')" class="covid choix-btn">↻</button>
+          <button  onclick="toggleSection('covid', 'hopital-sec')" class="next choix-btn">➡</button>
+         </div>
+       </section>
+   
+</main>
+</body>
+</html>

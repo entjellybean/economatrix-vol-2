@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="'IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/crises.css">
+     
+    <script src="javascript/app.js" defer> </script>
+    <script src="javascript/crises.js" defer></script>
+
+    <title>quatre crises</title>
+</head>
+<body>
+   
+    <header id="main-header">
+        <a href="index.html" id="logo">EconoMatrix</a>
+        <nav>
+          <ul><li>
+              <a href="savoir.html">Savoir Economique</a>
+          </li>
+              <li>
+                  <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
+              <li>
+                  <a href="aboutus.html">A propos</a>
+              </li>
+          </ul>
+        </nav>
+        <div id="menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </header>
+      <aside id="side-drawer">
+  <nav>
+    <button id="close-menu-button">X</button>
+      <ul>  
+        <li>
+            <a href="savoir.html">Savoir Economique</a>
+        </li>
+            <li>
+                <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
+            <li>
+                <a href="aboutus.html">A propos</a>
+            </li>
+      </ul>
+  </nav>
+      </aside>
+    
+  <main>
+    <section id="invest-sec" class="avatar-sec">
+        <p class="question-one">Le marché boursier est en pleine effervescence. Les gains sont rapides et les possibilités infinies. Vous avez investi massivement, mais la question reste : jusqu'où la vague de prospérité ira-t-elle ?</p>
+        <div class="choix-container-one button-container">
+         <button onclick="toggleClass('message-ch-1', 'choix-container-one');closeOverlay('question-one')"
+         class="button-ch-1 choix-btn">Spéculer davantage en empruntant auprès des banques</button>
+         <button  onclick="toggleClass('message-ch-2', 'choix-container-one');closeOverlay('question-one')"
+         class="button-ch-2 choix-btn">Rester prudent et diversifier ses investissements</button>
+        </div>
+        <div class="message-ch-1 message">
+         <div class="message-ch-1-content message-content">
+          <p>Vous décidez d'emprunter encore plus d'argent pour acheter des actions. Votre portefeuille grimpe rapidement, et les banques vous considèrent comme un client en or. Mais attention, la chute pourrait être brutale.</p>
+          <button  onclick="toggleClass('question-two-one', 'message-ch-1');openOverlay('choix-container-two-one')">➡</button>
+         </div>
+        </div>
+        <div class="message-ch-2 message">
+         <div class="message-ch-2-content message-content">
+          <p>Vous décidez de diversifier vos investissements dans l'immobilier et l'agriculture. Votre portefeuille croît plus lentement, mais vous vous sentez plus serein face aux fluctuations du marché.</p>
+          <button  onclick="toggleClass('question-two-two', 'message-ch-2');openOverlay('choix-container-two-two')">➡</button>
+         </div>
+        </div>
+        <p class="question-two-one">Les signes d’instabilité commencent à apparaître. Les rumeurs de bulle spéculative se multiplient. Que faites-vous ?</p>
+        <div class="choix-container-two-one button-container">
+         <button onclick="toggleClass('message-ch-211', 'choix-container-two-one');closeOverlay('question-two-one')"
+         class="button-ch-211 choix-btn">Doubler la mise</button>
+         <button onclick="toggleClass('message-ch-212', 'choix-container-two-one');closeOverlay('question-two-one')"
+         class="button-ch-212 choix-btn">Vendre certaines actions</button>
+        </div>
+        <div class="message-ch-211 message">
+         <div class="message-ch-211-content message-content">
+           <p>Vous empruntez encore plus pour profiter de la montée des actions. Votre fortune semble croître exponentiellement, mais un sentiment d'inquiétude persiste.</p>
+          <button  onclick="toggleClass('final1', 'message-ch-211');openOverlay('choix-container-final')">➡</button>
+         </div>
+        </div>
+        <div class="message-ch-212 message">
+         <div class="message-ch-212-content message-content">
+           <p>Vous vendez une partie de votre portefeuille pour réduire les risques. Les profits sont encore importants, mais vous n'avez pas la même influence qu’avant.</p>
+           <button  onclick="toggleClass('final2', 'message-ch-212');openOverlay('choix-container-final')">➡</button>
+   
+         </div>
+        </div>
+        <p class="question-two-two">Le marché commence à montrer des signes de faiblesse, mais vos actifs sont plus résilients. Que faites-vous ?</p>
+        <div class="choix-container-two-two button-container">
+         <button onclick="toggleClass('message-ch-221', 'choix-container-two-two');closeOverlay('question-two-two')"
+         class="button-ch-221 choix-btn">Se retirer du marché</button>
+         <button onclick="toggleClass('message-ch-222', 'choix-container-two-two');closeOverlay('question-two-two')"
+         class="button-ch-222 choix-btn">Reprendre le risque</button>
+        </div>
+        <div class="message-ch-221 message">
+         <div class="message-ch-221-content message-content">
+           <p>Vous liquidez toutes vos positions en actions et investissez dans des valeurs refuges comme l’or. Les autres investisseurs vous regardent avec perplexité.</p>
+           <button  onclick="toggleClass('final3', 'message-ch-221');openOverlay('choix-container-final')">➡</button>
+         </div>
+        </div>
+        <div class="message-ch-222 message">
+         <div class="message-ch-222-content message-content">
+           <p>Vous décidez de reprendre des risques en achetant de nouvelles actions. Vous espérez que le marché se rétablira bientôt.</p>
+           <button  onclick="toggleClass('final4', 'message-ch-222');openOverlay('choix-container-final')">➡</button>
+         </div>
+        </div>
+        <p class="final1 final">Le krach frappe de plein fouet. Votre portefeuille perd presque toute sa valeur en une journée. Vous êtes endetté jusqu’au cou et les banques exigent leur dû. C'est la ruine.</p>
+        <p class="final2 final">Le marché s'effondre, mais vos pertes sont limitées. Vous avez sauvé ce qui pouvait l'être, mais votre avenir financier reste incertain.</p>
+        <p class="final3 final">Le krach arrive et vous n’avez pas tout perdu, mais l’économie plonge, et même vos valeurs refuges en pâtissent. Votre sécurité est relative.</p>
+        <p class="final4 final">Le krach anéantit vos espoirs. Votre portefeuille s'effondre. Vous réalisez trop tard que vous auriez dû rester prudent.</p>
+        <div class="choix-container-final button-container">
+            <a href="QuatreCrisesJeux.html"><button class="grand choix-btn">↻</button></a>
+        <a href="choc-petrolier.html"><button class="next choix-btn">➡</button></a>
+        </div>
+       </section>
+   
+
+   
+</main>
+</body>
+</html>

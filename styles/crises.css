@@ -38,9 +38,13 @@ li{
     justify-content:space-evenly;
     margin-top: 2rem;
 }
+#avatars a{
+    color: black;
+}
 #avatars li{
    width:20rem;
    justify-items: center;
+   display: grid;
 }
 #avatars li p{
     text-align: center;
@@ -48,6 +52,9 @@ li{
 #avatars li:hover{
     background-color: whitesmoke;
     cursor: pointer;
+}
+button a{
+    color:white;
 }
 .message-content{
     justify-items: center;
@@ -81,9 +88,7 @@ li{
 button:hover{
     cursor: pointer;
 }
-#choc-petrolier, #crise-immobilier, #covid{
-    display:none;
-}
+
 
 .message{
     display: none;
@@ -96,15 +101,5 @@ button:hover{
 }
 .choix-container-one{
 display:grid;}
-.avatar-sec {
-    display: none; /* Start with the avatar sections hidden */
-}
 
 
-#invest-sec, #poli-sec, #ouvrier-sec {
-    display: none;
-}
-
-#invest-sec.active, #poli-sec.active, #ouvrier-sec.active {
-    display: grid;
-}

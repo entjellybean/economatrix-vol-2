@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="'IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/crises.css">
+     
+    <script src="javascript/app.js" defer> </script>
+    <script src="javascript/crises.js" defer></script>
+
+    <title>quatre crises</title>
+</head>
+<body>
+   
+    <header id="main-header">
+        <a href="index.html" id="logo">EconoMatrix</a>
+        <nav>
+          <ul><li>
+              <a href="savoir.html">Savoir Economique</a>
+          </li>
+              <li>
+                  <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
+              <li>
+                  <a href="aboutus.html">A propos</a>
+              </li>
+          </ul>
+        </nav>
+        <div id="menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </header>
+      <aside id="side-drawer">
+  <nav>
+    <button id="close-menu-button">X</button>
+      <ul>  
+        <li>
+            <a href="savoir.html">Savoir Economique</a>
+        </li>
+            <li>
+                <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>            
+            <li>
+                <a href="aboutus.html">A propos</a>
+            </li>
+      </ul>
+  </nav>
+      </aside>
+    
+  <main>
+    <section id="agent-sec"  class="avatar-sec">
+        <p class="question-one">Vous êtes un agent immobilier prospère, profitant de la flambée des prix de l’immobilier. Les maisons se vendent comme des petits pains, et les commissions ne cessent d’augmenter. Mais vous sentez que quelque chose ne va pas. Les prix sont trop élevés, et les clients commencent à avoir du mal à obtenir des crédits. Allez-vous profiter de la bulle tant qu’elle existe, ou vous préparer à son éclatement ?</p>
+        <div class="choix-container-one button-container">
+          <button class="button-ch-1 choix-btn"> Encourager l'achat de biens immobiliers coûteux</button>
+          <button class="button-ch-2 choix-btn">Alerter vos clients sur les risques du marché</button>
+         </div>
+         <div class="message-ch-1 message">
+          <div class="message-ch-1-content message-content">
+            <p>Vous encouragez vos clients à acheter des propriétés de plus en plus chères, même s’ils doivent emprunter au maximum de leurs capacités. Les commissions sont énormes, et vous accumulez des profits records.</p>
+           <button  onclick="closeOverlay('message-ch-1')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-2 message">
+          <div class="message-ch-2-content message-content">
+            <p>Vous commencez à alerter vos clients sur la surévaluation des prix immobiliers et les risques de l’endettement. Certains vous écoutent, mais d’autres vous tournent le dos.</p>
+           <button  onclick="closeOverlay('message-ch-2')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-one">Les prix continuent de grimper, mais les ventes commencent à ralentir. Certains clients peinent à payer leurs mensualités. Que faites-vous ?</p>
+     <div class="choix-container-two-one button-container">
+      <button class="button-ch-211 choix-btn">Continuer à vendre des biens chers, coûte que coûte</button>
+      <button class="button-ch-212 choix-btn">Se concentrer sur les biens abordables</button>
+     </div>
+     <div class="message-ch-211 message">
+      <div class="message-ch-211-content message-content">
+        <p>Vous continuez à vendre des maisons coûteuses, convaincu que le marché va se stabiliser. Vos profits continuent d’augmenter.</p>
+       <button  onclick="closeOverlay('message-ch-211')">➡</button>
+      </div>
+     </div>
+     <div class="message-ch-212 message">
+      <div class="message-ch-212-content message-content">
+        <p>Vous commencez à orienter vos clients vers des maisons plus abordables. Vos commissions diminuent, mais vos clients sont plus satisfaits.</p>
+       <button  onclick="closeOverlay('message-ch-212')">➡</button>
+      </div>
+     </div>
+     <p class="question-two-two">Le marché semble encore solide, et vos avertissements passent pour du pessimisme. Vous perdez des clients au profit d'agents plus optimistes. Que faites-vous ?</p>
+     <div class="choix-container-two-two button-container">
+      <button class="button-ch-221 choix-btn">Revenir à la promotion des ventes comme avant</button>
+      <button class="button-ch-222 choix-btn">Maintenir votre position prudente</button>
+     </div>
+     <div class="message-ch-221 message">
+      <div class="message-ch-221-content message-content">
+        <p>Vous abandonnez vos mises en garde et recommencez à promouvoir des ventes. Les clients affluent, et vos profits augmentent de nouveau.</p>
+       <button  onclick="closeOverlay('message-ch-221')">➡</button>
+      </div>
+     </div>
+     <div class="message-ch-222 message">
+      <div class="message-ch-222-content message-content">
+        <p>Vous maintenez vos avertissements et vous vous concentrez sur les ventes prudentes. Vous perdez des clients, mais gardez votre intégrité.</p>
+       <button  onclick="closeOverlay('message-ch-222')">➡</button>
+      </div>
+     </div>
+     <p class="final1 final">Le marché s’effondre. Les propriétés que vous avez vendues perdent de leur valeur, et les clients vous accusent de les avoir trompés. Votre réputation est détruite, et votre entreprise est en faillite.</p>
+     <p class="final2 final">Le marché s'effondre, mais vos clients sont moins touchés par la crise. Votre entreprise survit, mais à un prix : vos revenus ont chuté de manière significative.</p>
+     <p class="final3 final">Le marché s'effondre peu après. Vos clients se sentent trahis, et votre réputation est entachée. Vous luttez pour maintenir votre entreprise à flot.</p>
+     <p class="final4 final">Le marché s’effondre, et beaucoup d’agents immobiliers font faillite. Vous avez moins de clients, mais une réputation intacte. Votre entreprise se maintient malgré la tempête.</p>
+     <div class="choix-container-final button-container">
+        <a href="crise-immobilier.html"><button class="grand choix-btn">↻</button></a>
+        <a href="covid.html"><button class="next choix-btn">➡</button></a>
+     </div>
+       </section>
+   
+</main>
+</body>
+</html>
