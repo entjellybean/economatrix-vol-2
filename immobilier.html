@@ -53,53 +53,53 @@
     <section id="agent-sec"  class="avatar-sec">
         <p class="question-one">Vous êtes un agent immobilier prospère, profitant de la flambée des prix de l’immobilier. Les maisons se vendent comme des petits pains, et les commissions ne cessent d’augmenter. Mais vous sentez que quelque chose ne va pas. Les prix sont trop élevés, et les clients commencent à avoir du mal à obtenir des crédits. Allez-vous profiter de la bulle tant qu’elle existe, ou vous préparer à son éclatement ?</p>
         <div class="choix-container-one button-container">
-          <button class="button-ch-1 choix-btn"> Encourager l'achat de biens immobiliers coûteux</button>
-          <button class="button-ch-2 choix-btn">Alerter vos clients sur les risques du marché</button>
+          <button onclick="toggleClass('message-ch-1', 'choix-container-one');closeOverlay('question-one')" class="button-ch-1 choix-btn"> Encourager l'achat de biens immobiliers coûteux</button>
+          <button onclick="toggleClass('message-ch-2', 'choix-container-one');closeOverlay('question-one')" class="button-ch-2 choix-btn">Alerter vos clients sur les risques du marché</button>
          </div>
          <div class="message-ch-1 message">
           <div class="message-ch-1-content message-content">
             <p>Vous encouragez vos clients à acheter des propriétés de plus en plus chères, même s’ils doivent emprunter au maximum de leurs capacités. Les commissions sont énormes, et vous accumulez des profits records.</p>
-           <button  onclick="closeOverlay('message-ch-1')">➡</button>
+            <button  onclick="toggleClass('question-two-one', 'message-ch-1');openOverlay('choix-container-two-one')">➡</button>
           </div>
          </div>
          <div class="message-ch-2 message">
           <div class="message-ch-2-content message-content">
             <p>Vous commencez à alerter vos clients sur la surévaluation des prix immobiliers et les risques de l’endettement. Certains vous écoutent, mais d’autres vous tournent le dos.</p>
-           <button  onclick="closeOverlay('message-ch-2')">➡</button>
+            <button  onclick="toggleClass('question-two-two', 'message-ch-2');openOverlay('choix-container-two-two')">➡</button>
           </div>
          </div>
          <p class="question-two-one">Les prix continuent de grimper, mais les ventes commencent à ralentir. Certains clients peinent à payer leurs mensualités. Que faites-vous ?</p>
      <div class="choix-container-two-one button-container">
-      <button class="button-ch-211 choix-btn">Continuer à vendre des biens chers, coûte que coûte</button>
-      <button class="button-ch-212 choix-btn">Se concentrer sur les biens abordables</button>
+      <button onclick="toggleClass('message-ch-211', 'choix-container-two-one');closeOverlay('question-two-one')" class="button-ch-211 choix-btn">Continuer à vendre des biens chers, coûte que coûte</button>
+      <button onclick="toggleClass('message-ch-212', 'choix-container-two-one');closeOverlay('question-two-one')" class="button-ch-212 choix-btn">Se concentrer sur les biens abordables</button>
      </div>
      <div class="message-ch-211 message">
       <div class="message-ch-211-content message-content">
         <p>Vous continuez à vendre des maisons coûteuses, convaincu que le marché va se stabiliser. Vos profits continuent d’augmenter.</p>
-       <button  onclick="closeOverlay('message-ch-211')">➡</button>
+        <button  onclick="toggleClass('final1', 'message-ch-211');openOverlay('choix-container-final')">➡</button>
       </div>
      </div>
      <div class="message-ch-212 message">
       <div class="message-ch-212-content message-content">
         <p>Vous commencez à orienter vos clients vers des maisons plus abordables. Vos commissions diminuent, mais vos clients sont plus satisfaits.</p>
-       <button  onclick="closeOverlay('message-ch-212')">➡</button>
+        <button  onclick="toggleClass('final2', 'message-ch-212');openOverlay('choix-container-final')">➡</button>
       </div>
      </div>
      <p class="question-two-two">Le marché semble encore solide, et vos avertissements passent pour du pessimisme. Vous perdez des clients au profit d'agents plus optimistes. Que faites-vous ?</p>
      <div class="choix-container-two-two button-container">
-      <button class="button-ch-221 choix-btn">Revenir à la promotion des ventes comme avant</button>
-      <button class="button-ch-222 choix-btn">Maintenir votre position prudente</button>
+      <button onclick="toggleClass('message-ch-221', 'choix-container-two-two');closeOverlay('question-two-two')" class="button-ch-221 choix-btn">Revenir à la promotion des ventes comme avant</button>
+      <button onclick="toggleClass('message-ch-222', 'choix-container-two-two');closeOverlay('question-two-two')" class="button-ch-222 choix-btn">Maintenir votre position prudente</button>
      </div>
      <div class="message-ch-221 message">
       <div class="message-ch-221-content message-content">
         <p>Vous abandonnez vos mises en garde et recommencez à promouvoir des ventes. Les clients affluent, et vos profits augmentent de nouveau.</p>
-       <button  onclick="closeOverlay('message-ch-221')">➡</button>
+        <button  onclick="toggleClass('final3', 'message-ch-221');openOverlay('choix-container-final')">➡</button>
       </div>
      </div>
      <div class="message-ch-222 message">
       <div class="message-ch-222-content message-content">
         <p>Vous maintenez vos avertissements et vous vous concentrez sur les ventes prudentes. Vous perdez des clients, mais gardez votre intégrité.</p>
-       <button  onclick="closeOverlay('message-ch-222')">➡</button>
+        <button  onclick="toggleClass('final4', 'message-ch-222');openOverlay('choix-container-final')">➡</button>
       </div>
      </div>
      <p class="final1 final">Le marché s’effondre. Les propriétés que vous avez vendues perdent de leur valeur, et les clients vous accusent de les avoir trompés. Votre réputation est détruite, et votre entreprise est en faillite.</p>
