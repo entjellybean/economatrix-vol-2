@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="'IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/general.css">
+    <link href="/styles/savoir.css" rel="stylesheet">
+    <script src="/javascript/app.js" defer> </script>
+    <title>Savoir Economique</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main>
+
+<section id="carousel">
+    <div class="carousel-container">
+        <div class="carousel-slide">
+          <a href="/laGrandeDepressionInfo"><img src="images/depression.jpg" id="Image1"></a>
+          <a href="/leChocPetrolierInfo"><img src="images/petrol.png" id="Image2"></a>
+          <a href="/criseSubprimeInfo"><img src="images/subprime.png" id="Image3"></a>
+          <a href="/criseSannitaireInfo"><img src="images/covid.png" id="Image4"></a>
+         
+        </div>
+        <button id="prevBtn">‹</button>
+        <button id="nextBtn">›</button>
+      </div>
+      
+ 
+</section>
+<section id="highlight">
+        <li><a href="/laGrandeDepressionInfo">Grande Dépression</a></li>
+        <li><a href="/leChocPetrolierInfo">Premier choc pétrolier</a></li>
+        <li><a href="/criseSubprimeInfo">Crise des subprimes</a></li>
+        <li><a href="/criseSannitaireInfo">Crise COVID-19</a></li>
+        <li><a href="/nashInfo">Equilibre de Nash</a></li>
+        <li><a href="/stackelbergInfo">Duopole de Stackelberg </a></li>
+        <li><a href="/prisonerInfo">Dilemme du prisonnier</a></li>
+        <li><a href="/cournotInfo">Duopole de Cournot</a></li>
+        <li><a href="/bertrandInfo">Duopole de Bertrand</a></li>
+</section>
+</main>
+
+<footer>
+
+    </footer>
+</body>
+</html>

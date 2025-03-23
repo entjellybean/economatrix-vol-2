@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="'IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/crises.css">
+     
+    <script src="javascript/app.js" defer> </script>
+    <script src="javascript/crises.js" defer></script>
+
+    <title>bertrand</title>
+</head>
+<body>
+   
+  <%- include('partials/header') %>
+
+    
+  <main>
+    <section id="choc-petrolier">
+      
+        <aside class="titles">
+          <div class="titles-content">
+          <ul>
+          <a href="/QuatreCrisesJeux"><li><button style="background-color: rgb(18, 108, 108);">Grande Depression</button></li></a>
+          <li><button onclick="closeOverlay('titles')" id="choc-petrolier-btn" style="background-color: rgb(18, 108, 108);">Choc Petrolier</button></li>
+          <li><button>Crise Immobilier</button></li>
+          <li><button>Crise Sanitaire</button></li>
+        </ul></div>
+         </aside>
+         <section id="hero">
+        <h1>Quatre Crises</h1>
+        <a href="/leChocPetrolierInfo"> <button class="btn">En savoir plus</button></a>
+      </section>
+      <p class="description">Le joueur est plongé dans l'euphorie des années 1960 et du début des années 1970, une période de prospérité et de croissance économique. Cependant, cette prospérité repose sur une base fragile : la dépendance excessive au pétrole étranger. Les tensions géopolitiques montent au Moyen-Orient, et le spectre d’une crise énergétique plane sur l’Occident. Le joueur incarnera un personnage clé dans ce contexte et devra faire des choix qui influenceront le déroulement des événements. Saurez-vous naviguer à travers cette période tumultueuse et éviter la catastrophe ?
+      </p>
+      <ul id="avatars">
+     <a href="/dirig"> <li>
+        <p>Dirigeant Industriel</p>
+        <img src="images/dirig.png">
+       </li></a>
+     <a href="/poli-occid">  <li>
+         <p>Politicien Occidental</p>
+         <img src="images/poliOccident.png">
+       </li></a></ul></section>
+</main>
+</body>
+</html>

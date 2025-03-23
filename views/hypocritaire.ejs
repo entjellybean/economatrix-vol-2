@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="'IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/crises.css">
+     
+    <script src="javascript/app.js" defer> </script>
+    <script src="javascript/crises.js" defer></script>
+
+    <title>quatre crises</title>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+    <section id="preteur-sec"  class="avatar-sec">
+        <p class="question-one">En tant que directeur d’une institution de crédit hypothécaire, vous avez le pouvoir de décider à qui prêter de l’argent. La demande de prêts immobiliers est en forte croissance, et les profits rapides semblent à portée de main. Mais vous savez que beaucoup de ces prêts sont risqués. Allez-vous maximiser les profits immédiats, ou penser à la stabilité à long terme ?</p>
+        <div class="choix-container-one button-container">
+          <button onclick="toggleClass('message-ch-1', 'choix-container-one');closeOverlay('question-one')" class="button-ch-1 choix-btn">Accorder des prêts subprimes à haut risque</button>
+          <button onclick="toggleClass('message-ch-2', 'choix-container-one');closeOverlay('question-one')" class="button-ch-2 choix-btn"> Privilégier les prêts à faible risque et les clients solvables</button>
+         </div>
+         <div class="message-ch-1 message">
+          <div class="message-ch-1-content message-content">
+            <p>Vous décidez de vous concentrer sur les prêts subprimes. Les clients avec de faibles revenus ou un historique de crédit instable se bousculent pour obtenir un prêt. Les commissions augmentent, et les bénéfices montent en flèche.</p>
+           <button   onclick="toggleClass('question-two-one', 'message-ch-1');openOverlay('choix-container-two-one')"➡</button>
+          </div>
+         </div>
+         <div class="message-ch-2 message">
+          <div class="message-ch-2-content message-content">
+            <p>Vous décidez de limiter les prêts aux clients solvables avec un historique de crédit solide. Les bénéfices sont plus faibles, mais votre portefeuille de prêts reste sain.</p>
+            <button  onclick="toggleClass('question-two-two', 'message-ch-2');openOverlay('choix-container-two-two')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-one">Les ventes de maisons atteignent des sommets, mais les taux de défaut de paiement commencent à augmenter. Les signes de surchauffe du marché se multiplient. Que faites-vous ?</p>
+         <div class="choix-container-two-one button-container">
+          <button onclick="toggleClass('message-ch-211', 'choix-container-two-one');closeOverlay('question-two-one')" class="button-ch-211 choix-btn">Titrisations massives pour revendre les prêts</button>
+          <button onclick="toggleClass('message-ch-212', 'choix-container-two-one');closeOverlay('question-two-one')" class="button-ch-212 choix-btn">Cesser de prêter et se retirer du marché subprime</button>
+         </div>
+         <div class="message-ch-211 message">
+          <div class="message-ch-211-content message-content">
+            <p>Vous empaquetez les prêts hypothécaires en titres financiers complexes que vous revendez sur le marché. Les risques sont transférés à d’autres investisseurs, et vous continuez à réaliser des profits élevés.</p>
+            <button  onclick="toggleClass('final1', 'message-ch-211');openOverlay('choix-container-final')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-212 message">
+          <div class="message-ch-212-content message-content">
+            <p>Vous arrêtez les prêts subprimes et vous retirez du marché. Vos concurrents se moquent de votre prudence, mais vous sentez que le risque est trop grand.</p>
+            <button  onclick="toggleClass('final2', 'message-ch-212');openOverlay('choix-container-final')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-two">Vos concurrents engrangent des bénéfices records avec les subprimes. Vos actionnaires commencent à se plaindre. Que faites-vous ?</p>
+         <div class="choix-container-two-two button-container">
+          <button onclick="toggleClass('message-ch-221', 'choix-container-two-two');closeOverlay('question-two-two')" class="button-ch-221 choix-btn">Céder à la pression et commencer à accorder des prêts subprimes</button>
+          <button onclick="toggleClass('message-ch-222', 'choix-container-two-two');closeOverlay('question-two-two')" class="button-ch-222 choix-btn">Maintenir une politique prudente malgré la pression</button>
+         </div>
+         <div class="message-ch-221 message">
+          <div class="message-ch-221-content message-content">
+            <p>Vous cédiez à la pression et commencez à  prêter à des clients moins solvables. Les profits augmentent, mais vous sentez une tension croissante.</p>
+            <button  onclick="toggleClass('final3', 'message-ch-221');openOverlay('choix-container-final')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-222 message">
+          <div class="message-ch-222-content message-content">
+            <p>Vous résistez à la tentation et continuez à prêter de manière prudente. Vos concurrents vous dépassent, mais vous gardez la tête froide.</p>
+            <button  onclick="toggleClass('final4', 'message-ch-222');openOverlay('choix-container-final')">➡</button>
+          </div>
+         </div>
+         <p class="final1 final">Le marché des subprimes s’effondre. Les titres deviennent toxiques, et vous êtes pris dans une vague de faillites. Votre institution est accusée d’avoir alimenté la crise.</p>
+     <p class="final2 final">Vous évitez le pire de la crise, mais l'effondrement du marché immobilier affecte tout de même vos activités. Vous survivez, mais à un coût élevé pour vos profits.</p>
+     <p class="final3 final">Le marché s'effondre, et vos nouveaux prêts deviennent rapidement des actifs toxiques. Votre institution est en difficulté, et vous luttez pour éviter la faillite.</p>
+     <p class="final4 final">Le krach des subprimes emporte beaucoup de vos concurrents. Vous survivez à la crise avec un minimum de dégâts, et votre réputation est renforcée.</p>
+     <div class="choix-container-final button-container">
+        <a href="/crise-immobilier"><button class="grand choix-btn">↻</button></a>
+        <a href="/covid"><button class="next choix-btn">➡</button></a>
+     </div>
+       </section>
+   
+</main>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<header id="main-header">
+    <a href="/" id="logo">EconoMatrix</a>
+    <nav>
+      <ul><li>
+          <a href="/savoir">Savoir Economique</a>
+      </li>
+          <li>
+              <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a></li>            
+          <li>
+              <a href="/aboutus">A propos</a>
+          </li>
+          <li>
+            <% if (typeof username !== 'undefined') { %>
+              <span style="color: white;font-size: 1.75rem;"><%= username %></span>
+            <% } else { %>
+              <a href="/connecter">Se connecter</a>
+            <% } %>
+          </li>
+          
+      </ul>
+    </nav>
+    <div id="menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+  </header>
+  <aside id="side-drawer">
+<nav>
+<button id="close-menu-button">X</button>
+  <ul>
+      
+      <li>
+          <a href="/savoir">Savoir Economique</a>
+      </li>
+      <li>
+        <a href="mailto:LearnWithEconomatrix@gmail.com?subject=General" >Feedback</a>       </li>
+      <li>
+          <a href="/aboutus">A propos</a>
+      </li>
+      <li>
+        <% if (typeof username !== 'undefined') { %>
+          <span style="color: white;font-size: 1.75rem;"><%= username %></span>
+        <% } else { %>
+          <a href="/connecter">Se connecter</a>
+        <% } %>
+      </li>
+      
+  </ul>
+</nav>
+  </aside>

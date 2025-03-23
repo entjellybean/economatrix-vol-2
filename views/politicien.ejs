@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="'IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/crises.css">
+     
+    <script src="javascript/app.js" defer> </script>
+    <script src="javascript/crises.js" defer></script>
+
+    <title>quatre crises</title>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+    <section id="poli-sec"  class="avatar-sec">
+      <p class="question-one">Vous êtes au cœur du gouvernement, témoin d’une croissance économique effrénée. Mais cette prospérité repose sur des bases fragiles : la spéculation et le crédit facile. Allez-vous intervenir pour éviter une catastrophe, ou encourager la croissance, quitte à risquer une crise ?</p>
+      <div class="choix-container-one button-container">
+        <button onclick="toggleClass('message-ch-1', 'choix-container-one');closeOverlay('question-one')" class="button-ch-1 choix-btn"> Proposer des lois pour réguler les prêts à risque des banques</button>
+        <button onclick="toggleClass('message-ch-2', 'choix-container-one');closeOverlay('question-one')" class="button-ch-2 choix-btn">Laisser les banques se réguler elles-mêmes</button>
+       </div>
+       <div class="message-ch-1 message">
+        <div class="message-ch-1-content message-content">
+         <p>Vous proposez une législation stricte pour limiter les prêts à risque des banques. Les milieux d'affaires s'opposent fermement à vos initiatives. On vous accuse de freiner l'économie.</p>
+         <button onclick="toggleClass('question-two-one', 'message-ch-1');openOverlay('choix-container-two-one')">➡</button>
+        </div>
+       </div>
+       <div class="message-ch-2 message">
+        <div class="message-ch-2-content message-content">
+         <p>Vous encouragez les banques à continuer de prêter et incitez les citoyens à investir. La croissance se poursuit, et votre popularité atteint des sommets.</p>
+         <button onclick="toggleClass('question-two-two', 'message-ch-2');openOverlay('choix-container-two-two')">➡</button>
+        </div>
+       </div>
+       <p class="question-two-one">Les lois passent, mais affaiblies. Les banques continuent de prêter, et les tensions montent. Que faites-vous ?</p>
+       <div class="choix-container-two-one button-container">
+        <button onclick="toggleClass('message-ch-211', 'choix-container-two-one');closeOverlay('question-two-one')" class="button-ch-211 choix-btn">Renforcer la réglementation</button>
+        <button onclick="toggleClass('message-ch-212', 'choix-container-two-one');closeOverlay('question-two-one')" class="button-ch-212 choix-btn">Laisser les banques se réguler elles-mêmes</button>
+       </div>
+       <div class="message-ch-211 message">
+        <div class="message-ch-211-content message-content">
+          <p>Vous persistez malgré tout et proposez des régulations encore plus strictes. Les oppositions deviennent virulentes, et vous commencez à perdre le soutien politique.</p>
+         <button   onclick="toggleClass('final1', 'message-ch-211');openOverlay('choix-container-final')">➡</button>
+        </div>
+       </div>
+       <div class="message-ch-212 message">
+        <div class="message-ch-212-content message-content">
+          <p>Vous cédez à la pression et retirez vos propositions. Les banques continuent à prêter massivement, et les marchés s’emballent.</p>
+         <button   onclick="toggleClass('final2', 'message-ch-212');openOverlay('choix-container-final')">➡</button>
+        </div>
+       </div>
+       <p class="question-two-two">Les marchés sont surchauffés. Vous commencez à recevoir des avertissements de la part d’économistes inquiets. Que faites-vous ?</p>
+       <div class="choix-container-two-two button-container">
+        <button onclick="toggleClass('message-ch-221', 'choix-container-two-two');closeOverlay('question-two-two')" class="button-ch-221 choix-btn"> Introduire des mesures de régulation tardives</button>
+        <button onclick="toggleClass('message-ch-222', 'choix-container-two-two');closeOverlay('question-two-two')" class="button-ch-222 choix-btn">Continuer sur la voie actuelle</button>
+       </div>
+       <div class="message-ch-221 message">
+        <div class="message-ch-221-content message-content">
+          <p>Face à la montée des risques, vous tentez d'introduire des régulations tardives. Les milieux financiers se rebellent contre vous.</p>
+         <button  onclick="toggleClass('final3', 'message-ch-221');openOverlay('choix-container-final')" onclick="closeOverlay('message-ch-221')">➡</button>
+        </div>
+       </div>
+       <div class="message-ch-222 message">
+        <div class="message-ch-222-content message-content">
+          <p>Vous choisissez de ne rien faire, convaincu que le marché s’auto-régulera. Les signaux d’alerte se multiplient, mais vous restez confiant.</p>
+         <button   onclick="toggleClass('final4', 'message-ch-222');openOverlay('choix-container-final')">➡</button>
+        </div>
+       </div>
+       <p class="final1 final">Vos mesures atténuent le choc, mais l’économie s'effondre tout de même. Vous sauvez le système bancaire, mais la récession plonge le pays dans le chaos.</p>
+     <p class="final2 final">Le krach de 1929 vous frappe de plein fouet. Les banques s’effondrent, et la crise économique est inévitable. Votre carrière politique est en ruine.</p>
+     <p class="final3 final">Vos mesures arrivent trop tard. Le krach dévaste l’économie et votre carrière. Vous vous retrouvez à gérer une crise que vous n’avez pas pu éviter.</p>
+     <p class="final4 final">Le krach arrive, détruisant non seulement l'économie mais aussi votre réputation. Vous réalisez trop tard l’ampleur de la crise que vous avez laissée se développer.</p>
+     <div class="choix-container-final button-container">
+      <a href="/QuatreCrisesJeux"><button class="grand choix-btn">↻</button></a>
+        <a href="/choc-petrolier"><button class="next choix-btn">➡</button></a>
+     </div>
+    </section>
+
+   
+</main>
+</body>
+</html>

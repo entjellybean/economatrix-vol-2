@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link href="styles/savoir.css" rel="stylesheet">
+    <script src="javascript/app.js" defer> </script>
+    <title>Savoir Economique</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main>
+
+<section id="text">
+    <h1>Duopole de Bertrand</h1>
+    <p>Dans un monopole, par définition, il ne peut y avoir de relation entre les firmes, puisqu'il n'y en a qu'une. En concurrence pure et parfaite et en concurrence monopolistique, le nombre d'entreprises fait qu'une firme n'a pas (ou très peu) d'influence sur les autres. La réalité des affaires montre que dans la plupart des secteurs industriels ou de services, les entreprises s'opposent vivement entre elles et mettent en oeuvre des stratégies complexes d'affrontement, d'entente ou de collusion.</p>
+    <h2>Définitions et hypothèses</h2>
+    <p>L'oligopole est un marché sur lequel s'affronte un petit nombre de producteurs. Ainsi, une firme est souvent capable de connaître tous ses concurrents et peut donc tenir compte de leurs stratégies dans ses propres décisions: on dit qu'il y a interdépendance conjecturale. Il s'agit d'une interdépendance fondée sur des vraisemblances. Une telle structure de marché s'explique par l'existence de barrières à l'entrée (différenciation, économies d'échelle, réglementations, avantage absolu de coûts... etc.).
+        Afin de simplifier une réalité très complexe, considérons que l'oligopole ne comporte que deux firmes (A et B) ; cette situation prend le nom de duopole.
+        Nous supposerons que les firmes produisent un bien homogène, afin d'éviter les problèmes liés à la différenciation. On distingue deux types principaux de comportement : l'affrontement et l'entente. Dans le premier cas, les équilibres seront appelés équilibres non coopératifs. Plusieurs modèles très célèbres s'y intéressent ; il s'agit des modèles de Cournot, de Stackelberg et de Bertrand (ce dernier ne sera pas abordé). Dans le second cas, les équilibres seront dits coopératifs. Le modèle du cartel en fournit une parfaite illustration.</p>
+    <h2>Le modèle de Bertrand</h2>
+    <p>
+        Le duopole de Bertrand est un modèle économique qui décrit la concurrence entre deux entreprises produisant des biens homogènes et rivalisant principalement par les prix. 
+        Ce modèle, introduit par le mathématicien Joseph Bertrand en 1883, met en évidence que, dans de telles situations, les entreprises tendent à fixer leurs prix au niveau du coût marginal, 
+        ce qui conduit à une absence de profit économique.
+    </p>
+
+    <h3>Hypothèses principales du modèle de Bertrand :</h3>
+
+    <p><strong>• H1</strong> La demande est contingente, c'est-à-dire qu'elle est dépendante du niveau de prix décidé par l'autre firme.</p>
+
+    <ul>
+        <li>La firme <i>i</i> fixe son prix à <i>P<sub>i</sub></i>. La fonction de demande totale est D(P). Quelle est la demande pour l'entreprise <i>j</i> ?</li>
+    </ul>
+
+    <p style="text-align: center;">
+        D(P) = D(P<sub>j</sub>) si P<sub>j</sub> &lt; P<sub>i</sub> &rarr; j capte toute la demande.
+    </p>
+    <p style="text-align: center;">
+        D(P) = D(P<sub>j</sub>) / 2 si P<sub>j</sub> = P<sub>i</sub> &rarr; i et j se partagent la demande.
+    </p>
+    <p style="text-align: center;">
+        D(P) = 0 si P<sub>j</sub> &gt; P<sub>i</sub> &rarr; j n’a aucune demande.
+    </p>
+
+    <p><strong>• H2</strong> On suppose que toutes les firmes ont assez de capacités de production pour fournir la totalité du marché.</p>
+
+    <p><strong>• H3</strong> La variable stratégique de chacune des firmes sur le marché est le prix.</p>
+
+    <p><strong>• H4</strong> Le bien produit dans la branche est parfaitement homogène (= parfaitement substituable).</p>
+
+    <p><strong>• H5</strong> Chaque firme va chercher à maximiser le profit contingent qu’elle pourrait réaliser dans les circonstances créées par l’un des duopoleurs.</p>
+
+<h2>Paradoxe de Bertrand</h2>
+<p>
+    Le modèle conduit à un résultat paradoxal : bien qu'il n'y ait que deux entreprises sur le marché, 
+    la concurrence par les prix les pousse à fixer des prix égaux au coût marginal. 
+    Ainsi, le marché atteint une situation similaire à celle de la concurrence parfaite, 
+    où les entreprises ne réalisent aucun profit économique. 
+    <strong>(Équilibre de Bertrand-Nash)</strong>
+</p>
+
+<p>
+    À l'équilibre, les deux entreprises fixent un prix égal au coût marginal :
+</p>
+
+<p style="text-align: center;">
+    p<sub>1</sub>* = p<sub>2</sub>* = Cm
+</p>
+
+<p>
+    Dans cette situation, chaque entreprise réalise un profit nul, car :
+</p>
+
+<p style="text-align: center;">
+    &#960;<sub>i</sub> = (Cm - Cm) &times; D<sub>i</sub> = 0
+</p>
+
+
+
+
+<h2>Les principales caractéristiques de l’équilibre coopératif</h2>
+
+
+    <p>
+        À la place de maximiser individuellement leur profit, les entreprises d’un oligopole peuvent décider de maximiser les profits de l’ensemble de la branche.<br>
+        Imaginons que trois firmes A, B et C décident de former un cartel. Dans ce cas, l’oligopole se comporte comme un monopole, qui approvisionne à lui seul la totalité du marché.<br>
+        L’objectif consiste donc à maximiser le profit du cartel :
+    </p>
+
+    <p style="text-align: center;">
+        &#960;<sub>cartel</sub> = RT(Q) - CT<sub>A</sub> - CT<sub>B</sub> - CT<sub>C</sub>
+    </p>
+
+    <p>
+        Il faut donc résoudre le système : (1)
+    </p>
+
+    <p style="text-align: center;">
+        &#8706;&#960;<sub>cartel</sub> / &#8706;q<sub>A</sub> = 0 ; 
+        &#8706;&#960;<sub>cartel</sub> / &#8706;q<sub>B</sub> = 0 ; 
+        &#8706;&#960;<sub>cartel</sub> / &#8706;q<sub>C</sub> = 0
+    </p>
+
+    <p style="text-align: center;">
+        &#8706;RT / &#8706;q<sub>A</sub> - Cm<sub>A</sub> = 0 ; 
+        &#8706;RT / &#8706;q<sub>B</sub> - Cm<sub>B</sub> = 0 ; 
+        &#8706;RT / &#8706;q<sub>C</sub> - Cm<sub>C</sub> = 0
+    </p>
+
+    <p style="text-align: center;">
+        &#8706;RT / &#8706;q<sub>A</sub> = Cm<sub>A</sub> = Cm<sub>B</sub> = Cm<sub>C</sub>
+    </p>
+
+    <p>
+        Or, le prix de vente du produit est identique, quelle que soit la firme qui le produit. Donc, chaque unité fabriquée en plus (unité marginale) rapportera la même recette marginale, quelle que soit la firme qui produit cette unité.<br>
+        Cela nous permet d’écrire que :
+    </p>
+
+    <p style="text-align: center;">
+        &#8706;RT / &#8706;q<sub>A</sub> = &#8706;RT / &#8706;q<sub>B</sub> = &#8706;RT / &#8706;q<sub>C</sub>
+    </p>
+    <p>
+        Cette égalité permet de résoudre le système (1); il vient alors :
+    </p>
+
+    <p style="text-align: center;">
+        Cm<sub>A</sub> = Cm<sub>B</sub> = Cm<sub>C</sub>
+    </p>
+
+    <p>
+        Ainsi, les quantités optimales produites par les firmes sont telles que les coûts marginaux associés à ces quantités soient tous égaux entre eux 
+        (et égaux au coût marginal du cartel pour la quantité globale produite par l'ensemble des entreprises).<br>
+        Le cartel définit des quantités optimales plus faibles et un prix de vente plus fort, par rapport à un oligopole non coopératif.<br>
+        Le respect des « quotas » de production par les entreprises est une des principales sources d'éclatement d'un cartel.
+    </p>
+    <h2>Sources:</h2>
+  <ul>
+    Microéconomie, 2ᵉ édition :
+    <li>Aprahamian, F., Bertrand, A., Besancenot, D., Ferrari, J.-B., & Huynh, K. . Microéconomie : Cours, Méthodes, Exercices corrigés. Collection Grand Amphi Économie, dirigée par Marc Montoussé. Éditions Bréal.</li>
+    Microéconomie, 5ᵉ édition :
+    <li>Médan, P. . Microéconomie : QCM et exercices corrigés, 9 sujets d'examen corrigés, avec rappels de cours. 5ᵉ édition. Éditions Dunod.</li>
+  </ul>
+</section>
+</main>
+
+<footer>
+
+    </footer>
+</body>
+</html>

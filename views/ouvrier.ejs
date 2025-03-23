@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="'IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/crises.css">
+     
+    <script src="javascript/app.js" defer> </script>
+    <script src="javascript/crises.js" defer></script>
+
+    <title>quatre crises</title>
+</head>
+<body>
+   
+  <%- include('partials/header') %>
+
+    
+  <main>
+    <section id="ouvrier-sec"  class="avatar-sec">
+        <p class="question-one">Vous travaillez dur dans une usine de production automobile. Vous voyez les autres autour de vous profiter de la prospérité grâce au crédit facile. Le rêve américain est à portée de main, mais vous hésitez : devez-vous vous lancer dans la consommation, ou rester prudent ?</p>
+        <div class="choix-container-one button-container">
+          <button onclick="toggleClass('message-ch-1', 'choix-container-one');closeOverlay('question-one')" 
+          class="button-ch-1 choix-btn">Profiter des crédits faciles pour acheter une voiture ou une maison</button>
+          <button onclick="toggleClass('message-ch-2', 'choix-container-one');closeOverlay('question-one')" 
+          class="button-ch-2 choix-btn">Mettre de l’argent de côté, inquiet de l’avenir incertain</button>
+         </div>
+         <div class="message-ch-1 message">
+          <div class="message-ch-1-content message-content">
+           <p>Vous décidez d'acheter une voiture flambant neuve à crédit. Vous vous sentez enfin à la hauteur de vos voisins. Les mensualités sont abordables, du moins pour l'instant.</p>
+           <button onclick="toggleClass('question-two-one', 'message-ch-1');openOverlay('choix-container-two-one')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-2 message">
+          <div class="message-ch-2-content message-content">
+           <p>Vous choisissez de ne pas prendre de crédit et d'épargner chaque mois. Vous vous privez de certains biens, mais vous vous sentez plus serein face à l'incertitude.</p>
+           <button onclick="toggleClass('question-two-two', 'message-ch-2');openOverlay('choix-container-two-two')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-one">Votre salaire reste stagnant, mais les mensualités augmentent. La situation économique commence à se détériorer. Que faites-vous ?</p>
+         <div class="choix-container-two-one button-container">
+          <button onclick="toggleClass('message-ch-211', 'choix-container-two-one');closeOverlay('question-two-one')"
+          class="button-ch-211 choix-btn">Contracter un deuxième prêt</button>
+          <button onclick="toggleClass('message-ch-212', 'choix-container-two-one');closeOverlay('question-two-one')"
+          class="button-ch-212 choix-btn">Réduire les dépenses</button>
+         </div>
+         <div class="message-ch-211 message">
+          <div class="message-ch-211-content message-content">
+            <p>Vous décidez d'acheter d'autres biens à crédit pour maintenir votre niveau de vie. Les banques acceptent sans hésiter.</p>
+           <button onclick="toggleClass('final1', 'message-ch-211');openOverlay('choix-container-final')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-212 message">
+          <div class="message-ch-212-content message-content">
+            <p>Vous limitez vos achats et essayez de rembourser vos dettes plus rapidement. Vous vous serrez la ceinture, mais vous vous sentez plus en sécurité.</p>
+           <button onclick="toggleClass('final2', 'message-ch-212');openOverlay('choix-container-final')">➡</button>
+          </div>
+         </div>
+         <p class="question-two-two">Vous voyez les autres dépenser sans compter. La tentation d’investir dans des actions est grande. Que faites-vous ?</p>
+         <div class="choix-container-two-two button-container">
+          <button onclick="toggleClass('message-ch-221', 'choix-container-two-two');closeOverlay('question-two-two')"
+          class="button-ch-221 choix-btn"> Utiliser l’épargne pour investir dans des actions</button>
+          <button onclick="toggleClass('message-ch-222', 'choix-container-two-two');closeOverlay('question-two-two')"
+          class="button-ch-222 choix-btn">Continuer à épargner prudemment</button>
+         </div>
+         <div class="message-ch-221 message">
+          <div class="message-ch-221-content message-content">
+            <p>Vous cédez à la tentation et investissez votre épargne dans des actions, espérant des rendements rapides. Les premiers gains sont prometteurs.</p>
+           <button onclick="toggleClass('final3', 'message-ch-221');openOverlay('choix-container-final')">➡</button>
+          </div>
+         </div>
+         <div class="message-ch-222 message">
+          <div class="message-ch-222-content message-content">
+            <p>Vous restez fidèle à votre plan d'épargne, malgré les opportunités d'investissement. Vous vous concentrez sur la sécurité financière.</p>
+           <button  onclick="toggleClass('final4', 'message-ch-222');openOverlay('choix-container-final')">➡</button>
+          </div>
+         </div>
+         <p class="final1 final">Le krach vous prend par surprise. Vous perdez votre emploi, et vous ne pouvez plus rembourser vos dettes. La banque saisit vos biens. C'est la ruine.</p>
+       <p class="final2 final">Vous perdez votre emploi, mais vous avez réussi à limiter les dégâts financiers. La crise est dure, mais vous tenez bon.</p>
+       <p class="final3 final">Le krach détruit vos investissements en un instant. Vous perdez toutes vos économies. L’avenir s’annonce sombre.</p>
+       <p class="final4 final">Le krach arrive, mais vous avez évité le pire. Vos économies vous permettent de survivre, mais le chômage et la récession rendent la vie très difficile.</p>
+       <div class="choix-container-final button-container">
+        <a href="/QuatreCrisesJeux"><button class="grand choix-btn">↻</button></a>
+        <a href="/choc-petrolier"><button class="next choix-btn">➡</button></a>
+       </div>
+      </section>
+      </section>
+  
+   
+
+   
+</main>
+</body>
+</html>

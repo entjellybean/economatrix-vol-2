@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Doğru CSS pathleri (public klasöründen göreli) -->
+        <link rel="stylesheet" href="/styles/general.css">
+        <link rel="stylesheet" href="/styles/style.css">
+    
+        <!-- JS dosyası da aynı şekilde -->
+        <script src="/javascript/app.js" defer></script>
+    
+        <title>Accueil</title>
+    </head>
+    
+<body>
+    <%- include('partials/header') %>
+
+    <main>
+        <section id="jeux">
+            <ul>
+                <li class="jeux-items">
+                    <article>
+                        <img src="images/crise.png" alt="crises">
+                        <div class="jeux-content">
+                        <h2>Quatre Crises</h2>
+                        <a href="/QuatreCrisesJeux" class="btn">Jouer</a></div>
+                    </article>
+                </li>
+                <li class="jeux-items">
+                    <article>
+                        <img src="images/jeux.jpg" alt="jeux">
+                        <div class="jeux-content">
+                        <h2>Theories de Jeux</h2>
+                        <a href="/TheoriesDeJeux" class="btn">Jouer</a></div>
+                    </article>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
