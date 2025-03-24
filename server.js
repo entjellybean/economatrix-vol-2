@@ -30,14 +30,25 @@ app.use((req, res, next) => {
   next();
 });
 
-// Veritabanı tablo oluştur
+// Veritabanı tabloları
 db.serialize(() => {
+  // Kullanıcılar tablosu
   db.run(`
     CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL,
       email TEXT NOT NULL,
       password TEXT NOT NULL
+    )
+  `);
+
+  // Stackelberg oyun logları
+  db.run(`
+    CREATE TABLE IF NOT EXISTS stackelberg_logs (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER,
+      choice INTEGER,
+      role TEXT
     )
   `);
 });
@@ -78,31 +89,61 @@ app.get('/TheoriesDeJeux', (req, res) => res.render('TheoriesDeJeux'));
 
 // Kullanıcı kaydı
 app.post('/register', (req, res) => {
-    const { name, email, password } = req.body;
-  
-    db.get('SELECT * FROM users WHERE email = ?', [email], (err, row) => {
-      if (err) return res.send('Bir hata oluştu!');
-  
-      if (row) {
-        // Kullanıcı zaten kayıtlıysa direkt session'a kaydet ve yönlendir
-        req.session.username = row.name; // veritabanındaki ismi al
-        return res.redirect('/');
-      }
-  
-      // Yeni kullanıcıysa veritabanına ekle
-      const stmt = db.prepare('INSERT INTO users (name, email, password) VALUES (?, ?, ?)');
-      stmt.run(name, email, password, function(err) {
-        if (err) return res.send('Kayıt başarısız oldu!');
-  
-        req.session.username = name;
-        res.redirect('/');
+  const { name, email, password } = req.body;
+
+  db.get('SELECT * FROM users WHERE email = ?', [email], (err, row) => {
+    if (err) return res.send('Bir hata oluştu!');
+
+    if (row) {
+      // Kullanıcı zaten kayıtlıysa direkt session'a kaydet ve yönlendir
+      req.session.username = row.name;
+      return res.redirect('/');
+    }
+
+    // Yeni kullanıcı kaydı
+    const stmt = db.prepare('INSERT INTO users (name, email, password) VALUES (?, ?, ?)');
+    stmt.run(name, email, password, function (err) {
+      if (err) return res.send('Kayıt başarısız oldu!');
+      req.session.username = name;
+      res.redirect('/');
+    });
+    stmt.finalize();
+  });
+});
+
+// Stackelberg log kaydı
+app.post('/stackelberg/save', (req, res) => {
+  const { choice, role } = req.body;
+  const username = req.session.username;
+
+  if (username) {
+    db.get('SELECT id FROM users WHERE name = ?', [username], (err, row) => {
+      const user_id = row ? row.id : 0;
+
+      const stmt = db.prepare('INSERT INTO stackelberg_logs (user_id, choice, role) VALUES (?, ?, ?)');
+      stmt.run(user_id, choice, role, function (err) {
+        if (err) {
+          console.error(err.message);
+          return res.status(500).send('Veri kaydedilemedi.');
+        }
+        res.status(200).send('Kayıt başarılı.');
       });
       stmt.finalize();
     });
-  });
-  
+  } else {
+    const stmt = db.prepare('INSERT INTO stackelberg_logs (user_id, choice, role) VALUES (?, ?, ?)');
+    stmt.run(0, choice, role, function (err) {
+      if (err) {
+        console.error(err.message);
+        return res.status(500).send('Veri kaydedilemedi.');
+      }
+      res.status(200).send('Kayıt başarılı.');
+    });
+    stmt.finalize();
+  }
+});
 
-// Port ayarı
+// Sunucu başlat
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Sunucu çalışıyor: http://localhost:${PORT}`);
