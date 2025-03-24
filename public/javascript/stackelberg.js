@@ -68,7 +68,6 @@ function checkIfAllCorrect() {
   button.addEventListener("click", () => {
     sendChoiceToServer(id);
 
-    // doğru-yanlış kontrolü:
     if (checkIfAllCorrect()) {
       winOverlay.style.display = 'grid';
     } else {
@@ -83,7 +82,6 @@ answerButton.addEventListener('click', function () {
   first.style.display = 'none';
   closeButton.style.display = 'none';
 
-  // Tüm doğru cevapları her dropdown içinde doldur
   const dropdowns = document.querySelectorAll('.dropdown');
 
   dropdowns.forEach(dropdown => {

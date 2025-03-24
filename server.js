@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
@@ -7,32 +6,25 @@ const sqlite3 = require('sqlite3').verbose();
 const app = express();
 const db = new sqlite3.Database('./sqlite/users.db');
 
-// Session ayarı
 app.use(session({
-  secret: 'gizli-anahtar',
+  secret: 'key-secret',
   resave: false,
   saveUninitialized: false
 }));
 
-// EJS ayarları
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Body parser
 app.use(express.urlencoded({ extended: true }));
 
-// Public klasörü
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Kullanıcıyı session ile tüm sayfalara geçirme (middleware)
 app.use((req, res, next) => {
   res.locals.username = req.session.username;
   next();
 });
-
-// Veritabanı tabloları
+//sql
 db.serialize(() => {
-  // Kullanıcılar tablosu
   db.run(`
     CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -42,7 +34,6 @@ db.serialize(() => {
     )
   `);
 
-  // Stackelberg oyun logları
   db.run(`
     CREATE TABLE IF NOT EXISTS stackelberg_logs (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -52,8 +43,7 @@ db.serialize(() => {
     )
   `);
 });
-
-// Sayfa route'ları
+//route
 app.get('/', (req, res) => res.render('index'));
 app.get('/aboutus', (req, res) => res.render('aboutus'));
 app.get('/bertrandInfo', (req, res) => res.render('bertrandInfo'));
@@ -87,7 +77,6 @@ app.get('/stackelbergInfo', (req, res) => res.render('stackelbergInfo'));
 app.get('/stackelbergJeux', (req, res) => res.render('stackelbergJeux'));
 app.get('/TheoriesDeJeux', (req, res) => res.render('TheoriesDeJeux'));
 
-// Kullanıcı kaydı
 app.post('/register', (req, res) => {
   const { name, email, password } = req.body;
 
@@ -95,12 +84,10 @@ app.post('/register', (req, res) => {
     if (err) return res.send('Bir hata oluştu!');
 
     if (row) {
-      // Kullanıcı zaten kayıtlıysa direkt session'a kaydet ve yönlendir
       req.session.username = row.name;
       return res.redirect('/');
     }
 
-    // Yeni kullanıcı kaydı
     const stmt = db.prepare('INSERT INTO users (name, email, password) VALUES (?, ?, ?)');
     stmt.run(name, email, password, function (err) {
       if (err) return res.send('Kayıt başarısız oldu!');
@@ -111,7 +98,6 @@ app.post('/register', (req, res) => {
   });
 });
 
-// Stackelberg log kaydı
 app.post('/stackelberg/save', (req, res) => {
   const { choice, role } = req.body;
   const username = req.session.username;
@@ -124,9 +110,9 @@ app.post('/stackelberg/save', (req, res) => {
       stmt.run(user_id, choice, role, function (err) {
         if (err) {
           console.error(err.message);
-          return res.status(500).send('Veri kaydedilemedi.');
+          return res.status(500).send('non success.');
         }
-        res.status(200).send('Kayıt başarılı.');
+        res.status(200).send('success.');
       });
       stmt.finalize();
     });
@@ -135,16 +121,15 @@ app.post('/stackelberg/save', (req, res) => {
     stmt.run(0, choice, role, function (err) {
       if (err) {
         console.error(err.message);
-        return res.status(500).send('Veri kaydedilemedi.');
+        return res.status(500).send('non success.');
       }
-      res.status(200).send('Kayıt başarılı.');
+      res.status(200).send('success.');
     });
     stmt.finalize();
   }
 });
 
-// Sunucu başlat
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Sunucu çalışıyor: http://localhost:${PORT}`);
+  console.log(`server: http://localhost:${PORT}`);
 });
