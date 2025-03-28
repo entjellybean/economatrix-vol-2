@@ -123,17 +123,20 @@ function getRandomComputerChoice() {
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.dropdown').forEach(dropdown => {
-    const button = dropdown.querySelector('.dropdown-btn');
+    const buttons = dropdown.querySelectorAll('.dropdown-btn');
     const items = dropdown.querySelectorAll('.dropdown-item, .correct');
 
     items.forEach(item => {
       item.addEventListener('click', () => {
-        button.textContent = item.textContent;
-        button.dataset.selected = item.classList.contains('correct') ? 'correct' : 'incorrect';
+        buttons.forEach(button => {
+          button.textContent = item.textContent;
+          button.dataset.selected = item.classList.contains('correct') ? 'correct' : 'incorrect';
+        });
       });
     });
   });
 });
+
 
 function closeOverlay(overlayId) {
   document.getElementById(overlayId).style.display = "none";

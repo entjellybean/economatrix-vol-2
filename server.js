@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const sqlite3 = require('sqlite3').verbose();
+const { hashPassword, comparePassword } = require('./lib/hash-password');
 
 const app = express();
 const db = new sqlite3.Database('./sqlite/users.db');
@@ -24,7 +25,8 @@ app.use((req, res, next) => {
   res.locals.username = req.session.username;
   next();
 });
-//sql
+
+// SQL: Tables
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS stackelberg_quantities (
@@ -45,7 +47,6 @@ db.serialize(() => {
       timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
     )
   `);
-  
 
   db.run(`
     CREATE TABLE IF NOT EXISTS stackelberg_logs (
@@ -55,24 +56,24 @@ db.serialize(() => {
       role TEXT
     )
   `);
+
   db.run(`
-    CREATE TABLE IF NOT EXISTS stackelberg_quantities (
+    CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
-      user_id INTEGER DEFAULT 0,
-      qm INTEGER,
-      qd INTEGER,
-      qc INTEGER,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL,
+      password TEXT NOT NULL,
       timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
     )
   `);
 });
-//route
+
+// Routes
 app.get('/', (req, res) => res.render('index'));
 app.get('/aboutus', (req, res) => res.render('aboutus'));
 app.get('/bertrandInfo', (req, res) => res.render('bertrandInfo'));
 app.get('/bertrandJeux', (req, res) => res.render('bertrandJeux'));
 app.get('/choc-petrolier', (req, res) => res.render('choc-petrolier'));
-app.get('/citoyen', (req, res) => res.render('citoyen'));
 app.get('/connecter', (req, res) => res.render('connecter'));
 app.get('/cournotInfo', (req, res) => res.render('cournotInfo'));
 app.get('/cournotJeux', (req, res) => res.render('cournotJeux'));
@@ -101,10 +102,11 @@ app.get('/stackelbergJeux', (req, res) => res.render('stackelbergJeux'));
 app.get('/TheoriesDeJeux', (req, res) => res.render('TheoriesDeJeux'));
 app.get('/stackelberg-cc', (req, res) => res.render('stackelberg-cc'));
 
-app.post('/register', (req, res) => {
+// Register route with hashing
+app.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
 
-  db.get('SELECT * FROM users WHERE email = ?', [email], (err, row) => {
+  db.get('SELECT * FROM users WHERE email = ?', [email], async (err, row) => {
     if (err) return res.send('Bir hata oluştu!');
 
     if (row) {
@@ -112,13 +114,43 @@ app.post('/register', (req, res) => {
       return res.redirect('/');
     }
 
-    const stmt = db.prepare('INSERT INTO users (name, email, password) VALUES (?, ?, ?)');
-    stmt.run(name, email, password, function (err) {
-      if (err) return res.send('Kayıt başarısız oldu!');
-      req.session.username = name;
-      res.redirect('/');
-    });
-    stmt.finalize();
+    try {
+      const hashedPassword = await hashPassword(password);
+      const stmt = db.prepare('INSERT INTO users (name, email, password) VALUES (?, ?, ?)');
+      stmt.run(name, email, hashedPassword, function (err) {
+        if (err) return res.send('Kayıt başarısız oldu!');
+        req.session.username = name;
+        res.redirect('/');
+      });
+      stmt.finalize();
+    } catch (error) {
+      console.error(error);
+      return res.send('Hashleme hatası!');
+    }
+  });
+});
+
+// Login route with password check
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+
+  db.get('SELECT * FROM users WHERE email = ?', [email], async (err, user) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('Sunucu hatası');
+    }
+
+    if (!user) {
+      return res.status(401).send('Kullanıcı bulunamadı.');
+    }
+
+    const isMatch = await comparePassword(password, user.password);
+    if (!isMatch) {
+      return res.status(401).send('Şifre yanlış.');
+    }
+
+    req.session.username = user.name;
+    res.redirect('/');
   });
 });
 
@@ -152,7 +184,7 @@ app.post('/stackelberg/save', (req, res) => {
     stmt.finalize();
   }
 });
-//stackelberg cc
+
 app.post('/stackelberg/save-quantities', (req, res) => {
   const { qm, qd, qc, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9 } = req.body;
   const username = req.session.username;
@@ -190,9 +222,6 @@ app.post('/stackelberg/save-quantities', (req, res) => {
     stmt.finalize();
   }
 });
-
-
-
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

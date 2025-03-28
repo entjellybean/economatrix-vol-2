@@ -251,8 +251,8 @@ main{
       }
       #main-game{
         grid-template-columns: 100%;
-        width:100%;
-        justify-content: left;
+        width:90%;
+        margin: 0 auto;
         gap:2rem;
       }
       .tree{

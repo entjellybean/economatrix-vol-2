@@ -99,11 +99,13 @@ button a{
     background: white;
     padding: 2rem;
     top:15%;
-    height: 17rem;
-    width:40rem;
+    height: 25%;
+    width:60%;
+    margin:0 auto;
     text-align: center;
     border-radius: 10px;
 }
+
 .choix-btn{
     width:25rem;
     background-color: rgb(18, 108, 108);
@@ -161,6 +163,15 @@ margin-left: -1rem;
     width:100%;
     height:auto;
   }
+  .message-content p{
+    padding:2%;
+}
+.message-content{
+ 
+    height: 50%;
+    
+}
+
 }
 
 
