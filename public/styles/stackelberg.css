@@ -10,11 +10,17 @@ main{
     text-align: center;
     width:70%;
 }
+.Qm,.Qd,.Qc{
+  width:2rem;
+}
 #scenario img{
     width: 25rem;
     height: auto;
     border-radius: 6px;
     padding-top: 5rem;
+}
+.game-btn{
+  text-align: center;
 }
 #hero{
     background-color: rgb(18, 108, 108);

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="'IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link href="styles/stackelberg.css" rel="stylesheet">
+    <script src="javascript/app.js" defer> </script>
+    <script src="javascript/stackelberg-cc.js" defer> </script>
+
+
+    <title>stackelberg</title>
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  
+    
+    <section id="hero">
+      <h1>Bataille de chocolatier</h1>
+      <a href="/stackelbergInfo"> <button class="btn">En savoir plus</button></a>
+    </section>
+    
+
+     
+               <section id="main-game">
+                <section id="partie-one">
+           <div class="tree">
+            <!-- Root Node -->
+            <div class="node root standart"> ChocoLeader</div>
+            <div class="node root media" > Leader</div>
+            <div class="branches">
+              <!-- First Branch -->
+              <div class="branch">
+                <div class="label"><input type="text"  class="Qm" placeholder="Qm" /></div>
+                <div class="node standart">ChocoFollower</div>
+                <div class="node media" >Follower</div>
+
+                <div class="sub-branches">
+                  <div class="branch">
+                    <div class="label"><input type="text"  class="Qm" placeholder="Qm" /></div>
+                   
+                    <div class="dropdown">
+        
+                      <input type="text" id="btn1" class="game-btn" placeholder="(...,...)" />
+                      
+                      </div>
+                  </div>
+                  <div class="branch">
+                    <div class="label"><input type="text"  class="Qd" placeholder="Qd" /></div>
+                    
+                    <div class="dropdown">
+                 
+                      <input type="text" id="btn2" class="game-btn" placeholder="(...,...)" />
+                      
+                      </div>
+                  </div>
+                  <div class="branch">
+                    <div class="label"><input type="text"  class="Qc" placeholder="Qc" />
+                    </div>
+                    
+                    <div class="dropdown">
+                 
+                      <input type="text" id="btn3" class="game-btn" placeholder="(...,...)" />
+                      
+      
+                      
+                      </div>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="branch">
+                <div class="label"><input type="text"  class="Qd" placeholder="Qd" /></div>
+                <div class="node standart">ChocoFollower</div>
+                <div class="node media" >Follower</div>
+
+                <div class="sub-branches">
+                    <div class="branch">
+                      <div class="label"><input type="text"  class="Qm" placeholder="Qm" /></div>
+                     
+                      <div class="dropdown">
+                 
+                        
+                        <input type="text" id="btn4" class="game-btn" placeholder="(...,...)" />
+                        
+      
+                          
+                      </div>
+                    </div>
+                    <div class="branch">
+                      <div class="label"><input type="text"  class="Qd" placeholder="Qd" /></div>
+                      
+                      <div class="dropdown">
+                 
+                        <input type="text" id="btn5" class="game-btn" placeholder="(...,...)" />
+                        
+      
+                        
+                      </div>
+                    </div>
+                    <div class="branch">
+                      <div class="label"><input type="text"  class="Qc" placeholder="Qc" /></div>
+                      
+                      <div class="dropdown">
+                 
+                        <input type="text" id="btn6" class="game-btn" placeholder="(...,...)" />
+                        
+      
+                      </div>
+                    </div>
+                  </div>
+              </div>
+        
+              <!-- Third Branch -->
+              <div class="branch">
+                <div class="label"><input type="text"  class="Qc" placeholder="Qc" /></div>
+                <div class="node standart"> ChocoFollower</div>
+                <div class="node media" >Follower</div>
+
+                <div class="sub-branches">
+                    <div class="branch">
+                      <div class="label"><input type="text"  class="Qm" placeholder="Qm" /></div>
+                     
+                      <div class="dropdown">
+                 
+                        <input type="text" id="btn7" class="game-btn" placeholder="(...,...)" />
+                        
+      
+                      </div>
+                    </div>
+                    <div class="branch">
+                      <div class="label"><input type="text"  class="Qd" placeholder="Qd" /></div>
+                      
+                      <div class="dropdown">
+                 
+                        <input type="text" id="btn8" class="game-btn" placeholder="(...,...)" />
+                        
+      
+                      </div>
+                    </div>
+                    <div class="branch">
+                      <div class="label"><input type="text"  class="Qc" placeholder="Qc" /></div>
+                     
+                      <div class="dropdown">
+                 
+                        <input type="text" id="btn9" class="game-btn" placeholder="(...,...)" />
+                        
+      
+                         
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            
+          </div>
+          <section id="decision-section">
+          <p class='decisionQ' id="leaderSentence">Vous êtes ChocoLeader. ChocoFollower va réagir à votre décision.</p>
+          <p class='decisionQ' id="followerSentence"></p>
+          <div id="decision">
+            <button id="send">send</button>
+           </div>
+          </section>
+        </section>
+         </section>
+          
+     
+<footer></footer>
+</body>
+</html>

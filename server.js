@@ -16,6 +16,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -26,13 +27,25 @@ app.use((req, res, next) => {
 //sql
 db.serialize(() => {
   db.run(`
-    CREATE TABLE IF NOT EXISTS users (
+    CREATE TABLE IF NOT EXISTS stackelberg_quantities (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL,
-      email TEXT NOT NULL,
-      password TEXT NOT NULL
+      user_id INTEGER DEFAULT 0,
+      qm INTEGER,
+      qd INTEGER,
+      qc INTEGER,
+      btn1 TEXT,
+      btn2 TEXT,
+      btn3 TEXT,
+      btn4 TEXT,
+      btn5 TEXT,
+      btn6 TEXT,
+      btn7 TEXT,
+      btn8 TEXT,
+      btn9 TEXT,
+      timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
     )
   `);
+  
 
   db.run(`
     CREATE TABLE IF NOT EXISTS stackelberg_logs (
@@ -40,6 +53,16 @@ db.serialize(() => {
       user_id INTEGER,
       choice INTEGER,
       role TEXT
+    )
+  `);
+  db.run(`
+    CREATE TABLE IF NOT EXISTS stackelberg_quantities (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER DEFAULT 0,
+      qm INTEGER,
+      qd INTEGER,
+      qc INTEGER,
+      timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
     )
   `);
 });
@@ -76,6 +99,7 @@ app.get('/savoir', (req, res) => res.render('savoir'));
 app.get('/stackelbergInfo', (req, res) => res.render('stackelbergInfo'));
 app.get('/stackelbergJeux', (req, res) => res.render('stackelbergJeux'));
 app.get('/TheoriesDeJeux', (req, res) => res.render('TheoriesDeJeux'));
+app.get('/stackelberg-cc', (req, res) => res.render('stackelberg-cc'));
 
 app.post('/register', (req, res) => {
   const { name, email, password } = req.body;
@@ -128,6 +152,47 @@ app.post('/stackelberg/save', (req, res) => {
     stmt.finalize();
   }
 });
+//stackelberg cc
+app.post('/stackelberg/save-quantities', (req, res) => {
+  const { qm, qd, qc, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9 } = req.body;
+  const username = req.session.username;
+
+  const insertData = [qm, qd, qc, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9];
+
+  const query = `
+    INSERT INTO stackelberg_quantities (
+      user_id, qm, qd, qc, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `;
+
+  if (username) {
+    db.get('SELECT id FROM users WHERE name = ?', [username], (err, row) => {
+      const user_id = row ? row.id : 0;
+      const stmt = db.prepare(query);
+      stmt.run(user_id, ...insertData, function (err) {
+        if (err) {
+          console.error(err.message);
+          return res.status(500).send('non success.');
+        }
+        res.status(200).send('success.');
+      });
+      stmt.finalize();
+    });
+  } else {
+    const stmt = db.prepare(query);
+    stmt.run(0, ...insertData, function (err) {
+      if (err) {
+        console.error(err.message);
+        return res.status(500).send('non success.');
+      }
+      res.status(200).send('success.');
+    });
+    stmt.finalize();
+  }
+});
+
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
