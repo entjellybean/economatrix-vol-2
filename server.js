@@ -102,7 +102,7 @@ app.get('/stackelbergJeux', (req, res) => res.render('stackelbergJeux'));
 app.get('/TheoriesDeJeux', (req, res) => res.render('TheoriesDeJeux'));
 app.get('/stackelberg-cc', (req, res) => res.render('stackelberg-cc'));
 
-// Register route with hashing
+// REGISTER
 app.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -130,21 +130,24 @@ app.post('/register', async (req, res) => {
   });
 });
 
-// Login route with password check
+// LOGIN (with name & password only)
 app.post('/login', (req, res) => {
-  const { email, password } = req.body;
+  const { name, password } = req.body;
+  console.log("Login request:", name, password); // DEBUG
 
-  db.get('SELECT * FROM users WHERE email = ?', [email], async (err, user) => {
+  db.get('SELECT * FROM users WHERE name = ?', [name], async (err, user) => {
     if (err) {
       console.error(err);
       return res.status(500).send('Sunucu hatası');
     }
 
     if (!user) {
+      console.log("Kullanıcı bulunamadı"); // DEBUG
       return res.status(401).send('Kullanıcı bulunamadı.');
     }
 
     const isMatch = await comparePassword(password, user.password);
+    console.log("Password match:", isMatch); // DEBUG
     if (!isMatch) {
       return res.status(401).send('Şifre yanlış.');
     }
@@ -154,6 +157,8 @@ app.post('/login', (req, res) => {
   });
 });
 
+
+// Stackelberg Save
 app.post('/stackelberg/save', (req, res) => {
   const { choice, role } = req.body;
   const username = req.session.username;
@@ -185,6 +190,7 @@ app.post('/stackelberg/save', (req, res) => {
   }
 });
 
+// Stackelberg Quantities Save
 app.post('/stackelberg/save-quantities', (req, res) => {
   const { qm, qd, qc, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9 } = req.body;
   const username = req.session.username;
