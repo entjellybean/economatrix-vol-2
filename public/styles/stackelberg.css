@@ -97,6 +97,9 @@ main{
     background: black;
     transform: translateY(-50%);
   }
+  .A , .B{
+    width:3rem;
+  }
   
   .branch:after {
     content: '';

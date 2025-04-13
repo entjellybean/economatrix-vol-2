@@ -27,34 +27,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const sendBtn = document.getElementById('send');
   if (sendBtn) {
-    sendBtn.addEventListener('click', () => {
-      const qm = getFirstNonEmptyValue('Qm');
-      const qd = getFirstNonEmptyValue('Qd');
-      const qc = getFirstNonEmptyValue('Qc');
+   sendBtn.addEventListener('click', () => {
+  const qm = getFirstNonEmptyValue('Qm');
+  const qd = getFirstNonEmptyValue('Qd');
+  const qc = getFirstNonEmptyValue('Qc');
 
-      const btnValues = {};
-      for (let i = 1; i <= 9; i++) {
-        const input = document.getElementById(`btn${i}`);
-        btnValues[`btn${i}`] = input ? input.value.trim() : '';
-      }
+  // 👇 Yeni inputlar
+  const cout = document.querySelector('.cout')?.value.trim() || '';
+  const A = document.querySelector('.A')?.value.trim() || '';
+  const B = document.querySelector('.B')?.value.trim() || '';
 
-      fetch('/stackelberg/save-quantities', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ qm, qd, qc, ...btnValues })
-      })
-        .then(res => res.text())
-        .then(response => {
-          if (response === 'success.') {
-            alert('Veriler başarıyla kaydedildi.');
-          } else {
-            alert('Bir hata oluştu.');
-          }
-        })
-        .catch(error => {
-          console.error(error);
-          alert('Sunucu hatası!');
-        });
-    });
+  const btnValues = {};
+  for (let i = 1; i <= 9; i++) {
+    const input = document.getElementById(`btn${i}`);
+    btnValues[`btn${i}`] = input ? input.value.trim() : '';
   }
+
+  fetch('/stackelberg/save-quantities', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ cout, A, B, qm, qd, qc, ...btnValues })
+  })
+    .then(res => res.text())
+    .then(response => {
+      if (response === 'success.') {
+        alert('Veriler başarıyla kaydedildi.');
+      } else {
+        alert('Bir hata oluştu.');
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      alert('Sunucu hatası!');
+    });
 });
+
+    }});
+

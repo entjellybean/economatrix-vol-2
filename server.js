@@ -32,6 +32,10 @@ db.serialize(() => {
     CREATE TABLE IF NOT EXISTS stackelberg_quantities (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       user_id INTEGER DEFAULT 0,
+            cout INTEGER,
+      A INTEGER,
+      B INTEGER,
+
       qm INTEGER,
       qd INTEGER,
       qc INTEGER,
@@ -44,6 +48,7 @@ db.serialize(() => {
       btn7 TEXT,
       btn8 TEXT,
       btn9 TEXT,
+      all_q_optimal BOOLEAN DEFAULT 0,
       timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
     )
   `);
@@ -190,35 +195,60 @@ app.post('/stackelberg/save', (req, res) => {
   }
 });
 
-// Stackelberg Quantities Save
 app.post('/stackelberg/save-quantities', (req, res) => {
-  const { qm, qd, qc, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9 } = req.body;
+  const {
+    cout, A, B, qm, qd, qc,
+    btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9
+  } = req.body;
+
   const username = req.session.username;
 
-  const insertData = [qm, qd, qc, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9];
+  const qmFloat = parseFloat(qm);
+  const qdFloat = parseFloat(qd);
+  const qcFloat = parseFloat(qc);
+  const coutFloat = parseFloat(cout);
+  const AFloat = parseFloat(A);
+  const BFloat = parseFloat(B);
+
+  let all_q_optimal = false;
+  if (
+    !isNaN(qmFloat) && !isNaN(qdFloat) && !isNaN(qcFloat) &&
+    !isNaN(coutFloat) && !isNaN(AFloat) && !isNaN(BFloat)
+  ) {
+    const q_mono = (AFloat - coutFloat) / (2 * BFloat);
+    const q_leader = q_mono;         // Stackelberg leader
+    const q_follower = q_mono / 2;   // Stackelberg follower
+    const q_half_mono = q_mono / 2;  // Used for qc
+
+    const tol = 0.01;
+    const check = (a, b) => Math.abs(a - b) < tol;
+
+    if (
+      check(qmFloat, q_leader) &&
+      check(qdFloat, q_follower) &&
+      check(qcFloat, q_half_mono)
+    ) {
+      all_q_optimal = true;
+    }
+  }
+
+  const insertData = [
+    cout, A, B, qm, qd, qc,
+    btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9,
+    all_q_optimal ? 1 : 0
+  ];
 
   const query = `
     INSERT INTO stackelberg_quantities (
-      user_id, qm, qd, qc, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      user_id, cout, A, B, qm, qd, qc,
+      btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9,
+      all_q_optimal
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `;
 
-  if (username) {
-    db.get('SELECT id FROM users WHERE name = ?', [username], (err, row) => {
-      const user_id = row ? row.id : 0;
-      const stmt = db.prepare(query);
-      stmt.run(user_id, ...insertData, function (err) {
-        if (err) {
-          console.error(err.message);
-          return res.status(500).send('non success.');
-        }
-        res.status(200).send('success.');
-      });
-      stmt.finalize();
-    });
-  } else {
+  const saveToDB = (user_id) => {
     const stmt = db.prepare(query);
-    stmt.run(0, ...insertData, function (err) {
+    stmt.run(user_id, ...insertData, function (err) {
       if (err) {
         console.error(err.message);
         return res.status(500).send('non success.');
@@ -226,8 +256,19 @@ app.post('/stackelberg/save-quantities', (req, res) => {
       res.status(200).send('success.');
     });
     stmt.finalize();
+  };
+
+  if (username) {
+    db.get('SELECT id FROM users WHERE name = ?', [username], (err, row) => {
+      const user_id = row ? row.id : 0;
+      saveToDB(user_id);
+    });
+  } else {
+    saveToDB(0);
   }
 });
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
