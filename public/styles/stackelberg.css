@@ -99,6 +99,17 @@ main{
   }
   .A , .B{
     width:3rem;
+    text-align: center;
+
+  }
+  .cout {
+    text-align: center;
+  }
+  #formulas{
+    display: grid;
+    justify-items: center;
+    gap:1rem;
+    margin-top: 2%;
   }
   
   .branch:after {
