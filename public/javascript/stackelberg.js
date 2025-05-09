@@ -51,10 +51,10 @@ function sendChoiceToServer(choice) {
   })
     .then((res) => res.text())
     .then((msg) => {
-      console.log("Kayıt sonucu:", msg);
+      console.log("result", msg);
     })
     .catch((err) => {
-      console.error("Kayıt hatası:", err);
+      console.error("error:", err);
     });
 }
 

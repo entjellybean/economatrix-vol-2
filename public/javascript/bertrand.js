@@ -93,7 +93,6 @@ buttons.forEach(button => {
 function handlePlayerChoice(playerChoice) {
     const computerChoice = getRandomComputerChoice(); 
 
-    // Close all overlays first to prevent multiple showing at once
     closeOverlay('overlay-nash-bravo');
     closeOverlay('overlay-no-nash-bravo');
     closeOverlay('overlay-mal');

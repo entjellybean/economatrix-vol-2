@@ -26,7 +26,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// SQL: Tables
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS stackelberg_quantities (
@@ -107,12 +106,11 @@ app.get('/stackelbergJeux', (req, res) => res.render('stackelbergJeux'));
 app.get('/TheoriesDeJeux', (req, res) => res.render('TheoriesDeJeux'));
 app.get('/stackelberg-cc', (req, res) => res.render('stackelberg-cc'));
 
-// REGISTER
 app.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
 
   db.get('SELECT * FROM users WHERE email = ?', [email], async (err, row) => {
-    if (err) return res.send('Bir hata oluştu!');
+    if (err) return res.send('error');
 
     if (row) {
       req.session.username = row.name;
@@ -123,22 +121,21 @@ app.post('/register', async (req, res) => {
       const hashedPassword = await hashPassword(password);
       const stmt = db.prepare('INSERT INTO users (name, email, password) VALUES (?, ?, ?)');
       stmt.run(name, email, hashedPassword, function (err) {
-        if (err) return res.send('Kayıt başarısız oldu!');
+        if (err) return res.send('error');
         req.session.username = name;
         res.redirect('/');
       });
       stmt.finalize();
     } catch (error) {
       console.error(error);
-      return res.send('Hashleme hatası!');
+      return res.send('Hash error!');
     }
   });
 });
 
-// LOGIN (with name & password only)
 app.post('/login', (req, res) => {
   const { name, password } = req.body;
-  console.log("Login request:", name, password); // DEBUG
+  console.log("Login request:", name, password); 
 
   db.get('SELECT * FROM users WHERE name = ?', [name], async (err, user) => {
     if (err) {
@@ -147,12 +144,12 @@ app.post('/login', (req, res) => {
     }
 
     if (!user) {
-      console.log("Kullanıcı bulunamadı"); // DEBUG
+      console.log("Kullanıcı bulunamadı"); 
       return res.status(401).send('Kullanıcı bulunamadı.');
     }
 
     const isMatch = await comparePassword(password, user.password);
-    console.log("Password match:", isMatch); // DEBUG
+    console.log("Password match:", isMatch); 
     if (!isMatch) {
       return res.status(401).send('Şifre yanlış.');
     }
@@ -163,7 +160,6 @@ app.post('/login', (req, res) => {
 });
 
 
-// Stackelberg Save
 app.post('/stackelberg/save', (req, res) => {
   const { choice, role } = req.body;
   const username = req.session.username;
@@ -216,9 +212,9 @@ app.post('/stackelberg/save-quantities', (req, res) => {
     !isNaN(coutFloat) && !isNaN(AFloat) && !isNaN(BFloat)
   ) {
     const q_mono = (AFloat - coutFloat) / (2 * BFloat);
-    const q_leader = q_mono;         // Stackelberg leader
-    const q_follower = q_mono / 2;   // Stackelberg follower
-    const q_half_mono = q_mono / 2;  // Used for qc
+    const q_leader = q_mono;         
+    const q_follower = q_mono / 2;   
+    const q_half_mono = q_mono / 2;  
 
     const tol = 0.01;
     const check = (a, b) => Math.abs(a - b) < tol;

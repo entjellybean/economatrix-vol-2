@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let counter = 0;
     const size = images[0]?.clientWidth || 0;
   
-    // Sayfa yönlendirmeleri
     if (jeuxButton) {
         jeuxButton.addEventListener('click', function() {
             window.location.href = 'TheoriesDeJeux.html';
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
   
-    // İleri butonu
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             if (counter >= images.length - 1) return;
@@ -45,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
   
-    // Geri butonu
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             if (counter <= 0) return;
@@ -55,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
   
-    // Sonsuz döngü için kontrol
     carouselSlide.addEventListener('transitionend', () => {
         if (images[counter].id === 'lastClone') {
             carouselSlide.style.transition = "none";

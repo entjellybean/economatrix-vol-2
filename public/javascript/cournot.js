@@ -1,4 +1,3 @@
-// Elementleri Seç
 const advTrahirPrice = document.getElementById("trahir-price-adv");
 const advCartelPrice = document.getElementById("cartel-price-adv");
 const btn1 = document.getElementById("btn1");
@@ -73,11 +72,9 @@ resultButton.addEventListener("click", () => {
     updateResults();  
     tips.style.display = 'none';
 });
-
-// Inputlara tıklanıldığında placeholder'ı temizle
 gameInputs.forEach(input => {
     input.addEventListener("click", () => {
-        input.placeholder = "";  // Placeholder'ı temizle
+        input.placeholder = "";  
     });
 });
 

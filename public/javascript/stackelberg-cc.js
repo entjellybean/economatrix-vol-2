@@ -31,8 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const qm = getFirstNonEmptyValue('Qm');
   const qd = getFirstNonEmptyValue('Qd');
   const qc = getFirstNonEmptyValue('Qc');
-
-  // 👇 Yeni inputlar
   const cout = document.querySelector('.cout')?.value.trim() || '';
   const A = document.querySelector('.A')?.value.trim() || '';
   const B = document.querySelector('.B')?.value.trim() || '';
@@ -51,14 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(res => res.text())
     .then(response => {
       if (response === 'success.') {
-        alert('Veriler başarıyla kaydedildi.');
+        alert('succes.');
       } else {
-        alert('Bir hata oluştu.');
+        alert('error.');
       }
     })
     .catch(error => {
       console.error(error);
-      alert('Sunucu hatası!');
+      alert('server error!');
     });
 });
 

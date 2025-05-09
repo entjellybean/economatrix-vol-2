@@ -7,7 +7,6 @@ const coopcheat = document.getElementById('overlay-coop-cheat');
 const cheatcoop = document.getElementById('overlay-cheat-coop');
 
 
-//cartel=denoncer=cheat
 function getRandomComputerChoice() {
     const choices = ['cartel','cartel','cartel','trahir'];
     return choices[Math.floor(Math.random() * choices.length)];
