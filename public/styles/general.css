@@ -15,9 +15,19 @@ a{
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 5;
 }
+
 footer{
     height: 2rem;
-}
+        background-color:rgb(18, 108, 108);
+        margin-bottom: 0;
+        padding-bottom: 2rem;
+    }
+        footer p{
+            color: white;
+            font-size: 150%;
+            padding: 0.5rem;
+        }
+
 #main-header{
     height:5rem;
     display: flex;
@@ -72,20 +82,24 @@ footer{
     cursor: default;
   }
   
-
+.btn a{
+    color: white;
+}
 #main-header nav a:hover{
     color:antiquewhite
 }
-.btn{
+.btn, #play{
     background-color:rgb(18, 108, 108);
     border-radius: 4px;
-    font-size: 200%;
+    font-size: 150%;
     color:white;
     padding: 0.5rem 1.5rem;
     display: inline-block;
 }
-.btn:hover{
+.btn:hover, #play:hover{
     background-color: rgb(111, 169, 150);
+        cursor: pointer;
+
 }
 
 #side-drawer{

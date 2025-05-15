@@ -61,7 +61,7 @@
   <button id="tip-close">x</button>
         <div id="tip-one">
          <p>Si prix=< cout, Vous ne pouvez pas en tirer profit. </p>
-        <button id="btn-tip-one">→</button>
+        <button id="btn-tip-one" class="btn">→</button>
         </div>
         <div id="tip-two">
          <p>Essayez de trouver les prix optimaux:</p>
@@ -87,16 +87,16 @@
     <div id="overlay-content">
         <h2>Vous n'avez pas choisi la décision optimale selon l'équilibre de Nash, 
          mais vous avez obtenu un bénéfice supérieur à celui de votre concurrent.</h2>
-        <button onclick="closeOverlay('overlay-no-nash-bravo')">↻</button>
-        <button><a href="/TheoriesDeJeux">Théories de jeux</a></button>
+        <button class="btn" onclick="closeOverlay('overlay-no-nash-bravo')">↻</button>
+        <button class="btn"><a href="/TheoriesDeJeux">Théories de jeux</a></button>
     </div>
 </div>
 
 <div id="overlay-defait" class="bertrand-overlay">
     <div id="overlay-content">
     <h2>Vous avez obtenu aucun profit...</h2>
-    <button onclick="closeOverlay('overlay-defait')">↻</button>
-    <button><a href="/TheoriesDeJeux">Théories de jeux</a></button>
+    <button class="btn" onclick="closeOverlay('overlay-defait')">↻</button>
+    <button class="btn"><a href="/TheoriesDeJeux">Théories de jeux</a></button>
     </div>
 </div>
 
@@ -104,8 +104,8 @@
     <div id="overlay-content">
         <h2>Vous avez choisi l'option optimale selon l'équilibre de Nash. Malheureusement, 
         votre concurrent étant plus avantagé, vous avez réalisé un profit inférieur au sien.</h2>
-        <button onclick="closeOverlay('overlay-nash-mal')">↻</button>
-        <button><a href="/TheoriesDeJeux">Théories de jeux</a></button>
+        <button class="btn" onclick="closeOverlay('overlay-nash-mal')">↻</button>
+        <button class="btn"><a href="/TheoriesDeJeux">Théories de jeux</a></button>
     </div>
 </div>
 
@@ -113,12 +113,12 @@
     <div id="overlay-content">
 <h2>Vous n'avez ni appliqué le prix optimal selon l'équilibre de Nash    
 ni obtenu un profit supérieur à celui de votre concurrent.</h2>
-<button onclick="closeOverlay('overlay-mal')">↻</button>
-        <button><a href="/TheoriesDeJeux">Théories de jeux</a></button>    </div>
+<button class="btn" onclick="closeOverlay('overlay-mal')">↻</button>
+        <button class="btn"><a href="/TheoriesDeJeux">Théories de jeux</a></button>    </div>
 </div>
 
 
 
-<footer></footer>
+    <%- include('partials/footer') %>
 </body>
 </html>
